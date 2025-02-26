@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libraryProject.Entities", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libraryProject.UI", "libraryProject.UI\libraryProject.UI.csproj", "{C1A5A8AC-EA51-4B33-9AE5-4CC1645B4274}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookForm", "BookForm\BookForm.csproj", "{10440766-ED89-49B3-B90B-EF31727D45CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C1A5A8AC-EA51-4B33-9AE5-4CC1645B4274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1A5A8AC-EA51-4B33-9AE5-4CC1645B4274}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1A5A8AC-EA51-4B33-9AE5-4CC1645B4274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10440766-ED89-49B3-B90B-EF31727D45CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10440766-ED89-49B3-B90B-EF31727D45CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10440766-ED89-49B3-B90B-EF31727D45CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10440766-ED89-49B3-B90B-EF31727D45CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
