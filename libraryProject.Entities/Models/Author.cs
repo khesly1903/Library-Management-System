@@ -14,5 +14,9 @@ namespace libraryProject.Entities.Models
         public string? Surname { get; set; }
 
         public string? Biography{ get; set; }
+
+
+        // bağlantı referansları
+        public ICollection<Book>? Books { get; set; }
     }
 }
