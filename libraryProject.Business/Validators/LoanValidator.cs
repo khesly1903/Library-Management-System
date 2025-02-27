@@ -13,6 +13,14 @@ namespace libraryProject.Business.Validators
         {
             RuleFor(l => l.LoanDate).NotEmpty().WithMessage("Loan date is required.");
             RuleFor(l => l.RetrunDate).GreaterThan(l => l.LoanDate).WithMessage("Return date must be after loan date.");
+
+
+
+            // retrun date loan date den 15 günden fazla olamaz
+
+
+
+            // studentID ve bookID boş olamaz
         }
     }
 }

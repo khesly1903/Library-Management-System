@@ -8,5 +8,9 @@ namespace libraryProject.Business.Validators
 {
     internal class ShelfValidator
     {
+
+        // shelfID boş olamaz
+
+
     }
 }

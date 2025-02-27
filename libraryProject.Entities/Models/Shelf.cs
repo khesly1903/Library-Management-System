@@ -9,7 +9,7 @@ namespace libraryProject.Entities.Models
 {
     public class Shelf : Entity
     {
-        // rafın adresi?? bişeyler koyarız
+        public Guid ShelftID { get; set; }
         public string? ShelfDescription { get; set; }
 
         //referans bağlantılar

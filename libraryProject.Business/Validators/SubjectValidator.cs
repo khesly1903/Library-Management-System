@@ -8,5 +8,6 @@ namespace libraryProject.Business.Validators
 {
     internal class SubjectValidator
     {
+        //subject name boş olamaz
     }
 }

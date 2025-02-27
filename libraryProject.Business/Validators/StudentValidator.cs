@@ -17,6 +17,9 @@ namespace libraryProject.Business.Validators
         {
             RuleFor(s => s.StudentName).NotEmpty().WithMessage("Student name is required.");
             RuleFor(s => s.StudentNumber).NotEmpty().WithMessage("Student number is required.");
+
+            // ad soyad sayı ve özel karakter içeremez
+
         }
 
     }

@@ -11,9 +11,12 @@ namespace libraryProject.Business.Validators
     {
         public AuthorValidator()
         {
+
+            // 2 karakterden küçük olamaz
             RuleFor(a => a.Name)
                 .NotEmpty().WithMessage("Yazar adı boş olamaz.");
 
+            // 2 karakterden küçük olamaz
             RuleFor(a => a.Surname)
                 .NotEmpty().WithMessage("Yazar soyadı boş olamaz.");
 
