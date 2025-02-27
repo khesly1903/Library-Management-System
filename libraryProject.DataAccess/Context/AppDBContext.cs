@@ -30,10 +30,15 @@ namespace libraryProject.DataAccess.Context
 
 
 
-            // BERKAY DB LOCAL
+            
             if (!optionsBuilder.IsConfigured)
             {
+                // BERKAY DB LOCAL
                 optionsBuilder.UseSqlServer(@"Data Source=KAYAB\SQLEXPRESS;Initial Catalog=LibraryProjectDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+
+                // MERVE DB LOCAL
+                //optionsBuilder.UseSqlServer(@"");
+
             }
 
         }
