@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentValidation;
+﻿using FluentValidation;
 using libraryProject.Entities.Models;
 namespace libraryProject.Business.Validators
 {
@@ -12,16 +7,16 @@ namespace libraryProject.Business.Validators
         public AuthorValidator()
         {
 
-            // 2 karakterden küçük olamaz
             RuleFor(a => a.Name)
-                .NotEmpty().WithMessage("Yazar adı boş olamaz.");
+          .NotEmpty().WithMessage("Yazar adı boş olamaz.")
+          .MinimumLength(2).WithMessage("Yazar adı en az 2 karakter olmalıdır.");
 
-            // 2 karakterden küçük olamaz
             RuleFor(a => a.Surname)
-                .NotEmpty().WithMessage("Yazar soyadı boş olamaz.");
+           .NotEmpty().WithMessage("Yazar soyadı boş olamaz.")
+           .MinimumLength(2).WithMessage("Yazar soyadı en az 2 karakter olmalıdır.");
 
             RuleFor(a => a.Biography)
-                .MaximumLength(1000).WithMessage("Biyografi 1000 karakterden uzun olamaz.");
+           .MaximumLength(1000).WithMessage("Biyografi 1000 karakterden uzun olamaz.");
         }
     }
 }

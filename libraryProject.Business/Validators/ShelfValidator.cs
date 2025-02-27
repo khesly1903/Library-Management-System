@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
+using libraryProject.Entities.Models;
 
 namespace libraryProject.Business.Validators
 {
-    internal class ShelfValidator
+    public class ShelfValidator : AbstractValidator<Shelf>
     {
-
-        // shelfID boş olamaz
-
-
+        public ShelfValidator()
+        {
+            // ShelftID boş olamaz ve geçerli bir Guid olmalı
+            RuleFor(s => s.ShelftID)
+                .NotEqual(Guid.Empty).WithMessage("Raf ID'si boş olamaz ve geçerli bir Guid olmalıdır.");
+        }
     }
 }

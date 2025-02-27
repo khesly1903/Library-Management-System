@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using FluentValidation;
 using libraryProject.Entities.Models;
 
@@ -11,16 +10,21 @@ namespace libraryProject.Business.Validators
     {
         public LoanValidator()
         {
-            RuleFor(l => l.LoanDate).NotEmpty().WithMessage("Loan date is required.");
-            RuleFor(l => l.RetrunDate).GreaterThan(l => l.LoanDate).WithMessage("Return date must be after loan date.");
+            RuleFor(l => l.LoanDate)
+                .NotEmpty().WithMessage("Ödünç alma tarihi gereklidir.");
 
+            // ReturnDate, LoanDate'den sonra olmalıdır
+            RuleFor(l => l.RetrunDate)
+                .GreaterThan(l => l.LoanDate).WithMessage("Teslim tarihi, ödünç alma tarihinden sonra olmalıdır.")
+                .LessThanOrEqualTo(l => l.LoanDate.AddDays(15)).WithMessage("Teslim tarihi, ödünç alma tarihinden 15 günden fazla olamaz.");
 
+            // Student boş olamaz
+            RuleFor(l => l.Student)
+                .NotEmpty().WithMessage("Öğrenci ID'si gereklidir.");
 
-            // retrun date loan date den 15 günden fazla olamaz
-
-
-
-            // studentID ve bookID boş olamaz
+            // BookId boş olamaz
+            RuleFor(l => l.BookId)
+                .NotEmpty().WithMessage("Kitap ID'si gereklidir.");
         }
     }
 }

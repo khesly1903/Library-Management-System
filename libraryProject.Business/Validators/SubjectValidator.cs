@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
+using libraryProject.Entities.Models;
 
 namespace libraryProject.Business.Validators
 {
-    internal class SubjectValidator
+    internal class SubjectValidator: AbstractValidator<Subject>
     {
-        //subject name boş olamaz
+        public SubjectValidator()
+        {
+            RuleFor(s => s.SubjectName)
+                .NotEmpty().WithMessage("Konu adı zorunludur.");
+        }
     }
 }
