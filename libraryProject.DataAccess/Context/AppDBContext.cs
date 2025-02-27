@@ -24,7 +24,7 @@ namespace libraryProject.DataAccess.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // COMMITE EDERKEN VEYA PULL ETTİKTEN SONRA BURAYI KONTROL ETMEYİ UNUTMAYIN
+            // COMMIT EDERKEN VEYA PULL ETTİKTEN SONRA BURAYI KONTROL ETMEYİ UNUTMAYIN
             // DB HATASI ALIRSANIZ İLK OLARAK BURADAKİ CONNECTION STRING KISMINA BAKIN
             // İŞLEM YAPACAĞINIZ ZAMAN KENDİNİZ HARİÇ HERKESİ YORUM SATIRINA ALIN
 
@@ -34,10 +34,13 @@ namespace libraryProject.DataAccess.Context
             if (!optionsBuilder.IsConfigured)
             {
                 // BERKAY DB LOCAL
-                optionsBuilder.UseSqlServer(@"Data Source=KAYAB\SQLEXPRESS;Initial Catalog=LibraryProjectDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                //optionsBuilder.UseSqlServer(@"Data Source=KAYAB\SQLEXPRESS;Initial Catalog=LibraryProjectDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+
+                // DERYA DB LOCAL
+                //optionsBuilder.UseSqlServer(@"Data Source = DESKTOP - N6SRBPV; Initial Catalog = LibraryProject; Integrated Security = True; Connect Timeout = 30; Encrypt = True; Trust Server Certificate = True; Application Intent = ReadWrite; Multi Subnet Failover = False");
 
                 // MERVE DB LOCAL
-                //optionsBuilder.UseSqlServer(@"");
+                //optionsBuilder.UseSqlServer(@"Data Source=LAPTOP-R2AE4IO5\SQLEXPRESS;Initial Catalog=LibraryProject;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
             }
 
