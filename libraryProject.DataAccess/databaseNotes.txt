@@ -1,0 +1,23 @@
+	1-
+	Paketlerin Yüklenmesi:
+	Install-Package Microsoft.EntityFrameworkCore
+	Install-Package Microsoft.EntityFrameworkCore.Tools
+	Install-Package Microsoft.EntityFrameworkCore.SqlServer
+	Install-Package Microsoft.EntityFrameworkCore.Design
+
+	2-
+	Entitylerin Oluþturulmasý:
+	Category, Product
+
+	3-
+	Context Sýnýfý Oluþturalým:
+	ApplicationDBContext:DbContext
+
+	4-Migrations
+	enable-migrations
+
+	5-
+	add-migration <......>
+
+	6-
+	update-database

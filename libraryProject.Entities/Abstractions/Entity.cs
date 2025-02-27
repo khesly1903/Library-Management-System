@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace libraryProject.Entities.Abstractions
 {
-    public class Entity
+    public abstract class Entity
     {
         public Entity()
         {
-            Guid Id = Guid.NewGuid();
+            Id = Guid.NewGuid();
         }
+        public Guid Id { get; set; }
     }
+
+
 }

@@ -13,6 +13,11 @@ internal class BookValidator: AbstractValidator<Book>
 {
     public BookValidator()
     {
+
+        // aynı kitap adı veya ısbn numarası varsa uyarı vericek
+
+
+
         RuleFor(b => b.BookName).NotEmpty().WithMessage("Book name is required.");
         // book title boş olamaz
         //ISBN 10 or 13
