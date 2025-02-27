@@ -1,29 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
+using libraryProject.Entities.Models;
 
 namespace libraryProject.Business.Validators
 {
-    internal class PublisherValidator
+    internal class PublisherValidator : AbstractValidator<Publisher>
     {
 
-        // PublisherName boş olamaz
 
-        // contact number 10 haneli olmalı
+        public PublisherValidator()
+        {
+            // PublisherName boş olamaz
+            RuleFor(p => p.PublisherName)
+                .NotEmpty().WithMessage("Yayınevi adı gereklidir.");
 
+            // ContactNumber 10 haneli olmalı
+            RuleFor(p => p.ContactNumber)
+                .NotEmpty().WithMessage("İletişim numarası gereklidir.")
+                .Matches(@"^\d{10}$").WithMessage("İletişim numarası 10 haneli olmalıdır.");
 
-
-        /*
-         public string? PublisherName { get; set; }
-        public string? Address { get; set; }
-        public string? ContactNumber { get; set; }
-
-
-
-        //referans bağlantıar
-        public ICollection<Book>? Book { get; set; }
-         */
+          
+        }
     }
 }
