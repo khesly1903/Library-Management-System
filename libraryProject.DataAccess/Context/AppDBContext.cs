@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace libraryProject.Business.Validators
+namespace libraryProject.DataAccess.Context
 {
-    internal class BookValidator
+    internal class AppDBContext
     {
+
+
     }
 }
