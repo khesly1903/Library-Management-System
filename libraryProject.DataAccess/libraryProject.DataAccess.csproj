@@ -13,4 +13,8 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\libraryProject.Entities\libraryProject.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

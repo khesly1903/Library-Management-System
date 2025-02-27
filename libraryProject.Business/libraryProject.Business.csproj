@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\libraryProject.DataAccess\libraryProject.DataAccess.csproj" />
     <ProjectReference Include="..\libraryProject.Entities\libraryProject.Entities.csproj" />
   </ItemGroup>
 
