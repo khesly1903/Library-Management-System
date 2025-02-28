@@ -3,7 +3,7 @@ using libraryProject.Entities.Models;
 
 namespace libraryProject.Business.Validators
 {
-    internal class SubjectValidator: AbstractValidator<Subject>
+    public class SubjectValidator: AbstractValidator<Subject>
     {
         public SubjectValidator()
         {

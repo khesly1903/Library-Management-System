@@ -4,7 +4,7 @@ using libraryProject.Entities.Models;
 
 namespace libraryProject.Business.Validators
 {
-    internal class StudentValidator : AbstractValidator<Student>
+    public class StudentValidator : AbstractValidator<Student>
     {
         public StudentValidator()
         {

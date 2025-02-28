@@ -32,7 +32,6 @@
             label2 = new Label();
             label3 = new Label();
             btnStudentDelete = new Button();
-            btnStudentUpgrade = new Button();
             btnStudentSave = new Button();
             txtStudentName = new TextBox();
             txtStudentSurname = new TextBox();
@@ -76,19 +75,9 @@
             btnStudentDelete.UseVisualStyleBackColor = true;
             btnStudentDelete.Click += btnStudentDelete_Click;
             // 
-            // btnStudentUpgrade
-            // 
-            btnStudentUpgrade.Location = new Point(168, 316);
-            btnStudentUpgrade.Margin = new Padding(3, 2, 3, 2);
-            btnStudentUpgrade.Name = "btnStudentUpgrade";
-            btnStudentUpgrade.Size = new Size(109, 33);
-            btnStudentUpgrade.TabIndex = 1;
-            btnStudentUpgrade.Text = "GÜNCELLE";
-            btnStudentUpgrade.UseVisualStyleBackColor = true;
-            // 
             // btnStudentSave
             // 
-            btnStudentSave.Location = new Point(283, 316);
+            btnStudentSave.Location = new Point(168, 316);
             btnStudentSave.Margin = new Padding(3, 2, 3, 2);
             btnStudentSave.Name = "btnStudentSave";
             btnStudentSave.Size = new Size(109, 33);
@@ -129,7 +118,7 @@
             // 
             lstStudentList.FormattingEnabled = true;
             lstStudentList.ItemHeight = 15;
-            lstStudentList.Location = new Point(422, 76);
+            lstStudentList.Location = new Point(296, 82);
             lstStudentList.Margin = new Padding(3, 2, 3, 2);
             lstStudentList.Name = "lstStudentList";
             lstStudentList.Size = new Size(421, 274);
@@ -138,7 +127,7 @@
             // 
             // label4
             // 
-            label4.Location = new Point(422, 54);
+            label4.Location = new Point(296, 54);
             label4.Name = "label4";
             label4.Size = new Size(183, 26);
             label4.TabIndex = 0;
@@ -148,13 +137,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(938, 452);
+            ClientSize = new Size(871, 382);
             Controls.Add(lstStudentList);
             Controls.Add(txtStudentSurname);
             Controls.Add(txtStudentNumber);
             Controls.Add(txtStudentName);
             Controls.Add(btnStudentSave);
-            Controls.Add(btnStudentUpgrade);
             Controls.Add(btnStudentDelete);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -174,7 +162,6 @@
         private Label label2;
         private Label label3;
         private Button btnStudentDelete;
-        private Button btnStudentUpgrade;
         private Button btnStudentSave;
         private TextBox txtStudentName;
         private TextBox txtStudentSurname;

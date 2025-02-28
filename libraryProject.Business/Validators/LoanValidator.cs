@@ -6,7 +6,7 @@ using libraryProject.Entities.Models;
 
 namespace libraryProject.Business.Validators
 {
-    internal class LoanValidator:AbstractValidator<Loan>
+    public class LoanValidator:AbstractValidator<Loan>
     {
         public LoanValidator()
         {

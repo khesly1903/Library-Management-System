@@ -62,10 +62,10 @@
             // 
             lblBookTitle.AutoSize = true;
             lblBookTitle.BackColor = Color.Bisque;
-            lblBookTitle.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBookTitle.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblBookTitle.Location = new Point(25, 24);
             lblBookTitle.Name = "lblBookTitle";
-            lblBookTitle.Size = new Size(72, 16);
+            lblBookTitle.Size = new Size(70, 16);
             lblBookTitle.TabIndex = 1;
             lblBookTitle.Text = "KİTAP ADI";
             lblBookTitle.Click += lblBookTitle_Click;
@@ -74,10 +74,10 @@
             // 
             lblBookAuthor.AutoSize = true;
             lblBookAuthor.BackColor = Color.Bisque;
-            lblBookAuthor.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBookAuthor.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblBookAuthor.Location = new Point(25, 59);
             lblBookAuthor.Name = "lblBookAuthor";
-            lblBookAuthor.Size = new Size(97, 16);
+            lblBookAuthor.Size = new Size(96, 16);
             lblBookAuthor.TabIndex = 2;
             lblBookAuthor.Text = "KİTAP YAZARI";
             lblBookAuthor.Click += lblBookAuthor_Click;
@@ -86,10 +86,10 @@
             // 
             lblBookType.AutoSize = true;
             lblBookType.BackColor = Color.Bisque;
-            lblBookType.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBookType.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblBookType.Location = new Point(25, 127);
             lblBookType.Name = "lblBookType";
-            lblBookType.Size = new Size(85, 16);
+            lblBookType.Size = new Size(87, 16);
             lblBookType.TabIndex = 3;
             lblBookType.Text = "KİTAP TÜRÜ";
             lblBookType.Click += lblBookType_Click;
@@ -98,7 +98,7 @@
             // 
             lblBookLocation.AutoSize = true;
             lblBookLocation.BackColor = Color.Bisque;
-            lblBookLocation.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBookLocation.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblBookLocation.Location = new Point(25, 214);
             lblBookLocation.Name = "lblBookLocation";
             lblBookLocation.Size = new Size(78, 16);
@@ -110,10 +110,10 @@
             // 
             lblBookISBN.AutoSize = true;
             lblBookISBN.BackColor = Color.Bisque;
-            lblBookISBN.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBookISBN.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblBookISBN.Location = new Point(25, 93);
             lblBookISBN.Name = "lblBookISBN";
-            lblBookISBN.Size = new Size(78, 16);
+            lblBookISBN.Size = new Size(79, 16);
             lblBookISBN.TabIndex = 5;
             lblBookISBN.Text = "KİTAP ISBN";
             lblBookISBN.Click += lblBookISBN_Click;
@@ -122,13 +122,25 @@
             // 
             lblBookTotalCopies.AutoSize = true;
             lblBookTotalCopies.BackColor = Color.Bisque;
-            lblBookTotalCopies.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBookTotalCopies.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblBookTotalCopies.Location = new Point(25, 252);
             lblBookTotalCopies.Name = "lblBookTotalCopies";
             lblBookTotalCopies.Size = new Size(84, 16);
             lblBookTotalCopies.TabIndex = 6;
             lblBookTotalCopies.Text = "KİTAP STOK";
             lblBookTotalCopies.Click += lblBookTotalCopies_Click;
+            // 
+            // lblBookPublisher
+            // 
+            lblBookPublisher.AutoSize = true;
+            lblBookPublisher.BackColor = Color.Bisque;
+            lblBookPublisher.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBookPublisher.Location = new Point(25, 170);
+            lblBookPublisher.Name = "lblBookPublisher";
+            lblBookPublisher.Size = new Size(109, 16);
+            lblBookPublisher.TabIndex = 6;
+            lblBookPublisher.Text = "KİTAP YAYINEVİ";
+            lblBookPublisher.Click += lblBookTotalCopies_Click;
             // 
             // panel1
             // 
@@ -251,18 +263,6 @@
             lstBooks.TabIndex = 10;
             lstBooks.SelectedIndexChanged += listBooks_SelectedIndexChanged;
             // 
-            // lblBookPublisher
-            // 
-            lblBookPublisher.AutoSize = true;
-            lblBookPublisher.BackColor = Color.Bisque;
-            lblBookPublisher.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBookPublisher.Location = new Point(25, 170);
-            lblBookPublisher.Name = "lblBookPublisher";
-            lblBookPublisher.Size = new Size(109, 16);
-            lblBookPublisher.TabIndex = 6;
-            lblBookPublisher.Text = "KİTAP YAYINEVİ";
-            lblBookPublisher.Click += lblBookTotalCopies_Click;
-            // 
             // txtBookPublisher
             // 
             txtBookPublisher.BackColor = SystemColors.AppWorkspace;
@@ -277,7 +277,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(608, 384);
+            ClientSize = new Size(608, 375);
             Controls.Add(lstBooks);
             Controls.Add(txtBookPublisher);
             Controls.Add(txtBookTotalCopies);

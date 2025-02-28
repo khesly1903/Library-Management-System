@@ -23,7 +23,7 @@ namespace libraryProject.Business.Services
 
             if (!result.IsValid)
             {
-                throw new Exception(string.Join("/n", result.Errors));
+                throw new Exception(string.Join(Environment.NewLine, result.Errors));
             }
 
             _studentRepository.Create(entity);
@@ -66,7 +66,13 @@ namespace libraryProject.Business.Services
             {
                 throw new Exception("Güncellenecek öğrenci bilgisi boş olamaz.");
             }
+            StudentValidator sVal = new();
+            ValidationResult result = sVal.Validate(entity);
 
+            if (!result.IsValid)
+            {
+                throw new Exception(string.Join(Environment.NewLine, result.Errors));
+            }
             _studentRepository.Update(entity);
         }
     }

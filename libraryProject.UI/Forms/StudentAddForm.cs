@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using libraryProject.Business.Services;
+﻿using libraryProject.Business.Services;
 using libraryProject.DataAccess.Context;
 using libraryProject.DataAccess.Repositories;
 using libraryProject.Entities.Models;
@@ -57,12 +48,24 @@ namespace libraryProject.UI
                     _studentService.Create(student);
                     GetAllStudents();
                     MessageBox.Show("işlem başarılı");
+  
+                    ClearForm();
+                }
+                else //update
+                {
+                    selected.StudentName = txtStudentName.Text;
+                    selected.StudentSurname = txtStudentSurname.Text;
+                    selected.StudentNumber = txtStudentNumber.Text;
+                    _studentService.Update(selected);
+                    GetAllStudents();
+                    MessageBox.Show("İşlem başarılı");
+                    ClearForm();
                 }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show("Hata buradan geliyor");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -73,6 +76,7 @@ namespace libraryProject.UI
                 _studentService.Delete(selected.Id);
                 GetAllStudents();
                 MessageBox.Show("İşlem başarılı");
+                ClearForm();
 
             }
             else
@@ -86,6 +90,14 @@ namespace libraryProject.UI
             lstStudentList.Items.Clear();
             _studentService.GetAll().ToList().ForEach(s => lstStudentList.Items.Add(s));
             ;
+        }
+
+        private void ClearForm()
+        {
+            txtStudentName.Text = "";
+            txtStudentSurname.Text = "";
+            txtStudentNumber.Text = "";
+            selected = null;
         }
 
         Student? selected;
