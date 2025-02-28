@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\libraryProject.Business\libraryProject.Business.csproj" />
-    <ProjectReference Include="..\libraryProject.DataAccess\libraryProject.DataAccess.csproj" />
     <ProjectReference Include="..\libraryProject.Entities\libraryProject.Entities.csproj" />
   </ItemGroup>
 

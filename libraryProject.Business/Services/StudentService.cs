@@ -26,17 +26,18 @@ namespace libraryProject.Business.Services
                 throw new Exception(string.Join("/n", result.Errors));
             }
 
+            _studentRepository.Create(entity);
         }
-        public void Delete(Student entity)
+        public void Delete(Guid id)
         {
-            var student = _studentRepository.GetByID(entity.Id);
+            var student = _studentRepository.GetByID(id);
 
             if (student == null)
             {
                 throw new System.Exception("Bulunamadı.");
             }
 
-            _studentRepository.Delete(entity.Id);
+            _studentRepository.Delete(id);
         }
 
         public IEnumerable<Student> GetAll()

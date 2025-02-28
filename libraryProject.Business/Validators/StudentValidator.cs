@@ -8,6 +8,7 @@ namespace libraryProject.Business.Validators
     {
         public StudentValidator()
         {
+            
             RuleFor(s => s.StudentName)
               .NotEmpty().WithMessage("Öğrenci adı zorunludur.")
               .Matches(@"^[a-zA-Z\s]+$").WithMessage("Öğrenci adı sadece harf içerebilir, sayı ve özel karakter içeremez.");
@@ -19,7 +20,7 @@ namespace libraryProject.Business.Validators
             RuleFor(s => s.StudentNumber)
             .NotEmpty().WithMessage("Öğrenci numarası zorunludur.")
             .Matches(@"^\d+$").WithMessage("Öğrenci numarası sadece sayılardan oluşmalıdır.");
-
+            
 
         }
 

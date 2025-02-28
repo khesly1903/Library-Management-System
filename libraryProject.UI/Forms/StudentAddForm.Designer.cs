@@ -74,6 +74,7 @@
             btnStudentDelete.TabIndex = 1;
             btnStudentDelete.Text = "SİL";
             btnStudentDelete.UseVisualStyleBackColor = true;
+            btnStudentDelete.Click += btnStudentDelete_Click;
             // 
             // btnStudentUpgrade
             // 

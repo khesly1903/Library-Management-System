@@ -15,7 +15,7 @@ namespace libraryProject.Business.Services
             throw new NotImplementedException();
         }
 
-        public void Delete(LoanService entity)
+        public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }

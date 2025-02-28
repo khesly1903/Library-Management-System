@@ -26,7 +26,7 @@ namespace libraryProject.DataAccess.Repositories
             _dbSet.Add(entity);
             _dbContext.SaveChanges();
         }
-
+        
         public void Delete(Guid id)
         {
             var data = _dbSet.Find(id);
@@ -36,7 +36,8 @@ namespace libraryProject.DataAccess.Repositories
                 _dbContext.SaveChanges();
             }
         }
-
+        
+       
         public IEnumerable<T> GetAll()
         {
             return _dbSet.ToList();

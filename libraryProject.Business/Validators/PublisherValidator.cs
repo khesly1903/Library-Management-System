@@ -20,7 +20,7 @@ namespace libraryProject.Business.Validators
 
             // Address boş olamaz
             RuleFor(p => p.Address)
-                .NotEmpty().WithMessage("Adres bilgisi gereklidir.")
+                .NotEmpty().WithMessage("Adres bilgisi gereklidir.");
         }
     }
 }

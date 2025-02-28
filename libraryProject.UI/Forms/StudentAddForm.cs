@@ -28,36 +28,25 @@ namespace libraryProject.UI
             _studentRepository = new StudentRepository(context);
             _studentService = new StudentService(_studentRepository);
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtStudentName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void StudentAddForm_Load(object sender, EventArgs e)
         {
-
+            GetAllStudents();
         }
 
-        Student? selected;
+        
         private void btnStudentSave_Click(object sender, EventArgs e)
         {
             try
             {
                 if (selected == null)
                 {
-                    /*
+
                     string studentName = txtStudentName.Text;
                     if (_studentService.IfEntityExists(s => s.StudentName == studentName))
                     {
                         throw new Exception("Öğrenci zaten mevcut");
                     }
-                    */
+
                     Student student = new Student()
                     {
                         StudentName = txtStudentName.Text,
@@ -66,7 +55,7 @@ namespace libraryProject.UI
                     };
 
                     _studentService.Create(student);
-                    //GetAllStudents();
+                    GetAllStudents();
                     MessageBox.Show("işlem başarılı");
                 }
             }
@@ -77,13 +66,46 @@ namespace libraryProject.UI
             }
         }
 
+        private void btnStudentDelete_Click(object sender, EventArgs e)
+        {
+            if (selected != null)
+            {
+                _studentService.Delete(selected.Id);
+                GetAllStudents();
+                MessageBox.Show("İşlem başarılı");
+
+            }
+            else
+            {
+                MessageBox.Show("Öğrenci seçiniz");
+            }
+        }
+
         private void GetAllStudents()
         {
             lstStudentList.Items.Clear();
-            _studentService.GetAll().ToList().ForEach(s =>
-            {
-                lstStudentList.Items.Add(s);
-            });
+            _studentService.GetAll().ToList().ForEach(s => lstStudentList.Items.Add(s));
+            ;
         }
+
+        Student? selected;
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstStudentList.SelectedIndex != -1)
+            {
+                selected = (Student?)lstStudentList.SelectedItem;
+                txtStudentName.Text = selected.StudentName;
+                txtStudentSurname.Text = selected.StudentSurname;
+                txtStudentNumber.Text = selected.StudentNumber;
+
+            }
+        }
+
+        private void txtStudentName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
