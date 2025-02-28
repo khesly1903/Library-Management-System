@@ -16,5 +16,10 @@ namespace libraryProject.UI.Forms
         {
             InitializeComponent();
         }
+
+        private void LoanForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

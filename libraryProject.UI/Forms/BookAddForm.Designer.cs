@@ -28,54 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Label lblBookID;
             Label lblBookTitle;
             Label lblBookAuthor;
             Label lblBookType;
             Label lblBookLocation;
             Label lblBookISBN;
             Label lblBookTotalCopies;
+            Label lblBookPublisher;
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel1 = new Panel();
             btnAdd = new Button();
             btnUpdata = new Button();
             btnList = new Button();
             btnDelete = new Button();
-            txtBookID = new TextBox();
             txtBookTitle = new TextBox();
             txtBookAuthor = new TextBox();
             txtBookISBN = new TextBox();
             txtBookType = new TextBox();
             txtBookLocation = new TextBox();
             txtBookTotalCopies = new TextBox();
-            listBooks = new ListBox();
-            lblBookID = new Label();
+            lstBooks = new ListBox();
+            txtBookPublisher = new TextBox();
             lblBookTitle = new Label();
             lblBookAuthor = new Label();
             lblBookType = new Label();
             lblBookLocation = new Label();
             lblBookISBN = new Label();
             lblBookTotalCopies = new Label();
+            lblBookPublisher = new Label();
             SuspendLayout();
-            // 
-            // lblBookID
-            // 
-            lblBookID.AutoSize = true;
-            lblBookID.BackColor = Color.Bisque;
-            lblBookID.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBookID.Location = new Point(20, 29);
-            lblBookID.Name = "lblBookID";
-            lblBookID.Size = new Size(63, 16);
-            lblBookID.TabIndex = 0;
-            lblBookID.Text = "KİTAP ID";
-            lblBookID.Click += lblBookID_Click;
             // 
             // lblBookTitle
             // 
             lblBookTitle.AutoSize = true;
             lblBookTitle.BackColor = Color.Bisque;
             lblBookTitle.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBookTitle.Location = new Point(20, 60);
+            lblBookTitle.Location = new Point(25, 24);
             lblBookTitle.Name = "lblBookTitle";
             lblBookTitle.Size = new Size(72, 16);
             lblBookTitle.TabIndex = 1;
@@ -87,7 +75,7 @@
             lblBookAuthor.AutoSize = true;
             lblBookAuthor.BackColor = Color.Bisque;
             lblBookAuthor.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBookAuthor.Location = new Point(20, 95);
+            lblBookAuthor.Location = new Point(25, 59);
             lblBookAuthor.Name = "lblBookAuthor";
             lblBookAuthor.Size = new Size(97, 16);
             lblBookAuthor.TabIndex = 2;
@@ -99,7 +87,7 @@
             lblBookType.AutoSize = true;
             lblBookType.BackColor = Color.Bisque;
             lblBookType.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBookType.Location = new Point(20, 163);
+            lblBookType.Location = new Point(25, 127);
             lblBookType.Name = "lblBookType";
             lblBookType.Size = new Size(85, 16);
             lblBookType.TabIndex = 3;
@@ -111,11 +99,11 @@
             lblBookLocation.AutoSize = true;
             lblBookLocation.BackColor = Color.Bisque;
             lblBookLocation.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBookLocation.Location = new Point(20, 198);
+            lblBookLocation.Location = new Point(25, 214);
             lblBookLocation.Name = "lblBookLocation";
-            lblBookLocation.Size = new Size(107, 16);
+            lblBookLocation.Size = new Size(78, 16);
             lblBookLocation.TabIndex = 4;
-            lblBookLocation.Text = "KİTAP KONUMU";
+            lblBookLocation.Text = "KİTAP RAFI";
             lblBookLocation.Click += lblBookLocation_Click;
             // 
             // lblBookISBN
@@ -123,7 +111,7 @@
             lblBookISBN.AutoSize = true;
             lblBookISBN.BackColor = Color.Bisque;
             lblBookISBN.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBookISBN.Location = new Point(20, 129);
+            lblBookISBN.Location = new Point(25, 93);
             lblBookISBN.Name = "lblBookISBN";
             lblBookISBN.Size = new Size(78, 16);
             lblBookISBN.TabIndex = 5;
@@ -135,7 +123,7 @@
             lblBookTotalCopies.AutoSize = true;
             lblBookTotalCopies.BackColor = Color.Bisque;
             lblBookTotalCopies.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBookTotalCopies.Location = new Point(20, 233);
+            lblBookTotalCopies.Location = new Point(25, 252);
             lblBookTotalCopies.Name = "lblBookTotalCopies";
             lblBookTotalCopies.Size = new Size(84, 16);
             lblBookTotalCopies.TabIndex = 6;
@@ -198,19 +186,10 @@
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
-            // txtBookID
-            // 
-            txtBookID.BackColor = SystemColors.AppWorkspace;
-            txtBookID.Location = new Point(141, 27);
-            txtBookID.Name = "txtBookID";
-            txtBookID.Size = new Size(203, 23);
-            txtBookID.TabIndex = 9;
-            txtBookID.TextChanged += txtBookID_TextChanged;
-            // 
             // txtBookTitle
             // 
             txtBookTitle.BackColor = SystemColors.AppWorkspace;
-            txtBookTitle.Location = new Point(141, 56);
+            txtBookTitle.Location = new Point(146, 20);
             txtBookTitle.Name = "txtBookTitle";
             txtBookTitle.Size = new Size(203, 23);
             txtBookTitle.TabIndex = 9;
@@ -219,7 +198,7 @@
             // txtBookAuthor
             // 
             txtBookAuthor.BackColor = SystemColors.AppWorkspace;
-            txtBookAuthor.Location = new Point(141, 88);
+            txtBookAuthor.Location = new Point(146, 52);
             txtBookAuthor.Name = "txtBookAuthor";
             txtBookAuthor.Size = new Size(203, 23);
             txtBookAuthor.TabIndex = 9;
@@ -228,7 +207,7 @@
             // txtBookISBN
             // 
             txtBookISBN.BackColor = SystemColors.AppWorkspace;
-            txtBookISBN.Location = new Point(141, 122);
+            txtBookISBN.Location = new Point(146, 86);
             txtBookISBN.Name = "txtBookISBN";
             txtBookISBN.Size = new Size(203, 23);
             txtBookISBN.TabIndex = 9;
@@ -237,7 +216,7 @@
             // txtBookType
             // 
             txtBookType.BackColor = SystemColors.AppWorkspace;
-            txtBookType.Location = new Point(141, 156);
+            txtBookType.Location = new Point(146, 120);
             txtBookType.Name = "txtBookType";
             txtBookType.Size = new Size(203, 23);
             txtBookType.TabIndex = 9;
@@ -246,7 +225,7 @@
             // txtBookLocation
             // 
             txtBookLocation.BackColor = SystemColors.AppWorkspace;
-            txtBookLocation.Location = new Point(141, 191);
+            txtBookLocation.Location = new Point(146, 207);
             txtBookLocation.Name = "txtBookLocation";
             txtBookLocation.Size = new Size(203, 23);
             txtBookLocation.TabIndex = 9;
@@ -255,41 +234,63 @@
             // txtBookTotalCopies
             // 
             txtBookTotalCopies.BackColor = SystemColors.AppWorkspace;
-            txtBookTotalCopies.Location = new Point(141, 226);
+            txtBookTotalCopies.Location = new Point(146, 245);
             txtBookTotalCopies.Name = "txtBookTotalCopies";
             txtBookTotalCopies.Size = new Size(203, 23);
             txtBookTotalCopies.TabIndex = 9;
             txtBookTotalCopies.TextChanged += txtBookTotalCopies_TextChanged;
             // 
-            // listBooks
+            // lstBooks
             // 
-            listBooks.BackColor = Color.PeachPuff;
-            listBooks.FormattingEnabled = true;
-            listBooks.ItemHeight = 15;
-            listBooks.Location = new Point(371, 21);
-            listBooks.Name = "listBooks";
-            listBooks.Size = new Size(222, 229);
-            listBooks.TabIndex = 10;
-            listBooks.SelectedIndexChanged += listBooks_SelectedIndexChanged;
+            lstBooks.BackColor = Color.PeachPuff;
+            lstBooks.FormattingEnabled = true;
+            lstBooks.ItemHeight = 15;
+            lstBooks.Location = new Point(371, 21);
+            lstBooks.Name = "lstBooks";
+            lstBooks.Size = new Size(222, 229);
+            lstBooks.TabIndex = 10;
+            lstBooks.SelectedIndexChanged += listBooks_SelectedIndexChanged;
+            // 
+            // lblBookPublisher
+            // 
+            lblBookPublisher.AutoSize = true;
+            lblBookPublisher.BackColor = Color.Bisque;
+            lblBookPublisher.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBookPublisher.Location = new Point(25, 170);
+            lblBookPublisher.Name = "lblBookPublisher";
+            lblBookPublisher.Size = new Size(109, 16);
+            lblBookPublisher.TabIndex = 6;
+            lblBookPublisher.Text = "KİTAP YAYINEVİ";
+            lblBookPublisher.Click += lblBookTotalCopies_Click;
+            // 
+            // txtBookPublisher
+            // 
+            txtBookPublisher.BackColor = SystemColors.AppWorkspace;
+            txtBookPublisher.Location = new Point(146, 163);
+            txtBookPublisher.Name = "txtBookPublisher";
+            txtBookPublisher.Size = new Size(203, 23);
+            txtBookPublisher.TabIndex = 9;
+            txtBookPublisher.TextChanged += txtBookTotalCopies_TextChanged;
             // 
             // BookAddForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(605, 383);
-            Controls.Add(listBooks);
+            ClientSize = new Size(608, 384);
+            Controls.Add(lstBooks);
+            Controls.Add(txtBookPublisher);
             Controls.Add(txtBookTotalCopies);
             Controls.Add(txtBookLocation);
             Controls.Add(txtBookType);
             Controls.Add(txtBookISBN);
             Controls.Add(txtBookAuthor);
             Controls.Add(txtBookTitle);
-            Controls.Add(txtBookID);
             Controls.Add(btnDelete);
             Controls.Add(btnList);
             Controls.Add(btnUpdata);
             Controls.Add(btnAdd);
+            Controls.Add(lblBookPublisher);
             Controls.Add(panel1);
             Controls.Add(lblBookTotalCopies);
             Controls.Add(lblBookISBN);
@@ -297,7 +298,6 @@
             Controls.Add(lblBookType);
             Controls.Add(lblBookAuthor);
             Controls.Add(lblBookTitle);
-            Controls.Add(lblBookID);
             FormBorderStyle = FormBorderStyle.None;
             Name = "BookAddForm";
             Text = "BookAddForm";
@@ -307,8 +307,6 @@
         }
 
         #endregion
-
-        private Label lblBookID;
         private Label lblBookTitle;
         private Label lblBookAuthor;
         private Label lblBookType;
@@ -321,13 +319,13 @@
         private Button btnUpdata;
         private Button btnList;
         private Button btnDelete;
-        private TextBox txtBookID;
         private TextBox txtBookTitle;
         private TextBox txtBookAuthor;
         private TextBox txtBookISBN;
         private TextBox txtBookType;
         private TextBox txtBookLocation;
         private TextBox txtBookTotalCopies;
-        private ListBox listBooks;
+        private ListBox lstBooks;
+        private TextBox txtBookPublisher;
     }
 }
