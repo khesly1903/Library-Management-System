@@ -18,7 +18,9 @@ namespace libraryProject.Business.Validators
                 .NotEmpty().WithMessage("İletişim numarası gereklidir.")
                 .Matches(@"^\d{10}$").WithMessage("İletişim numarası 10 haneli olmalıdır.");
 
-          
+            // Address boş olamaz
+            RuleFor(p => p.Address)
+                .NotEmpty().WithMessage("Adres bilgisi gereklidir.")
         }
     }
 }
