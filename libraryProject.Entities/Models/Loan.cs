@@ -22,5 +22,7 @@ namespace libraryProject.Entities.Models
 
         public Guid BookId { get; set; }
 
+
+
     }
 }

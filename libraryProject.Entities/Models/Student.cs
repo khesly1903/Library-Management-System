@@ -18,5 +18,11 @@ namespace libraryProject.Entities.Models
         public ICollection<Loan>? Loan { get; set; }
 
 
+        public override string ToString()
+        {
+            return $"{StudentName} {StudentSurname}";
+        }
+
+
     }
 }

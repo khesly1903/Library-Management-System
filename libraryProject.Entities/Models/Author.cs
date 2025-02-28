@@ -13,7 +13,7 @@ namespace libraryProject.Entities.Models
         public string? Name { get; set; }
         public string? Surname { get; set; }
 
-        public string? Biography{ get; set; }
+        public string? Biography1{ get; set; }
 
 
         // bağlantı referansları

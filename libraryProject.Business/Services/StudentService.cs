@@ -1,44 +1,72 @@
-﻿using libraryProject.Business.Abstractions;
+﻿using FluentValidation.Results;
+using libraryProject.Business.Abstractions;
+using libraryProject.Business.Validators;
+using libraryProject.DataAccess.Abstractions;
+using libraryProject.DataAccess.Repositories;
 using libraryProject.Entities.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace libraryProject.Business.Services
 {
     public class StudentService : IManager<Student>
     {
+        private readonly StudentRepository _studentRepository;
+
+        public StudentService(StudentRepository studentRepository)
+        {
+            _studentRepository = studentRepository;
+        }
         public void Create(Student entity)
         {
-            throw new NotImplementedException();
-        }
+            StudentValidator sVal = new();
+            ValidationResult result = sVal.Validate(entity);
 
+            if (!result.IsValid)
+            {
+                throw new Exception(string.Join("/n", result.Errors));
+            }
+
+        }
         public void Delete(Student entity)
         {
-            throw new NotImplementedException();
+            var student = _studentRepository.GetByID(entity.Id);
+
+            if (student == null)
+            {
+                throw new System.Exception("Bulunamadı.");
+            }
+
+            _studentRepository.Delete(entity.Id);
         }
 
         public IEnumerable<Student> GetAll()
         {
-            throw new NotImplementedException();
+            return _studentRepository.GetAll(); 
         }
 
         public Student GetById(Guid id)
         {
-            throw new NotImplementedException();
+            if (id == Guid.Empty)
+            {
+                throw new Exception("ID bilgisi boş olamaz.");
+            }
+
+            return _studentRepository.GetByID(id);
         }
 
-        public bool IfEntityExists(Expression<Func<Student, bool>> fiter)
+        public bool IfEntityExists(Expression<Func<Student, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _studentRepository.IfEntityExists(filter);
         }
 
         public void Update(Student entity)
         {
-            throw new NotImplementedException();
+            if (entity == null)
+            {
+                throw new Exception("Güncellenecek öğrenci bilgisi boş olamaz.");
+            }
+
+            _studentRepository.Update(entity);
         }
     }
 }

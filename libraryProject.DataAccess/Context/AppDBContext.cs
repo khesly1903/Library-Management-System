@@ -36,6 +36,9 @@ namespace libraryProject.DataAccess.Context
                 // BERKAY DB LOCAL
                 //optionsBuilder.UseSqlServer(@"Data Source=KAYAB\SQLEXPRESS;Initial Catalog=LibraryProjectDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
+                // BERKAY DB BAŞAKŞEHİR
+                optionsBuilder.UseSqlServer(@"Data Source = BPC17\SQLEXPRESS; Initial Catalog = libraryProject; Integrated Security = True; Connect Timeout = 30; Encrypt = False; Trust Server Certificate = False; Application Intent = ReadWrite; Multi Subnet Failover = False");
+
                 // DERYA DB LOCAL
                 //optionsBuilder.UseSqlServer(@"Data Source = DESKTOP - N6SRBPV; Initial Catalog = LibraryProject; Integrated Security = True; Connect Timeout = 30; Encrypt = True; Trust Server Certificate = True; Application Intent = ReadWrite; Multi Subnet Failover = False");
 
@@ -64,8 +67,6 @@ namespace libraryProject.DataAccess.Context
 
             modelBuilder.Entity<Subject>()
                 .HasKey(s => s.Id); // Define primary key for Subject
-
-            // Other configurations
         }
 
     }

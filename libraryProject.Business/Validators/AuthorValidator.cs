@@ -15,7 +15,7 @@ namespace libraryProject.Business.Validators
            .NotEmpty().WithMessage("Yazar soyadı boş olamaz.")
            .MinimumLength(2).WithMessage("Yazar soyadı en az 2 karakter olmalıdır.");
 
-            RuleFor(a => a.Biography)
+            RuleFor(a => a.Biography1)
            .MaximumLength(1000).WithMessage("Biyografi 1000 karakterden uzun olamaz.");
         }
     }

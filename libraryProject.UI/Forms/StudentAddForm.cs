@@ -7,19 +7,83 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using libraryProject.Business.Services;
+using libraryProject.DataAccess.Context;
+using libraryProject.DataAccess.Repositories;
+using libraryProject.Entities.Models;
 
 namespace libraryProject.UI
 {
     public partial class StudentAddForm : Form
     {
+
+
+        private readonly StudentService _studentService;
+        private readonly StudentRepository _studentRepository;
+
         public StudentAddForm()
         {
             InitializeComponent();
+            var context = new AppDBContext();
+            _studentRepository = new StudentRepository(context);
+            _studentService = new StudentService(_studentRepository);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtStudentName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StudentAddForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        Student? selected;
+        private void btnStudentSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (selected == null)
+                {
+                    /*
+                    string studentName = txtStudentName.Text;
+                    if (_studentService.IfEntityExists(s => s.StudentName == studentName))
+                    {
+                        throw new Exception("Öğrenci zaten mevcut");
+                    }
+                    */
+                    Student student = new Student()
+                    {
+                        StudentName = txtStudentName.Text,
+                        StudentSurname = txtStudentSurname.Text,
+                        StudentNumber = txtStudentNumber.Text
+                    };
+
+                    _studentService.Create(student);
+                    //GetAllStudents();
+                    MessageBox.Show("işlem başarılı");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Hata buradan geliyor");
+            }
+        }
+
+        private void GetAllStudents()
+        {
+            lstStudentList.Items.Clear();
+            _studentService.GetAll().ToList().ForEach(s =>
+            {
+                lstStudentList.Items.Add(s);
+            });
         }
     }
 }
