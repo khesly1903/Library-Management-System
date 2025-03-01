@@ -7,9 +7,9 @@ namespace libraryProject.UI.Forms
 {
     public partial class AuthorForm : Form
     {
-
         private readonly AuthorService _authorService;
         private readonly AuthorRepository _authorRepository;
+        Author? selected;
 
         public AuthorForm()
         {
@@ -24,24 +24,20 @@ namespace libraryProject.UI.Forms
             GetAllAuthor();
         }
 
-
-
         private void GetAllAuthor()
         {
             lstAuthorList.Items.Clear();
-            _authorService.GetAll().ToList().ForEach(s => lstAuthorList.Items.Add(s));
-            ;
+            _authorService.GetAll().ToList().ForEach(a => lstAuthorList.Items.Add(a));
         }
-        
+
         private void btnAuthorSave_Click(object sender, EventArgs e)
         {
             try
             {
                 if (selected == null)
                 {
-
                     string authorName = txtAuthorName.Text;
-                    if (_authorService.IfEntityExists(s => s.Name == authorName))
+                    if (_authorService.IfEntityExists(a => a.Name == authorName))
                     {
                         throw new Exception("Yazar zaten mevcut");
                     }
@@ -50,12 +46,11 @@ namespace libraryProject.UI.Forms
                     {
                         Name = txtAuthorName.Text,
                         Surname = txtAuthorSurname.Text,
-
                     };
 
                     _authorService.Create(author);
                     GetAllAuthor();
-                    MessageBox.Show("işlem başarılı");
+                    MessageBox.Show("İşlem başarılı");
 
                     ClearForm();
                 }
@@ -65,13 +60,12 @@ namespace libraryProject.UI.Forms
                     selected.Surname = txtAuthorSurname.Text;
                     _authorService.Update(selected);
                     GetAllAuthor();
-                    MessageBox.Show("İşlem başarılı");
+                    MessageBox.Show("İşlem başarılı");
                     ClearForm();
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -89,27 +83,29 @@ namespace libraryProject.UI.Forms
             {
                 _authorService.Delete(selected.Id);
                 GetAllAuthor();
-                MessageBox.Show("İşlem başarılı");
+                MessageBox.Show("İşlem başarılı");
                 ClearForm();
-
             }
             else
             {
-                MessageBox.Show("Yazar seçiniz");
+                MessageBox.Show("Yazar seçiniz");
             }
         }
 
-        Author? selected;
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+       
+
+        private void txtAuthorName_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void lstAuthorList_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (lstAuthorList.SelectedIndex != -1)
             {
-                selected = (Author?)lstAuthorList.SelectedItem;
+                selected = (Author)lstAuthorList.SelectedItem;
                 txtAuthorName.Text = selected.Name;
                 txtAuthorSurname.Text = selected.Surname;
-
             }
         }
     }
-
 }

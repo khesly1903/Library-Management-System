@@ -69,6 +69,7 @@
             lstAuthorList.Name = "lstAuthorList";
             lstAuthorList.Size = new Size(554, 344);
             lstAuthorList.TabIndex = 2;
+            lstAuthorList.SelectedIndexChanged += lstAuthorList_SelectedIndexChanged_1;
             // 
             // btnAuthorDelete
             // 
