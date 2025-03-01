@@ -18,6 +18,12 @@ namespace libraryProject.Entities.Models
         //referans bağlantıar
         public ICollection<Book>? Book { get; set; }
 
+        public override string ToString()
+        {
+            return $"{PublisherName} {Address} {ContactNumber}";
 
+
+
+        }
     }
 }
