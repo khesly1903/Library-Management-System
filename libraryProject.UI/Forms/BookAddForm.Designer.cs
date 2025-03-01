@@ -145,6 +145,18 @@
             lblBookPublisher.Text = "KİTAP YAYINEVİ";
             lblBookPublisher.Click += lblBookTotalCopies_Click;
             // 
+            // lblBookAuthorSurname
+            // 
+            lblBookAuthorSurname.AutoSize = true;
+            lblBookAuthorSurname.BackColor = Color.Bisque;
+            lblBookAuthorSurname.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBookAuthorSurname.Location = new Point(30, 137);
+            lblBookAuthorSurname.Name = "lblBookAuthorSurname";
+            lblBookAuthorSurname.Size = new Size(129, 20);
+            lblBookAuthorSurname.TabIndex = 11;
+            lblBookAuthorSurname.Text = "YAZAR SOYADI";
+            lblBookAuthorSurname.Click += label1_Click;
+            // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ButtonFace;
@@ -287,18 +299,6 @@
             txtBookPublisher.Size = new Size(231, 27);
             txtBookPublisher.TabIndex = 9;
             txtBookPublisher.TextChanged += txtBookTotalCopies_TextChanged;
-            // 
-            // lblBookAuthorSurname
-            // 
-            lblBookAuthorSurname.AutoSize = true;
-            lblBookAuthorSurname.BackColor = Color.Bisque;
-            lblBookAuthorSurname.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBookAuthorSurname.Location = new Point(30, 137);
-            lblBookAuthorSurname.Name = "lblBookAuthorSurname";
-            lblBookAuthorSurname.Size = new Size(129, 20);
-            lblBookAuthorSurname.TabIndex = 11;
-            lblBookAuthorSurname.Text = "YAZAR SOYADI";
-            lblBookAuthorSurname.Click += label1_Click;
             // 
             // txtBookAuthorSurname
             // 

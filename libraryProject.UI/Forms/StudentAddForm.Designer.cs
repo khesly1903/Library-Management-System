@@ -42,34 +42,33 @@
             // 
             // label1
             // 
-            label1.Location = new Point(53, 54);
+            label1.Location = new Point(61, 72);
             label1.Name = "label1";
-            label1.Size = new Size(183, 26);
+            label1.Size = new Size(209, 35);
             label1.TabIndex = 0;
             label1.Text = "ÖĞRENCİ ADI";
             // 
             // label2
             // 
-            label2.Location = new Point(53, 139);
+            label2.Location = new Point(61, 185);
             label2.Name = "label2";
-            label2.Size = new Size(183, 26);
+            label2.Size = new Size(209, 35);
             label2.TabIndex = 0;
             label2.Text = "ÖĞRENCİ SOYADI";
             // 
             // label3
             // 
-            label3.Location = new Point(53, 221);
+            label3.Location = new Point(61, 295);
             label3.Name = "label3";
-            label3.Size = new Size(183, 26);
+            label3.Size = new Size(209, 35);
             label3.TabIndex = 0;
             label3.Text = "ÖĞRENCİ NUMARASI";
             // 
             // btnStudentDelete
             // 
-            btnStudentDelete.Location = new Point(53, 316);
-            btnStudentDelete.Margin = new Padding(3, 2, 3, 2);
+            btnStudentDelete.Location = new Point(61, 421);
             btnStudentDelete.Name = "btnStudentDelete";
-            btnStudentDelete.Size = new Size(109, 33);
+            btnStudentDelete.Size = new Size(125, 44);
             btnStudentDelete.TabIndex = 1;
             btnStudentDelete.Text = "SİL";
             btnStudentDelete.UseVisualStyleBackColor = true;
@@ -77,10 +76,9 @@
             // 
             // btnStudentSave
             // 
-            btnStudentSave.Location = new Point(168, 316);
-            btnStudentSave.Margin = new Padding(3, 2, 3, 2);
+            btnStudentSave.Location = new Point(192, 421);
             btnStudentSave.Name = "btnStudentSave";
-            btnStudentSave.Size = new Size(109, 33);
+            btnStudentSave.Size = new Size(125, 44);
             btnStudentSave.TabIndex = 1;
             btnStudentSave.Text = "KAYDET";
             btnStudentSave.UseVisualStyleBackColor = true;
@@ -88,56 +86,52 @@
             // 
             // txtStudentName
             // 
-            txtStudentName.Location = new Point(53, 82);
-            txtStudentName.Margin = new Padding(3, 2, 3, 2);
+            txtStudentName.Location = new Point(61, 109);
             txtStudentName.Multiline = true;
             txtStudentName.Name = "txtStudentName";
-            txtStudentName.Size = new Size(224, 38);
+            txtStudentName.Size = new Size(255, 49);
             txtStudentName.TabIndex = 2;
             txtStudentName.TextChanged += txtStudentName_TextChanged;
             // 
             // txtStudentSurname
             // 
-            txtStudentSurname.Location = new Point(53, 166);
-            txtStudentSurname.Margin = new Padding(3, 2, 3, 2);
+            txtStudentSurname.Location = new Point(61, 221);
             txtStudentSurname.Multiline = true;
             txtStudentSurname.Name = "txtStudentSurname";
-            txtStudentSurname.Size = new Size(224, 38);
+            txtStudentSurname.Size = new Size(255, 49);
             txtStudentSurname.TabIndex = 2;
             // 
             // txtStudentNumber
             // 
-            txtStudentNumber.Location = new Point(53, 249);
-            txtStudentNumber.Margin = new Padding(3, 2, 3, 2);
+            txtStudentNumber.Location = new Point(61, 332);
             txtStudentNumber.Multiline = true;
             txtStudentNumber.Name = "txtStudentNumber";
-            txtStudentNumber.Size = new Size(224, 38);
+            txtStudentNumber.Size = new Size(255, 49);
             txtStudentNumber.TabIndex = 2;
             // 
             // lstStudentList
             // 
             lstStudentList.FormattingEnabled = true;
-            lstStudentList.ItemHeight = 15;
-            lstStudentList.Location = new Point(296, 82);
-            lstStudentList.Margin = new Padding(3, 2, 3, 2);
+            lstStudentList.Location = new Point(338, 109);
             lstStudentList.Name = "lstStudentList";
-            lstStudentList.Size = new Size(421, 274);
+            lstStudentList.Size = new Size(481, 364);
             lstStudentList.TabIndex = 3;
             lstStudentList.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // label4
             // 
-            label4.Location = new Point(296, 54);
+            label4.Location = new Point(338, 72);
             label4.Name = "label4";
-            label4.Size = new Size(183, 26);
+            label4.Size = new Size(209, 35);
             label4.TabIndex = 0;
             label4.Text = "ÖĞRENCİ LİSTESİ";
+            label4.Click += label4_Click;
             // 
             // StudentAddForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(871, 382);
+            ClientSize = new Size(995, 509);
             Controls.Add(lstStudentList);
             Controls.Add(txtStudentSurname);
             Controls.Add(txtStudentNumber);
@@ -148,7 +142,6 @@
             Controls.Add(label2);
             Controls.Add(label4);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "StudentAddForm";
             Text = "StudentAddForm";
             Load += StudentAddForm_Load;

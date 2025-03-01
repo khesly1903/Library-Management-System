@@ -24,7 +24,7 @@ namespace libraryProject.UI
             GetAllStudents();
         }
 
-        
+
         private void btnStudentSave_Click(object sender, EventArgs e)
         {
             try
@@ -48,7 +48,7 @@ namespace libraryProject.UI
                     _studentService.Create(student);
                     GetAllStudents();
                     MessageBox.Show("işlem başarılı");
-  
+
                     ClearForm();
                 }
                 else //update
@@ -118,6 +118,9 @@ namespace libraryProject.UI
 
         }
 
-       
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
