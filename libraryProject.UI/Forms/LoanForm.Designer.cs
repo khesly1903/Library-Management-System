@@ -46,10 +46,10 @@
             // 
             lblStudentList.AutoSize = true;
             lblStudentList.BackColor = Color.Bisque;
-            lblStudentList.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStudentList.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblStudentList.Location = new Point(27, 39);
             lblStudentList.Name = "lblStudentList";
-            lblStudentList.Size = new Size(112, 16);
+            lblStudentList.Size = new Size(120, 16);
             lblStudentList.TabIndex = 0;
             lblStudentList.Text = "ÖĞRENCİ LİSTESİ";
             // 
@@ -57,10 +57,10 @@
             // 
             lblBookList.AutoSize = true;
             lblBookList.BackColor = Color.Bisque;
-            lblBookList.Font = new Font("Lucida Fax", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBookList.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblBookList.Location = new Point(411, 39);
             lblBookList.Name = "lblBookList";
-            lblBookList.Size = new Size(92, 16);
+            lblBookList.Size = new Size(97, 16);
             lblBookList.TabIndex = 1;
             lblBookList.Text = "KİTAP LİSTESİ";
             // 
@@ -97,6 +97,7 @@
             lstStudents.Name = "lstStudents";
             lstStudents.Size = new Size(266, 214);
             lstStudents.TabIndex = 3;
+            lstStudents.SelectedIndexChanged += lstStudents_SelectedIndexChanged;
             // 
             // lstBooks
             // 

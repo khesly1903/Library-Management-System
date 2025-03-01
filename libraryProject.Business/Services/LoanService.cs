@@ -1,43 +1,80 @@
-﻿using libraryProject.Business.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using FluentValidation.Results;
+using libraryProject.Business.Abstractions;
+using libraryProject.Business.Validators;
+using libraryProject.DataAccess.Abstractions;
+using libraryProject.DataAccess.Repositories;
+using libraryProject.Entities.Models;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.Http.Headers;
 
 namespace libraryProject.Business.Services
 {
-    public class LoanService : IManager<LoanService>
+    public class LoanService : IManager<Loan>
     {
-        public void Create(LoanService entity)
+
+        private readonly LoanRepository _loanRepository;
+
+        public LoanService(LoanRepository loanRepository)
         {
-            throw new NotImplementedException();
+            _loanRepository = loanRepository;
+        }
+        public void Create(Loan entity)
+        {
+            LoanValidator lVal = new();
+            ValidationResult result = lVal.Validate(entity);
+            if (result != null)
+            {
+                throw new Exception(string.Join(System.Environment.NewLine, result.Errors));
+            }
+
+            _loanRepository.Create(entity);
         }
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var loan = _loanRepository.GetByID(id);
+            if (loan == null)
+            {
+                throw new System.Exception("Bulunamadı.");
+            }
+            _loanRepository.Delete(id);
         }
 
-        public IEnumerable<LoanService> GetAll()
+        public IEnumerable<Loan> GetAll()
         {
-            throw new NotImplementedException();
+            return _loanRepository.GetAll();
         }
 
-        public LoanService GetById(Guid id)
+        public Loan GetById(Guid id)
         {
-            throw new NotImplementedException();
+            if (id == Guid.Empty)
+            {
+                throw new Exception("ID bilgisi boş olamaz.");
+            }
+            return _loanRepository.GetByID(id);
         }
 
-        public bool IfEntityExists(Expression<Func<LoanService, bool>> fiter)
+        public bool IfEntityExists(Expression<Func<Loan, bool>> fiter)
         {
-            throw new NotImplementedException();
+            return _loanRepository.IfEntityExists(fiter);
         }
 
-        public void Update(LoanService entity)
+        public void Update(Loan entity)
         {
-            throw new NotImplementedException();
+            if (entity == null)
+            {
+                throw new Exception("Güncellenecek öğe bulunamadı.");
+            }
+
+            LoanValidator lVal = new();
+            ValidationResult result = lVal.Validate(entity);
+            if (result != null)
+            {
+                throw new Exception(string.Join(System.Environment.NewLine, result.Errors));
+            }
+
+            _loanRepository.Update(entity);
+
         }
     }
 }

@@ -32,7 +32,7 @@ namespace libraryProject.UI.Forms
             _authorService.GetAll().ToList().ForEach(s => lstAuthorList.Items.Add(s));
             ;
         }
-        
+
         private void btnAuthorSave_Click(object sender, EventArgs e)
         {
             try
@@ -109,6 +109,11 @@ namespace libraryProject.UI.Forms
                 txtAuthorSurname.Text = selected.Surname;
 
             }
+        }
+
+        private void txtAuthorName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
