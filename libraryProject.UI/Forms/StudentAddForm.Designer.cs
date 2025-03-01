@@ -42,33 +42,38 @@
             // 
             // label1
             // 
-            label1.Location = new Point(61, 72);
+            label1.Location = new Point(53, 70);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(209, 35);
+            label1.Size = new Size(187, 29);
             label1.TabIndex = 0;
             label1.Text = "ÖĞRENCİ ADI";
             // 
             // label2
             // 
-            label2.Location = new Point(61, 185);
+            label2.Location = new Point(53, 107);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(209, 35);
+            label2.Size = new Size(157, 32);
             label2.TabIndex = 0;
             label2.Text = "ÖĞRENCİ SOYADI";
             // 
             // label3
             // 
-            label3.Location = new Point(61, 295);
+            label3.Location = new Point(53, 144);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(209, 35);
+            label3.Size = new Size(261, 36);
             label3.TabIndex = 0;
-            label3.Text = "ÖĞRENCİ NUMARASI";
+            label3.Text = "ÖĞRENCİ NO";
             // 
             // btnStudentDelete
             // 
-            btnStudentDelete.Location = new Point(61, 421);
+            btnStudentDelete.ForeColor = Color.Red;
+            btnStudentDelete.Location = new Point(471, 447);
+            btnStudentDelete.Margin = new Padding(4, 3, 4, 3);
             btnStudentDelete.Name = "btnStudentDelete";
-            btnStudentDelete.Size = new Size(125, 44);
+            btnStudentDelete.Size = new Size(450, 46);
             btnStudentDelete.TabIndex = 1;
             btnStudentDelete.Text = "SİL";
             btnStudentDelete.UseVisualStyleBackColor = true;
@@ -76,9 +81,11 @@
             // 
             // btnStudentSave
             // 
-            btnStudentSave.Location = new Point(192, 421);
+            btnStudentSave.ForeColor = Color.Green;
+            btnStudentSave.Location = new Point(13, 447);
+            btnStudentSave.Margin = new Padding(4, 3, 4, 3);
             btnStudentSave.Name = "btnStudentSave";
-            btnStudentSave.Size = new Size(125, 44);
+            btnStudentSave.Size = new Size(450, 46);
             btnStudentSave.TabIndex = 1;
             btnStudentSave.Text = "KAYDET";
             btnStudentSave.UseVisualStyleBackColor = true;
@@ -86,52 +93,59 @@
             // 
             // txtStudentName
             // 
-            txtStudentName.Location = new Point(61, 109);
+            txtStudentName.Location = new Point(208, 66);
+            txtStudentName.Margin = new Padding(4, 3, 4, 3);
             txtStudentName.Multiline = true;
             txtStudentName.Name = "txtStudentName";
-            txtStudentName.Size = new Size(255, 49);
+            txtStudentName.Size = new Size(320, 32);
             txtStudentName.TabIndex = 2;
             txtStudentName.TextChanged += txtStudentName_TextChanged;
             // 
             // txtStudentSurname
             // 
-            txtStudentSurname.Location = new Point(61, 221);
+            txtStudentSurname.Location = new Point(208, 103);
+            txtStudentSurname.Margin = new Padding(4, 3, 4, 3);
             txtStudentSurname.Multiline = true;
             txtStudentSurname.Name = "txtStudentSurname";
-            txtStudentSurname.Size = new Size(255, 49);
+            txtStudentSurname.Size = new Size(320, 32);
             txtStudentSurname.TabIndex = 2;
             // 
             // txtStudentNumber
             // 
-            txtStudentNumber.Location = new Point(61, 332);
+            txtStudentNumber.Location = new Point(208, 140);
+            txtStudentNumber.Margin = new Padding(4, 3, 4, 3);
             txtStudentNumber.Multiline = true;
             txtStudentNumber.Name = "txtStudentNumber";
-            txtStudentNumber.Size = new Size(255, 49);
+            txtStudentNumber.Size = new Size(320, 32);
             txtStudentNumber.TabIndex = 2;
             // 
             // lstStudentList
             // 
             lstStudentList.FormattingEnabled = true;
-            lstStudentList.Location = new Point(338, 109);
+            lstStudentList.ItemHeight = 21;
+            lstStudentList.Location = new Point(568, 66);
+            lstStudentList.Margin = new Padding(4, 3, 4, 3);
             lstStudentList.Name = "lstStudentList";
-            lstStudentList.Size = new Size(481, 364);
+            lstStudentList.Size = new Size(320, 277);
             lstStudentList.TabIndex = 3;
             lstStudentList.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // label4
             // 
-            label4.Location = new Point(338, 72);
+            label4.Location = new Point(568, 27);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(209, 35);
+            label4.Size = new Size(261, 36);
             label4.TabIndex = 0;
             label4.Text = "ÖĞRENCİ LİSTESİ";
             label4.Click += label4_Click;
             // 
             // StudentAddForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(995, 509);
+            BackColor = SystemColors.ActiveBorder;
+            ClientSize = new Size(934, 661);
             Controls.Add(lstStudentList);
             Controls.Add(txtStudentSurname);
             Controls.Add(txtStudentNumber);
@@ -142,6 +156,8 @@
             Controls.Add(label2);
             Controls.Add(label4);
             Controls.Add(label1);
+            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "StudentAddForm";
             Text = "StudentAddForm";
             Load += StudentAddForm_Load;

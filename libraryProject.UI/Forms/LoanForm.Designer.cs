@@ -36,41 +36,43 @@
             lstBooks = new ListBox();
             txtStudentSearch = new TextBox();
             txtBookSearch = new TextBox();
-            dateTimeLoanDate = new DateTimePicker();
-            dateTimeReturnDate = new DateTimePicker();
-            panel1 = new Panel();
-            panel2 = new Panel();
+            clndrEndDate = new MonthCalendar();
+            clndrStartDate = new MonthCalendar();
+            btnLoan = new Button();
             SuspendLayout();
             // 
             // lblStudentList
             // 
             lblStudentList.AutoSize = true;
-            lblStudentList.BackColor = Color.Bisque;
-            lblStudentList.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStudentList.Location = new Point(27, 39);
+            lblStudentList.BackColor = Color.Transparent;
+            lblStudentList.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            lblStudentList.Location = new Point(13, 32);
+            lblStudentList.Margin = new Padding(4, 0, 4, 0);
             lblStudentList.Name = "lblStudentList";
-            lblStudentList.Size = new Size(120, 16);
+            lblStudentList.Size = new Size(96, 20);
             lblStudentList.TabIndex = 0;
-            lblStudentList.Text = "ÖĞRENCİ LİSTESİ";
+            lblStudentList.Text = "ÖĞRENCİ ";
             // 
             // lblBookList
             // 
             lblBookList.AutoSize = true;
-            lblBookList.BackColor = Color.Bisque;
-            lblBookList.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBookList.Location = new Point(411, 39);
+            lblBookList.BackColor = Color.Transparent;
+            lblBookList.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            lblBookList.Location = new Point(353, 27);
+            lblBookList.Margin = new Padding(4, 0, 4, 0);
             lblBookList.Name = "lblBookList";
-            lblBookList.Size = new Size(97, 16);
+            lblBookList.Size = new Size(64, 20);
             lblBookList.TabIndex = 1;
-            lblBookList.Text = "KİTAP LİSTESİ";
+            lblBookList.Text = "KİTAP ";
             // 
             // lblLoanDate
             // 
             lblLoanDate.AutoSize = true;
-            lblLoanDate.BackColor = SystemColors.ButtonFace;
+            lblLoanDate.BackColor = Color.Transparent;
             lblLoanDate.Font = new Font("Arial", 12F, FontStyle.Bold);
-            lblLoanDate.ForeColor = Color.MediumSeaGreen;
-            lblLoanDate.Location = new Point(43, 503);
+            lblLoanDate.ForeColor = Color.Black;
+            lblLoanDate.Location = new Point(751, 33);
+            lblLoanDate.Margin = new Padding(4, 0, 4, 0);
             lblLoanDate.Name = "lblLoanDate";
             lblLoanDate.Size = new Size(125, 19);
             lblLoanDate.TabIndex = 2;
@@ -79,10 +81,11 @@
             // lblReturnDate
             // 
             lblReturnDate.AutoSize = true;
-            lblReturnDate.BackColor = SystemColors.ButtonFace;
+            lblReturnDate.BackColor = Color.Transparent;
             lblReturnDate.Font = new Font("Arial", 12F, FontStyle.Bold);
-            lblReturnDate.ForeColor = Color.DeepSkyBlue;
-            lblReturnDate.Location = new Point(43, 560);
+            lblReturnDate.ForeColor = Color.Black;
+            lblReturnDate.Location = new Point(738, 232);
+            lblReturnDate.Margin = new Padding(4, 0, 4, 0);
             lblReturnDate.Name = "lblReturnDate";
             lblReturnDate.Size = new Size(147, 19);
             lblReturnDate.TabIndex = 2;
@@ -90,86 +93,78 @@
             // 
             // lstStudents
             // 
-            lstStudents.BackColor = Color.PeachPuff;
+            lstStudents.BackColor = SystemColors.Window;
             lstStudents.FormattingEnabled = true;
-            lstStudents.ItemHeight = 15;
-            lstStudents.Location = new Point(27, 117);
+            lstStudents.ItemHeight = 21;
+            lstStudents.Location = new Point(13, 98);
+            lstStudents.Margin = new Padding(4);
             lstStudents.Name = "lstStudents";
-            lstStudents.Size = new Size(266, 214);
+            lstStudents.Size = new Size(320, 151);
             lstStudents.TabIndex = 3;
             lstStudents.SelectedIndexChanged += lstStudents_SelectedIndexChanged;
             // 
             // lstBooks
             // 
-            lstBooks.BackColor = Color.PeachPuff;
+            lstBooks.BackColor = SystemColors.Window;
             lstBooks.FormattingEnabled = true;
-            lstBooks.ItemHeight = 15;
-            lstBooks.Location = new Point(411, 117);
+            lstBooks.ItemHeight = 21;
+            lstBooks.Location = new Point(353, 98);
+            lstBooks.Margin = new Padding(4);
             lstBooks.Name = "lstBooks";
-            lstBooks.Size = new Size(266, 214);
+            lstBooks.Size = new Size(320, 151);
             lstBooks.TabIndex = 3;
             // 
             // txtStudentSearch
             // 
-            txtStudentSearch.BackColor = SystemColors.AppWorkspace;
-            txtStudentSearch.Location = new Point(27, 74);
+            txtStudentSearch.BackColor = SystemColors.Window;
+            txtStudentSearch.Location = new Point(13, 61);
+            txtStudentSearch.Margin = new Padding(4);
             txtStudentSearch.Name = "txtStudentSearch";
-            txtStudentSearch.Size = new Size(266, 23);
+            txtStudentSearch.Size = new Size(320, 29);
             txtStudentSearch.TabIndex = 4;
+            txtStudentSearch.TextChanged += txtStudentSearch_TextChanged;
             // 
             // txtBookSearch
             // 
-            txtBookSearch.BackColor = SystemColors.AppWorkspace;
-            txtBookSearch.Location = new Point(411, 74);
+            txtBookSearch.BackColor = SystemColors.Window;
+            txtBookSearch.Location = new Point(353, 61);
+            txtBookSearch.Margin = new Padding(4);
             txtBookSearch.Name = "txtBookSearch";
-            txtBookSearch.Size = new Size(266, 23);
+            txtBookSearch.Size = new Size(320, 29);
             txtBookSearch.TabIndex = 4;
+            txtBookSearch.TextChanged += txtBookSearch_TextChanged;
             // 
-            // dateTimeLoanDate
+            // clndrEndDate
             // 
-            dateTimeLoanDate.CalendarMonthBackground = Color.FromArgb(0, 192, 0);
-            dateTimeLoanDate.CalendarTitleBackColor = Color.Aqua;
-            dateTimeLoanDate.Location = new Point(227, 499);
-            dateTimeLoanDate.Name = "dateTimeLoanDate";
-            dateTimeLoanDate.Size = new Size(200, 23);
-            dateTimeLoanDate.TabIndex = 5;
+            clndrEndDate.Location = new Point(698, 260);
+            clndrEndDate.Name = "clndrEndDate";
+            clndrEndDate.TabIndex = 5;
             // 
-            // dateTimeReturnDate
+            // clndrStartDate
             // 
-            dateTimeReturnDate.CalendarMonthBackground = Color.DeepSkyBlue;
-            dateTimeReturnDate.Location = new Point(227, 557);
-            dateTimeReturnDate.Name = "dateTimeReturnDate";
-            dateTimeReturnDate.Size = new Size(200, 23);
-            dateTimeReturnDate.TabIndex = 5;
+            clndrStartDate.Location = new Point(698, 61);
+            clndrStartDate.Name = "clndrStartDate";
+            clndrStartDate.TabIndex = 6;
             // 
-            // panel1
+            // btnLoan
             // 
-            panel1.BackColor = SystemColors.ButtonFace;
-            panel1.Location = new Point(0, 390);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(725, 3);
-            panel1.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = SystemColors.ButtonFace;
-            panel2.ForeColor = Color.Black;
-            panel2.Location = new Point(347, 5);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(3, 386);
-            panel2.TabIndex = 7;
+            btnLoan.Location = new Point(13, 447);
+            btnLoan.Name = "btnLoan";
+            btnLoan.Size = new Size(450, 46);
+            btnLoan.TabIndex = 7;
+            btnLoan.Text = "Kitabı Ver";
+            btnLoan.UseVisualStyleBackColor = true;
             // 
             // LoanForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(724, 630);
+            BackColor = SystemColors.ActiveBorder;
+            ClientSize = new Size(950, 700);
+            Controls.Add(btnLoan);
+            Controls.Add(clndrStartDate);
+            Controls.Add(clndrEndDate);
             Controls.Add(lblLoanDate);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(dateTimeReturnDate);
-            Controls.Add(dateTimeLoanDate);
             Controls.Add(txtBookSearch);
             Controls.Add(txtStudentSearch);
             Controls.Add(lstBooks);
@@ -177,7 +172,10 @@
             Controls.Add(lblReturnDate);
             Controls.Add(lblBookList);
             Controls.Add(lblStudentList);
+            Cursor = Cursors.IBeam;
+            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
             Name = "LoanForm";
             Text = "LoanForm";
             Load += LoanForm_Load;
@@ -195,9 +193,8 @@
         private ListBox lstBooks;
         private TextBox txtStudentSearch;
         private TextBox txtBookSearch;
-        private DateTimePicker dateTimeLoanDate;
-        private DateTimePicker dateTimeReturnDate;
-        private Panel panel1;
-        private Panel panel2;
+        private MonthCalendar clndrEndDate;
+        private MonthCalendar clndrStartDate;
+        private Button btnLoan;
     }
 }

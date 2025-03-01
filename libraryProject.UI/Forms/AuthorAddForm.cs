@@ -5,13 +5,13 @@ using libraryProject.Entities.Models;
 
 namespace libraryProject.UI.Forms
 {
-    public partial class AuthorForm : Form
+    public partial class AuthorAddForm : Form
     {
         private readonly AuthorService _authorService;
         private readonly AuthorRepository _authorRepository;
         Author? selected;
 
-        public AuthorForm()
+        public AuthorAddForm()
         {
             InitializeComponent();
             var context = new AppDBContext();
@@ -92,11 +92,9 @@ namespace libraryProject.UI.Forms
             }
         }
 
-       
 
-        private void txtAuthorName_TextChanged(object sender, EventArgs e)
-        {
-        }
+
+
 
         private void lstAuthorList_SelectedIndexChanged_1(object sender, EventArgs e)
         {

@@ -5,13 +5,13 @@ using libraryProject.Entities.Models;
 
 namespace libraryProject.UI.Forms
 {
-    public partial class PublisherForm : Form
+    public partial class PublisherAddForm : Form
     {
 
         private readonly PublisherService _publisherService;
         private readonly PublisherRepository _publisherRepository;
         Publisher? selected;
-        public PublisherForm()
+        public PublisherAddForm()
         {
             InitializeComponent();
             var context = new AppDBContext();

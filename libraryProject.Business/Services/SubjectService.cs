@@ -1,44 +1,73 @@
-﻿using libraryProject.Business.Abstractions;
+﻿using FluentValidation.Results;
+using libraryProject.Business.Abstractions;
+using libraryProject.Business.Validators;
+using libraryProject.DataAccess.Abstractions;
+using libraryProject.DataAccess.Repositories;
 using libraryProject.Entities.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace libraryProject.Business.Services
 {
     public class SubjectService : IManager<Subject>
     {
+        private readonly SubjectRepository _subjectRepository;
+        public SubjectService(SubjectRepository subjectRepository)
+        {
+            _subjectRepository = subjectRepository;
+        }
         public void Create(Subject entity)
         {
-            throw new NotImplementedException();
+            SubjectValidator sVal = new();
+            ValidationResult result = sVal.Validate(entity);
+            if (!result.IsValid)
+            {
+                throw new Exception(string.Join(Environment.NewLine, result.Errors));
+            }
+            _subjectRepository.Create(entity);
         }
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var subject = _subjectRepository.GetByID(id);
+            if (subject == null)
+            {
+                throw new System.Exception("Bulunamadı.");
+            }
+            _subjectRepository.Delete(id);
         }
 
         public IEnumerable<Subject> GetAll()
         {
-            throw new NotImplementedException();
+            return _subjectRepository.GetAll();
         }
 
         public Subject GetById(Guid id)
         {
-            throw new NotImplementedException();
+            if (id == Guid.Empty)
+            {
+                throw new Exception("ID bilgisi boş olamaz.");
+            }
+            return _subjectRepository.GetByID(id);
         }
 
         public bool IfEntityExists(Expression<Func<Subject, bool>> fiter)
         {
-            throw new NotImplementedException();
+            return _subjectRepository.IfEntityExists(fiter);
         }
 
         public void Update(Subject entity)
         {
-            throw new NotImplementedException();
+            if (entity == null)
+            {
+                throw new Exception("Güncellenecek nesne boş olamaz.");
+            }
+            SubjectValidator sVal = new();
+            ValidationResult result = sVal.Validate(entity);
+            if (!result.IsValid)
+            {
+                throw new Exception(string.Join(Environment.NewLine, result.Errors));
+            }
+            _subjectRepository.Update(entity);
         }
     }
 }
