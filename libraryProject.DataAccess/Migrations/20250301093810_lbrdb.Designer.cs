@@ -12,8 +12,8 @@ using libraryProject.DataAccess.Context;
 namespace libraryProject.DataAccess.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20250228171555_FirstInitialize")]
-    partial class FirstInitialize
+    [Migration("20250301093810_lbrdb")]
+    partial class lbrdb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

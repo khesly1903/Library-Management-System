@@ -27,5 +27,15 @@ namespace libraryProject.Entities.Models
         public Shelf? Shelf { get; set; }
         public Subject? Subject{ get; set; }
         public Publisher? Publiser { get; set; }
-    }
-}
+
+
+       
+            public override string ToString()
+            {
+                return $"{BookName} - {Author?.Name} {Author?.Surname}";
+            }
+        }
+
+
+    };
+
