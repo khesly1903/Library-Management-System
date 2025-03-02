@@ -39,6 +39,10 @@
             clndrEndDate = new MonthCalendar();
             clndrStartDate = new MonthCalendar();
             btnLoan = new Button();
+            btnDelete = new Button();
+            lstLoans = new ListBox();
+            textBox1 = new TextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // lblStudentList
@@ -113,6 +117,7 @@
             lstBooks.Name = "lstBooks";
             lstBooks.Size = new Size(320, 151);
             lstBooks.TabIndex = 3;
+            lstBooks.SelectedIndexChanged += lstBooks_SelectedIndexChanged;
             // 
             // txtStudentSearch
             // 
@@ -154,6 +159,47 @@
             btnLoan.TabIndex = 7;
             btnLoan.Text = "Kitabı Ver";
             btnLoan.UseVisualStyleBackColor = true;
+            btnLoan.Click += btnLoan_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Font = new Font("Arial", 12F, FontStyle.Bold);
+            btnDelete.ForeColor = Color.Red;
+            btnDelete.Location = new Point(471, 447);
+            btnDelete.Margin = new Padding(4);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(450, 46);
+            btnDelete.TabIndex = 14;
+            btnDelete.Text = "Teslim Al";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // lstLoans
+            // 
+            lstLoans.FormattingEnabled = true;
+            lstLoans.ItemHeight = 21;
+            lstLoans.Location = new Point(353, 260);
+            lstLoans.Name = "lstLoans";
+            lstLoans.Size = new Size(320, 172);
+            lstLoans.TabIndex = 15;
+            lstLoans.SelectedIndexChanged += lstLoans_SelectedIndexChanged;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(13, 303);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(320, 29);
+            textBox1.TabIndex = 16;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(13, 269);
+            label1.Name = "label1";
+            label1.Size = new Size(200, 21);
+            label1.TabIndex = 17;
+            label1.Text = "ÖĞRENCİ (TESLİM ALMA)";
             // 
             // LoanForm
             // 
@@ -161,6 +207,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(950, 700);
+            Controls.Add(label1);
+            Controls.Add(textBox1);
+            Controls.Add(lstLoans);
+            Controls.Add(btnDelete);
             Controls.Add(btnLoan);
             Controls.Add(clndrStartDate);
             Controls.Add(clndrEndDate);
@@ -196,5 +246,9 @@
         private MonthCalendar clndrEndDate;
         private MonthCalendar clndrStartDate;
         private Button btnLoan;
+        private Button btnDelete;
+        private ListBox lstLoans;
+        private TextBox textBox1;
+        private Label label1;
     }
 }

@@ -30,12 +30,14 @@ namespace libraryProject.Entities.Models
 
 
        
-            public override string ToString()
-            {
-                return $"{BookName} - {Author?.Name} {Author?.Surname}";
-            }
+        public override string ToString()
+        {
+            return $"{BookName} - {Author}";
+            //return $"{BookName} - {Author?.Name} {Author?.Surname}";
         }
 
+    }
 
-    };
+
+};
 

@@ -1,11 +1,9 @@
-﻿using FluentValidation.Results;
+﻿using System.Linq.Expressions;
+using FluentValidation.Results;
 using libraryProject.Business.Abstractions;
 using libraryProject.Business.Validators;
-using libraryProject.DataAccess.Abstractions;
 using libraryProject.DataAccess.Repositories;
 using libraryProject.Entities.Models;
-using System.Linq.Expressions;
-using System.Net.Http.Headers;
 
 namespace libraryProject.Business.Services
 {
@@ -22,8 +20,9 @@ namespace libraryProject.Business.Services
         {
             LoanValidator lVal = new();
             ValidationResult result = lVal.Validate(entity);
-            if (result != null)
+            if (!result.IsValid)
             {
+                
                 throw new Exception(string.Join(System.Environment.NewLine, result.Errors));
             }
 
@@ -68,7 +67,7 @@ namespace libraryProject.Business.Services
 
             LoanValidator lVal = new();
             ValidationResult result = lVal.Validate(entity);
-            if (result != null)
+            if (!result.IsValid)
             {
                 throw new Exception(string.Join(System.Environment.NewLine, result.Errors));
             }

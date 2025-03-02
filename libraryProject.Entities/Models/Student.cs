@@ -20,7 +20,7 @@ namespace libraryProject.Entities.Models
 
         public override string ToString()
         {
-            return $"{StudentName} {StudentSurname}";
+            return $"{StudentName} {StudentSurname} - {StudentNumber} ";
         }
 
 

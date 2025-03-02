@@ -10,6 +10,7 @@ namespace libraryProject.Business.Validators
     {
         public LoanValidator()
         {
+            
             RuleFor(l => l.LoanDate)
                 .NotEmpty().WithMessage("Ödünç alma tarihi gereklidir.");
 
@@ -20,11 +21,12 @@ namespace libraryProject.Business.Validators
 
             // Student boş olamaz
             RuleFor(l => l.Student)
-                .NotEmpty().WithMessage("Öğrenci ID'si gereklidir.");
+                .NotEmpty().WithMessage("Öğrenci gereklidir.");
 
             // BookId boş olamaz
-            RuleFor(l => l.BookId)
-                .NotEmpty().WithMessage("Kitap ID'si gereklidir.");
+            RuleFor(l => l.Book)
+                .NotEmpty().WithMessage("Kitap gereklidir.");
+            
         }
     }
 }

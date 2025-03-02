@@ -115,8 +115,24 @@ namespace libraryProject.UI
 
         private void txtStudentName_TextChanged(object sender, EventArgs e)
         {
-
+            LoadStudents(txtStudentName.Text);
         }
+        private void LoadStudents(string searchText = "")
+        {
+            lstStudentList.Items.Clear();
+            var students = _studentService.GetAll();
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                students = students.Where(s => s.StudentName.Contains(searchText, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            foreach (var student in students)
+            {
+                lstStudentList.Items.Add(student);
+            }
+        }
+
 
         private void label4_Click(object sender, EventArgs e)
         {

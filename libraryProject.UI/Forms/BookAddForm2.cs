@@ -1,17 +1,8 @@
-﻿using libraryProject.Business.Services;
+﻿using System.Data;
+using libraryProject.Business.Services;
 using libraryProject.DataAccess.Context;
 using libraryProject.DataAccess.Repositories;
 using libraryProject.Entities.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 
 namespace libraryProject.UI.Forms
@@ -50,6 +41,7 @@ namespace libraryProject.UI.Forms
         private void BookAddForm2_Load(object sender, EventArgs e)
         {
             GetAllComboBoxData();
+            //GetAllBooks();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -152,9 +144,9 @@ namespace libraryProject.UI.Forms
                 books = books.Where(a => a.BookName.Contains(searchText, StringComparison.OrdinalIgnoreCase)).ToList();
             }
 
-            foreach (var student in books)
+            foreach (var book in books)
             {
-                lstList.Items.Add(student);
+                lstList.Items.Add(book);
             }
         }
 
@@ -173,7 +165,7 @@ namespace libraryProject.UI.Forms
             cmbBookAuthor.Items.Clear();
             cmbBookPublisher.Items.Clear();
             cmbBookShelf.Items.Clear();
-            
+
             foreach (var author in authors)
             {
                 cmbBookAuthor.Items.Add(author);
@@ -196,6 +188,20 @@ namespace libraryProject.UI.Forms
         private void cmbBookPublisher_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (selected != null)
+            {
+                _bookService.Delete(selected.Id);
+                MessageBox.Show("Kitap Silindi");
+                ClearForm();
+            }
+            else
+            {
+                MessageBox.Show("Silinecek kitap seçiniz");
+            }
         }
     }
 }

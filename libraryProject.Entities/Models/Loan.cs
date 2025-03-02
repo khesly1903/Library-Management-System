@@ -12,17 +12,16 @@ namespace libraryProject.Entities.Models
         public DateTime LoanDate { get; set; }
         public DateTime RetrunDate { get; set; }
 
-
-
-
-
         // referans bağlantılar
 
         public Student? Student { get; set; }
 
-        public Guid BookId { get; set; }
+        public Book? Book { get; set; }
 
-
+        public override string ToString()
+        {
+            return $"{Student} - {Book}";
+        }
 
     }
 }

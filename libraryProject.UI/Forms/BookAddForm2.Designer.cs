@@ -124,7 +124,9 @@
             // 
             // cmbBookAuthor
             // 
+            cmbBookAuthor.DropDownHeight = 200;
             cmbBookAuthor.FormattingEnabled = true;
+            cmbBookAuthor.IntegralHeight = false;
             cmbBookAuthor.Location = new Point(208, 140);
             cmbBookAuthor.Name = "cmbBookAuthor";
             cmbBookAuthor.Size = new Size(320, 36);
@@ -133,7 +135,9 @@
             // 
             // cmbBookPublisher
             // 
+            cmbBookPublisher.DropDownHeight = 200;
             cmbBookPublisher.FormattingEnabled = true;
+            cmbBookPublisher.IntegralHeight = false;
             cmbBookPublisher.Location = new Point(208, 177);
             cmbBookPublisher.Name = "cmbBookPublisher";
             cmbBookPublisher.Size = new Size(320, 36);
@@ -171,6 +175,7 @@
             btnDelete.TabIndex = 13;
             btnDelete.Text = "SİL";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // lstList
             // 
@@ -184,7 +189,9 @@
             // 
             // cmbBookShelf
             // 
+            cmbBookShelf.DropDownHeight = 200;
             cmbBookShelf.FormattingEnabled = true;
+            cmbBookShelf.IntegralHeight = false;
             cmbBookShelf.Location = new Point(208, 214);
             cmbBookShelf.Name = "cmbBookShelf";
             cmbBookShelf.Size = new Size(320, 36);

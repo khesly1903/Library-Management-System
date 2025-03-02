@@ -1,13 +1,9 @@
-﻿using FluentValidation.Results; // FluentValidation kütüphanesinden doğrulama sonuçlarını kullanmak için eklenmiştir.
-using libraryProject.Business.Abstractions; // İş katmanı için kullanılan soyutlama dosyalarını içeren namespace.
-using libraryProject.Business.Validators; // Kitap doğrulamalarını yapan Validator sınıfını kullanmak için eklenmiştir.
-using libraryProject.DataAccess.Abstractions; // Veri erişim katmanındaki soyutlama dosyalarını içeren namespace.
-using libraryProject.DataAccess.Repositories; // Veri erişim katmanındaki repository sınıflarını kullanmak için eklenmiştir.
-using libraryProject.Entities.Models; // Book gibi model sınıflarını kullanmak için eklenmiştir.
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
+using FluentValidation.Results;
+using libraryProject.Business.Abstractions;
+using libraryProject.Business.Validators;
+using libraryProject.DataAccess.Repositories;
+using libraryProject.Entities.Models;
 
 namespace libraryProject.Business.Services
 {
