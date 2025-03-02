@@ -22,7 +22,7 @@ namespace libraryProject.Entities.Models
 
         // bağlantı referansları
 
-        public int AvailableCopies { get; set; }
+
         public Author? Author { get; set; }
         public Shelf? Shelf { get; set; }
         public Subject? Subject{ get; set; }

@@ -44,10 +44,11 @@
             txtBookISBN = new TextBox();
             txtBookType = new TextBox();
             txtBookLocation = new TextBox();
-            txtBookTotalCopies = new TextBox();
-            lstBooks = new ListBox();
+            lstList = new ListBox();
             txtBookPublisher = new TextBox();
             txtBookAuthorSurname = new TextBox();
+            numUdStock = new NumericUpDown();
+            lstHelp = new ListBox();
             lblBookTitle = new Label();
             lblBookAuthorName = new Label();
             lblBookType = new Label();
@@ -56,6 +57,7 @@
             lblBookTotalCopies = new Label();
             lblBookPublisher = new Label();
             lblBookAuthorSurname = new Label();
+            ((System.ComponentModel.ISupportInitialize)numUdStock).BeginInit();
             SuspendLayout();
             // 
             // lblBookTitle
@@ -238,27 +240,17 @@
             txtBookLocation.TabIndex = 9;
             txtBookLocation.TextChanged += txtBookLocation_TextChanged;
             // 
-            // txtBookTotalCopies
+            // lstList
             // 
-            txtBookTotalCopies.BackColor = SystemColors.Window;
-            txtBookTotalCopies.Location = new Point(208, 325);
-            txtBookTotalCopies.Margin = new Padding(4);
-            txtBookTotalCopies.Name = "txtBookTotalCopies";
-            txtBookTotalCopies.Size = new Size(320, 29);
-            txtBookTotalCopies.TabIndex = 9;
-            txtBookTotalCopies.TextChanged += txtBookTotalCopies_TextChanged;
-            // 
-            // lstBooks
-            // 
-            lstBooks.BackColor = Color.White;
-            lstBooks.FormattingEnabled = true;
-            lstBooks.ItemHeight = 21;
-            lstBooks.Location = new Point(568, 66);
-            lstBooks.Margin = new Padding(4);
-            lstBooks.Name = "lstBooks";
-            lstBooks.Size = new Size(320, 277);
-            lstBooks.TabIndex = 10;
-            lstBooks.SelectedIndexChanged += listBooks_SelectedIndexChanged;
+            lstList.BackColor = Color.White;
+            lstList.FormattingEnabled = true;
+            lstList.ItemHeight = 21;
+            lstList.Location = new Point(568, 66);
+            lstList.Margin = new Padding(4);
+            lstList.Name = "lstList";
+            lstList.Size = new Size(320, 277);
+            lstList.TabIndex = 10;
+            lstList.SelectedIndexChanged += listBooks_SelectedIndexChanged;
             // 
             // txtBookPublisher
             // 
@@ -268,7 +260,7 @@
             txtBookPublisher.Name = "txtBookPublisher";
             txtBookPublisher.Size = new Size(320, 29);
             txtBookPublisher.TabIndex = 9;
-            txtBookPublisher.TextChanged += txtBookTotalCopies_TextChanged;
+            txtBookPublisher.TextChanged += txtBookAuthor_TextChanged;
             // 
             // txtBookAuthorSurname
             // 
@@ -279,17 +271,36 @@
             txtBookAuthorSurname.Size = new Size(320, 29);
             txtBookAuthorSurname.TabIndex = 12;
             // 
+            // numUdStock
+            // 
+            numUdStock.Location = new Point(208, 324);
+            numUdStock.Name = "numUdStock";
+            numUdStock.Size = new Size(120, 29);
+            numUdStock.TabIndex = 13;
+            numUdStock.ValueChanged += numUdStock_ValueChanged;
+            // 
+            // lstHelp
+            // 
+            lstHelp.FormattingEnabled = true;
+            lstHelp.ItemHeight = 21;
+            lstHelp.Location = new Point(568, 352);
+            lstHelp.Name = "lstHelp";
+            lstHelp.Size = new Size(320, 88);
+            lstHelp.TabIndex = 14;
+            lstHelp.SelectedIndexChanged += lstHelp_SelectedIndexChanged;
+            // 
             // BookAddForm
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(950, 700);
+            Controls.Add(lstHelp);
+            Controls.Add(numUdStock);
             Controls.Add(txtBookAuthorSurname);
             Controls.Add(lblBookAuthorSurname);
-            Controls.Add(lstBooks);
+            Controls.Add(lstList);
             Controls.Add(txtBookPublisher);
-            Controls.Add(txtBookTotalCopies);
             Controls.Add(txtBookLocation);
             Controls.Add(txtBookType);
             Controls.Add(txtBookISBN);
@@ -310,6 +321,7 @@
             Name = "BookAddForm";
             Text = "BookAddForm";
             Load += BookAddForm_Load;
+            ((System.ComponentModel.ISupportInitialize)numUdStock).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -329,9 +341,10 @@
         private TextBox txtBookISBN;
         private TextBox txtBookType;
         private TextBox txtBookLocation;
-        private TextBox txtBookTotalCopies;
-        private ListBox lstBooks;
+        private ListBox lstList;
         private TextBox txtBookPublisher;
         private TextBox txtBookAuthorSurname;
+        private NumericUpDown numUdStock;
+        private ListBox lstHelp;
     }
 }

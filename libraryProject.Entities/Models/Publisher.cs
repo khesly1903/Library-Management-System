@@ -20,7 +20,7 @@ namespace libraryProject.Entities.Models
 
         public override string ToString()
         {
-            return $"{PublisherName} {Address} {ContactNumber}";
+            return $"{PublisherName}";
 
 
 

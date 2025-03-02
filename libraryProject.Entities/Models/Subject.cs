@@ -14,5 +14,12 @@ namespace libraryProject.Entities.Models
 
         //referans bağlantılar
         public ICollection<Book>? Book { get; set; }
+
+
+        public override string ToString()
+        {
+            return $"{SubjectName}";
+        }
+
     }
 }
