@@ -37,7 +37,7 @@ namespace libraryProject.UI.Forms
 
         private void btnGoBookAddForm_Click(object sender, EventArgs e)
         {
-            var bookAddForm = new BookAddForm();
+            var bookAddForm = new BookAddForm2();
             OpenFormInPanel(bookAddForm);
         }
 

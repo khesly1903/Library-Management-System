@@ -260,7 +260,7 @@
             txtBookPublisher.Name = "txtBookPublisher";
             txtBookPublisher.Size = new Size(320, 29);
             txtBookPublisher.TabIndex = 9;
-            txtBookPublisher.TextChanged += txtBookAuthor_TextChanged;
+            txtBookPublisher.TextChanged += txtBookPublisher_TextChanged;
             // 
             // txtBookAuthorSurname
             // 

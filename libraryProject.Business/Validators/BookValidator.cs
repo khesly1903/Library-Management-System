@@ -22,6 +22,16 @@ public class BookValidator: AbstractValidator<Book>
         .GreaterThan(0).WithMessage("Toplam kopya sayısı 0'dan büyük olmalıdır.");
 
 
-       
+        // Author boş olamaz
+        RuleFor(b => b.Author.Name).NotEmpty().WithMessage("Yazar adı gereklidir.");
+        RuleFor(b => b.Author.Surname).NotEmpty().WithMessage("Yazar soyadı gereklidir.");
+
+        // Shelf boş olamaz
+        //RuleFor(b => b.Shelf.ShelfDescription).NotEmpty().WithMessage("Raf açıklaması gereklidir.");
+
+        //publisher boş olamaz
+        RuleFor(b => b.Publiser.PublisherName).NotEmpty().WithMessage("Yayınevi adı gereklidir.");
+
+
     }
 }
