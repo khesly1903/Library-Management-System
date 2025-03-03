@@ -56,11 +56,33 @@ namespace libraryProject.UI.Forms
 
         private void LoanForm_Load(object sender, EventArgs e)
         {
-           // GetAllBooks();
-           // GetAllAuthors();
-            GetAllLoans();
+           GetAllBooks();
+           GetAllStudents();
+           //GetAllLoans();
         }
 
+        private void GetAllBooks()
+        {
+            lstBooks.Items.Clear();
+            var books = _bookService.GetAll().ToList();
+            foreach (var book in books)
+            {
+                Book current_book = _bookService.GetById(book.Id);
+                lstBooks.Items.Add(book);
+            }
+        }
+
+        private void GetAllStudents()
+        {
+            lstStudents.Items.Clear();
+            var students = _studentService.GetAll().ToList();
+            foreach (var student in students)
+            {
+                Student current_student = _studentService.GetById(student.Id);
+                lstStudents.Items.Add(student);
+            }
+        }
+        /*
         private void GetAllLoans()
         {
             lstLoans.Items.Clear();
@@ -71,42 +93,19 @@ namespace libraryProject.UI.Forms
                 lstLoans.Items.Add(loan);
             }
         }
-
-
-        private void GetAllBooks()
+        */
+        private void ClearForm()
         {
-            lstBooks.Items.Clear();
-            var books = _bookService.GetAll().ToList();
-            foreach (var book in books)
-            {
-                Book current_book = _bookService.GetById(book.Id);
-                
-                lstBooks.Items.Add(current_book);
-                
-            }
-        }
-
-       
-
-        private void GetAllAuthors()
-        {
-            lstBooks.Items.Clear();
-            var authors = _authorService.GetAll().ToList();
-            
-            foreach (var author in authors)
-            {
-                lstBooks.Items.Add(author.Books);
-            }
+            txtBookSearch.Text = "";
+            txtStudentSearch.Text = "";
         }
 
 
 
 
-        private void dateTimeLoanDate_ValueChanged(object sender, EventArgs e)
-        {
 
-        }
-        // ----------------------------------------------------------
+        
+        // --------------- Student Search -------------------------
         private void txtStudentSearch_TextChanged(object sender, EventArgs e)
         {
             LoadStudents(txtStudentSearch.Text);
@@ -137,7 +136,7 @@ namespace libraryProject.UI.Forms
                 selectedStudent = student;
             }
         }
-        // ----------------------------------------------------------
+        // --------------- Book Search -------------------------
         private void txtBookSearch_TextChanged(object sender, EventArgs e)
         {
             LoadBooks(txtBookSearch.Text);
@@ -161,7 +160,7 @@ namespace libraryProject.UI.Forms
         // çalışıyor
         private void LoadBooks(string searchText = "")
         {
-            lstBooks.Items.Clear();
+           lstBooks.Items.Clear();
            var books = GetAllBooksList();
 
             if (!string.IsNullOrEmpty(searchText))
@@ -185,7 +184,62 @@ namespace libraryProject.UI.Forms
 
             }
         }
-        // ----------------------------------------------------------
+        // --------------- Loan Search -------------------------
+
+
+        /*
+        private List<Loan> GetAllLoansList()
+        {
+            lstLoans.Items.Clear();
+            var loans = _loanService.GetAll().ToList();
+            List<Loan> loanList = new List<Loan>();
+            foreach (var loan in loans)
+            {
+                Loan current_loan = _loanService.GetById(loan.Id);
+                loanList.Add(current_loan);
+            }
+            return loanList;
+        }
+
+        private void LoadLoans(string searchText = "")
+        {
+            lstLoans.Items.Clear();
+            var loans = GetAllLoansList();
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+
+                loans = loans.Where(a => a.Student.StudentName.Contains(searchText, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            foreach (var loan in loans)
+            {
+                lstLoans.Items.Add(loan);
+            }
+        }
+       
+
+        private void lstLoans_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            selectedLoan = (Loan)lstLoans.SelectedItem;
+            if (selectedLoan != null)
+            {
+                _loanService.Delete(selectedLoan.Id);
+                GetAllLoans();
+                MessageBox.Show("İşlem başarılı");
+                ClearForm();
+            }
+            else
+            {
+                MessageBox.Show("Öğrenci seçiniz");
+            }
+        }
+        */
 
         private void btnLoan_Click(object sender, EventArgs e)
         {
@@ -222,79 +276,15 @@ namespace libraryProject.UI.Forms
             }
         }
 
-        private void ClearForm()
-        {
-            txtBookSearch.Text = "";
-            txtStudentSearch.Text = "";
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            LoadLoans(textBox1.Text);
-        }
-
-        private List<Loan> GetAllLoansList()
-        {
-            lstLoans.Items.Clear();
-            var loans = _loanService.GetAll().ToList();
-            List<Loan> loanList = new List<Loan>();
-            foreach (var loan in loans)
-            {
-                Loan current_loan = _loanService.GetById(loan.Id);
-                loanList.Add(current_loan);
-            }
-            return loanList;
-        }
-
-        private void LoadLoans(string searchText = "")
-        {
-            lstLoans.Items.Clear();
-            var loans = GetAllLoansList();
-
-            if (!string.IsNullOrEmpty(searchText))
-            {
-
-                loans = loans.Where(a => a.Student.StudentName.Contains(searchText, StringComparison.OrdinalIgnoreCase)).ToList();
-            }
-
-            foreach (var loan in loans)
-            {
-                lstLoans.Items.Add(loan);
-            }
-        }
-
-
-
-
-
-
-
-        private void lstLoans_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            selectedLoan = (Loan)lstLoans.SelectedItem;
-            if (selectedLoan != null)
-            {
-                _loanService.Delete(selectedLoan.Id);
-                GetAllLoans();
-                MessageBox.Show("İşlem başarılı");
-                ClearForm();
-            }
-            else
-            {
-                MessageBox.Show("Öğrenci seçiniz");
-            }
-        }
 
 
 
 
         // ----------------------------------------------------------
 
+        private void dateTimeLoanDate_ValueChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

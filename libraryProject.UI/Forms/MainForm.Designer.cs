@@ -27,6 +27,7 @@
             btnGoPublisherAddForm = new Button();
             btnGoLoanForm = new Button();
             mainPanel = new Panel();
+            btnGoReturnForm = new Button();
             SuspendLayout();
             // 
             // btnGoStudentAddForm
@@ -76,7 +77,7 @@
             btnGoLoanForm.Name = "btnGoLoanForm";
             btnGoLoanForm.Size = new Size(250, 40);
             btnGoLoanForm.TabIndex = 4;
-            btnGoLoanForm.Text = "Ödünç Alma Formunu Aç";
+            btnGoLoanForm.Text = "Kitap Ver";
             btnGoLoanForm.UseVisualStyleBackColor = true;
             btnGoLoanForm.Click += btnGoLoanForm_Click;
             // 
@@ -87,10 +88,21 @@
             mainPanel.Size = new Size(950, 520);
             mainPanel.TabIndex = 5;
             // 
+            // btnGoReturnForm
+            // 
+            btnGoReturnForm.Location = new Point(62, 58);
+            btnGoReturnForm.Name = "btnGoReturnForm";
+            btnGoReturnForm.Size = new Size(250, 40);
+            btnGoReturnForm.TabIndex = 6;
+            btnGoReturnForm.Text = "Kitap Al";
+            btnGoReturnForm.UseVisualStyleBackColor = true;
+            btnGoReturnForm.Click += btnGoReturnForm_Click;
+            // 
             // MainForm
             // 
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(984, 661);
+            Controls.Add(btnGoReturnForm);
             Controls.Add(mainPanel);
             Controls.Add(btnGoLoanForm);
             Controls.Add(btnGoPublisherAddForm);
@@ -103,5 +115,7 @@
             Name = "MainForm";
             ResumeLayout(false);
         }
+
+        private Button btnGoReturnForm;
     }
 }

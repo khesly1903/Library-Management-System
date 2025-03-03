@@ -18,7 +18,7 @@ namespace libraryProject.DataAccess.Repositories
             _dbContext = db;
         }
 
-        public Book GetByID(Guid id)
+        public Book? GetByID(Guid id)
         {
             return _dbContext.Books
                 .Include(b => b.Author)

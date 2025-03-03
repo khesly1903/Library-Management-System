@@ -132,10 +132,10 @@
             // 
             // label4
             // 
-            label4.Location = new Point(568, 27);
+            label4.Location = new Point(660, 27);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(261, 36);
+            label4.Size = new Size(146, 36);
             label4.TabIndex = 0;
             label4.Text = "ÖĞRENCİ LİSTESİ";
             label4.Click += label4_Click;

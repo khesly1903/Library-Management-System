@@ -132,10 +132,10 @@
             // 
             // label4
             // 
-            label4.Location = new Point(568, 28);
+            label4.Location = new Point(661, 28);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(301, 35);
+            label4.Size = new Size(144, 35);
             label4.TabIndex = 0;
             label4.Text = "YAYINEVİ LİSTESİ";
             // 

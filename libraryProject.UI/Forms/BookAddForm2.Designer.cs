@@ -43,6 +43,7 @@
             btnDelete = new Button();
             lstList = new ListBox();
             cmbBookShelf = new ComboBox();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)numBookStock).BeginInit();
             SuspendLayout();
             // 
@@ -197,12 +198,22 @@
             cmbBookShelf.Size = new Size(320, 36);
             cmbBookShelf.TabIndex = 15;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(666, 35);
+            label7.Name = "label7";
+            label7.Size = new Size(131, 28);
+            label7.TabIndex = 16;
+            label7.Text = "KİTAP LİSTESİ";
+            // 
             // BookAddForm2
             // 
             AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(934, 661);
+            Controls.Add(label7);
             Controls.Add(cmbBookShelf);
             Controls.Add(lstList);
             Controls.Add(btnDelete);
@@ -245,5 +256,6 @@
         private Button btnDelete;
         private ListBox lstList;
         private ComboBox cmbBookShelf;
+        private Label label7;
     }
 }

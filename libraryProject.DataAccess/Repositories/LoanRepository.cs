@@ -17,7 +17,7 @@ namespace libraryProject.DataAccess.Repositories
         {
             _dbContext = db;
         }
-        public Loan GetByID(Guid id)
+        public Loan? GetByID(Guid id)
         {
             return _dbContext.Loans
                 .Include(l => l.Student)

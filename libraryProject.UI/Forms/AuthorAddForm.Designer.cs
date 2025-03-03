@@ -93,10 +93,10 @@
             // 
             // label2
             // 
-            label2.Location = new Point(568, 27);
+            label2.Location = new Point(669, 27);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(286, 36);
+            label2.Size = new Size(147, 36);
             label2.TabIndex = 0;
             label2.Text = "YAZAR LİSTESİ";
             // 
