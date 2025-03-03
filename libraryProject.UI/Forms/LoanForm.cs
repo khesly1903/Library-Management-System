@@ -56,32 +56,47 @@ namespace libraryProject.UI.Forms
 
         private void LoanForm_Load(object sender, EventArgs e)
         {
-            GetAllBooks();
+           // GetAllBooks();
+           // GetAllAuthors();
             GetAllLoans();
         }
+
+        private void GetAllLoans()
+        {
+            lstLoans.Items.Clear();
+            var loans = _loanService.GetAll().ToList();
+            foreach (var loan in loans)
+            {
+                Loan current_loan = _loanService.GetById(loan.Id);
+                lstLoans.Items.Add(loan);
+            }
+        }
+
+
         private void GetAllBooks()
         {
             lstBooks.Items.Clear();
             var books = _bookService.GetAll().ToList();
             foreach (var book in books)
             {
-                lstBooks.Items.Add(book);
+                Book current_book = _bookService.GetById(book.Id);
+                
+                lstBooks.Items.Add(current_book);
+                
             }
         }
 
-        private void GetAllBooks2()
+       
+
+        private void GetAllAuthors()
         {
             lstBooks.Items.Clear();
-            var books = _bookService.GetAll().ToList();
-            foreach (var book in books)
+            var authors = _authorService.GetAll().ToList();
+            
+            foreach (var author in authors)
             {
-                Book current_book = _bookService.GetById(book.Id);
-                string book_name = current_book.BookName;
-                string author_name = current_book.Author.ToString(); // nasıl null dönebilir ????
-                lstBooks.Items.Add($"{book_name} {author_name}");
+                lstBooks.Items.Add(author.Books);
             }
-
-
         }
 
 
@@ -128,21 +143,36 @@ namespace libraryProject.UI.Forms
             LoadBooks(txtBookSearch.Text);
         }
 
+       
+        // çalışıyor
+        private List<Book> GetAllBooksList()
+        {
+            lstBooks.Items.Clear();
+            var books = _bookService.GetAll().ToList();
+            List<Book> bookList = new List<Book>();
+            foreach (var book in books)
+            {
+                Book current_book = _bookService.GetById(book.Id);
+                bookList.Add(current_book);
+            }
 
-
+            return bookList;
+        }
+        // çalışıyor
         private void LoadBooks(string searchText = "")
         {
             lstBooks.Items.Clear();
-            var books = _bookService.GetAll();
+           var books = GetAllBooksList();
 
             if (!string.IsNullOrEmpty(searchText))
             {
-                books = books.Where(a => a.BookName.Contains(searchText, StringComparison.OrdinalIgnoreCase)).ToList();
+
+                 books = _bookService.GetAll().Where(a => a.BookName.Contains(searchText, StringComparison.OrdinalIgnoreCase)).ToList();
             }
 
             foreach (var book in books)
             {
-                lstBooks.Items.Add(book.Id);
+                lstBooks.Items.Add(book);
             }
         }
         private void lstBooks_SelectedIndexChanged(object sender, EventArgs e)
@@ -200,13 +230,33 @@ namespace libraryProject.UI.Forms
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            //LoadLoans(textBox1.Text);
+            LoadLoans(textBox1.Text);
         }
 
-        private void GetAllLoans()
+        private List<Loan> GetAllLoansList()
         {
             lstLoans.Items.Clear();
             var loans = _loanService.GetAll().ToList();
+            List<Loan> loanList = new List<Loan>();
+            foreach (var loan in loans)
+            {
+                Loan current_loan = _loanService.GetById(loan.Id);
+                loanList.Add(current_loan);
+            }
+            return loanList;
+        }
+
+        private void LoadLoans(string searchText = "")
+        {
+            lstLoans.Items.Clear();
+            var loans = GetAllLoansList();
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+
+                loans = loans.Where(a => a.Student.StudentName.Contains(searchText, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
             foreach (var loan in loans)
             {
                 lstLoans.Items.Add(loan);
@@ -215,9 +265,13 @@ namespace libraryProject.UI.Forms
 
 
 
+
+
+
+
         private void lstLoans_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

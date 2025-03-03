@@ -42,6 +42,18 @@ namespace libraryProject.UI.Forms
         {
             GetAllComboBoxData();
             //GetAllBooks();
+            //GetAllAuthors();
+        }
+
+        private void GetAllAuthors()
+        {
+            lstList.Items.Clear();
+            var authors = _authorService.GetAll().ToList();
+
+            foreach (var author in authors)
+            {
+                lstList.Items.Add(author.Books);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -65,6 +77,8 @@ namespace libraryProject.UI.Forms
                         Publiser = (Publisher)cmbBookPublisher.SelectedItem,
                         Shelf = (Shelf)cmbBookShelf.SelectedItem
                     };
+                    Author book_author = book.Author;
+                    book_author.Books.Add(book);
 
                     _bookService.Create(book);
                     MessageBox.Show("Kitap Eklendi");

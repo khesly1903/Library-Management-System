@@ -1,5 +1,6 @@
 ﻿using libraryProject.DataAccess.Context;
 using libraryProject.Entities.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,14 @@ namespace libraryProject.DataAccess.Repositories
         {
             _dbContext = db;
         }
+        public Loan GetByID(Guid id)
+        {
+            return _dbContext.Loans
+                .Include(l => l.Student)
+                .Include(l => l.Book)
+                .FirstOrDefault(l => l.Id == id);
+        }
     }
+
+   
 }

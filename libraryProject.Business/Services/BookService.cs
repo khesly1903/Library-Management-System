@@ -4,6 +4,7 @@ using libraryProject.Business.Abstractions;
 using libraryProject.Business.Validators;
 using libraryProject.DataAccess.Repositories;
 using libraryProject.Entities.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace libraryProject.Business.Services
 {
@@ -46,10 +47,6 @@ namespace libraryProject.Business.Services
 
         public Book GetById(Guid id)
         {
-            if (id == Guid.Empty)
-            {
-                throw new Exception("ID bilgisi boş olamaz.");
-            }
             return _bookRepository.GetByID(id);
 
         }
@@ -73,6 +70,12 @@ namespace libraryProject.Business.Services
                 throw new Exception(string.Join(Environment.NewLine, result.Errors));
             }
 
+
+
         }
+
+       
+
+
     }
 }

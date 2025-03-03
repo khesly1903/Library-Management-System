@@ -46,10 +46,6 @@ namespace libraryProject.Business.Services
 
         public Loan GetById(Guid id)
         {
-            if (id == Guid.Empty)
-            {
-                throw new Exception("ID bilgisi boş olamaz.");
-            }
             return _loanRepository.GetByID(id);
         }
 

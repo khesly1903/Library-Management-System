@@ -13,7 +13,7 @@ namespace libraryProject.Entities.Models
         public DateTime RetrunDate { get; set; }
 
         // referans bağlantılar
-
+        
         public Student? Student { get; set; }
 
         public Book? Book { get; set; }
