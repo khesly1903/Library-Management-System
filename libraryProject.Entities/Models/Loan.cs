@@ -20,7 +20,7 @@ namespace libraryProject.Entities.Models
 
         public override string ToString()
         {
-            return $"{Student} - {Book}";
+            return $"{Student} # {Book} # {LoanDate.ToShortDateString()}-{RetrunDate.ToShortDateString()}";
         }
 
     }

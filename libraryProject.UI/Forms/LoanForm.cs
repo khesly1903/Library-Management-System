@@ -58,7 +58,7 @@ namespace libraryProject.UI.Forms
         {
            GetAllBooks();
            GetAllStudents();
-           //GetAllLoans();
+
         }
 
         private void GetAllBooks()
@@ -82,18 +82,9 @@ namespace libraryProject.UI.Forms
                 lstStudents.Items.Add(student);
             }
         }
-        /*
-        private void GetAllLoans()
-        {
-            lstLoans.Items.Clear();
-            var loans = _loanService.GetAll().ToList();
-            foreach (var loan in loans)
-            {
-                Loan current_loan = _loanService.GetById(loan.Id);
-                lstLoans.Items.Add(loan);
-            }
-        }
-        */
+        
+
+        
         private void ClearForm()
         {
             txtBookSearch.Text = "";
@@ -136,6 +127,8 @@ namespace libraryProject.UI.Forms
                 selectedStudent = student;
             }
         }
+
+
         // --------------- Book Search -------------------------
         private void txtBookSearch_TextChanged(object sender, EventArgs e)
         {
@@ -157,6 +150,8 @@ namespace libraryProject.UI.Forms
 
             return bookList;
         }
+
+        
         // çalışıyor
         private void LoadBooks(string searchText = "")
         {
@@ -184,13 +179,13 @@ namespace libraryProject.UI.Forms
 
             }
         }
+
+
         // --------------- Loan Search -------------------------
 
-
-        /*
         private List<Loan> GetAllLoansList()
         {
-            lstLoans.Items.Clear();
+            
             var loans = _loanService.GetAll().ToList();
             List<Loan> loanList = new List<Loan>();
             foreach (var loan in loans)
@@ -199,47 +194,8 @@ namespace libraryProject.UI.Forms
                 loanList.Add(current_loan);
             }
             return loanList;
-        }
-
-        private void LoadLoans(string searchText = "")
-        {
-            lstLoans.Items.Clear();
-            var loans = GetAllLoansList();
-
-            if (!string.IsNullOrEmpty(searchText))
-            {
-
-                loans = loans.Where(a => a.Student.StudentName.Contains(searchText, StringComparison.OrdinalIgnoreCase)).ToList();
-            }
-
-            foreach (var loan in loans)
-            {
-                lstLoans.Items.Add(loan);
-            }
-        }
-       
-
-        private void lstLoans_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            selectedLoan = (Loan)lstLoans.SelectedItem;
-            if (selectedLoan != null)
-            {
-                _loanService.Delete(selectedLoan.Id);
-                GetAllLoans();
-                MessageBox.Show("İşlem başarılı");
-                ClearForm();
-            }
-            else
-            {
-                MessageBox.Show("Öğrenci seçiniz");
-            }
-        }
-        */
 
         private void btnLoan_Click(object sender, EventArgs e)
         {
@@ -247,6 +203,39 @@ namespace libraryProject.UI.Forms
             {
                 if (selectedBook != null && selectedStudent != null)
                 {
+
+                    // öğrenci kaç loana sahip
+                    List<Loan> allLoans = GetAllLoansList();
+                    int studentLoanCount = 1;
+                    foreach (var studentLoans in allLoans)
+                    {
+                        
+                        if (studentLoans.Student.Id == selectedStudent.Id)
+                        {
+                            
+                            studentLoanCount++;
+                        }
+                    }
+                    
+                    if (studentLoanCount > 3)
+                    {
+                        MessageBox.Show("Öğrenci aynı anda en fazla 3 kitap alabilir.");
+                        ClearForm();
+                        return;
+                    }
+
+                    // öğrenci aynı kitabı alamaz
+                    foreach (var studentLoans in allLoans)
+                    {
+                        if (studentLoans.Student.Id == selectedStudent.Id && studentLoans.Book.Id == selectedBook.Id)
+                        {
+                            MessageBox.Show("Öğrenci aynı kitaba aynı anda sahip olamaz.");
+                            ClearForm();
+                            return;
+                        }
+                    }
+
+
 
                     Loan loan = new Loan()
                     {
@@ -257,9 +246,15 @@ namespace libraryProject.UI.Forms
                         Book = (Book?)selectedBook
                     };
 
+
+
                     _loanService.Create(loan);
-                    // messagebox ile hangi öğrenciye hangi kitabı ödünç verdiğini göster
-                    MessageBox.Show($"Öğrenci: {selectedStudent.StudentName} {selectedStudent.StudentSurname} {Environment.NewLine} Kitap: {selectedBook.BookName} {Environment.NewLine} Başlangıç Tarihi: {clndrStartDate.SelectionStart.ToShortDateString()} {Environment.NewLine} Biriş Tarihi {clndrEndDate.SelectionStart.ToShortDateString()}");
+
+                    // Kitap sayısını azalt
+                    selectedBook.TotalCopies--;
+                    _bookService.Update(selectedBook);
+
+                    MessageBox.Show($"Öğrenci: {selectedStudent.StudentName} {selectedStudent.StudentSurname} {Environment.NewLine} Kitap: {selectedBook.BookName} {Environment.NewLine} Başlangıç Tarihi: {clndrStartDate.SelectionStart.ToShortDateString()} {Environment.NewLine} Biriş Tarihi {clndrEndDate.SelectionStart.ToShortDateString()} {Environment.NewLine} Toplam Ödünç Sayısı: {studentLoanCount}");
 
                     ClearForm();
 

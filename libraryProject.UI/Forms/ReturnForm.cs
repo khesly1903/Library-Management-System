@@ -18,6 +18,8 @@ namespace libraryProject.UI.Forms
         private readonly LoanService _loanService;
         private readonly LoanRepository _loanRepository;
 
+        Loan? selectedLoan;
+
         public ReturnForm()
         {
             InitializeComponent();
@@ -48,10 +50,11 @@ namespace libraryProject.UI.Forms
                 Book loan_book = _bookService.GetById(loan.Book.Id);
                 string loan_date = loan.LoanDate.ToShortDateString();
                 string retrun_date = loan.RetrunDate.ToShortDateString();
-                lstList.Items.Add($"{loan_student} # {loan_book} # {loan_date} # {retrun_date}");
+                //lstList.Items.Add($"{loan_student} # {loan_book} # {loan_date} # {retrun_date}");
+                lstList.Items.Add(loan);
             }
         }
-        
+
         private List<Loan> GetAllLoansList()
         {
             lstList.Items.Clear();
@@ -81,7 +84,8 @@ namespace libraryProject.UI.Forms
                 Book loan_book = _bookService.GetById(loan.Book.Id);
                 string loan_date = loan.LoanDate.ToShortDateString();
                 string retrun_date = loan.RetrunDate.ToShortDateString();
-                lstList.Items.Add($"{loan_student} # {loan_book} # {loan_date} # {retrun_date}");
+                //lstList.Items.Add($"{loan_student} # {loan_book} # {loan_date} # {retrun_date}");
+                lstList.Items.Add(loan);
             }
         }
 
@@ -99,7 +103,8 @@ namespace libraryProject.UI.Forms
                 Book loan_book = _bookService.GetById(loan.Book.Id);
                 string loan_date = loan.LoanDate.ToShortDateString();
                 string retrun_date = loan.RetrunDate.ToShortDateString();
-                lstList.Items.Add($"{loan_student} # {loan_book} # {loan_date} # {retrun_date}");
+                //lstList.Items.Add($"{loan_student} # {loan_book} # {loan_date} # {retrun_date}");
+                lstList.Items.Add(loan);
             }
         }
 
@@ -113,11 +118,28 @@ namespace libraryProject.UI.Forms
             LoadLoansByBookName(txtBookSearch.Text);
         }
 
-        private void LoadLoansByStudent(string searchText = "")
-        {
-
-        }
 
         
+
+        private void lstList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstList.SelectedItem is Loan loan)
+            {
+                selectedLoan = loan;
+            }
+
+            
+        }
+
+        private void btnRetrun_Click(object sender, EventArgs e)
+        {
+            Loan loan = _loanService.GetById(selectedLoan.Id);
+            loan.Book.TotalCopies++;
+
+            _loanService.Delete(loan.Id);
+
+            MessageBox.Show("İşlem başarıyla tamamlandı");
+            GetAllLoans();
+        }
     }
 }

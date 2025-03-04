@@ -47,6 +47,7 @@
             btnRetrun.TabIndex = 13;
             btnRetrun.Text = "Kitabı Al";
             btnRetrun.UseVisualStyleBackColor = true;
+            btnRetrun.Click += btnRetrun_Click;
             // 
             // txtStudentSearch
             // 
@@ -72,6 +73,7 @@
             lstList.Name = "lstList";
             lstList.Size = new Size(893, 256);
             lstList.TabIndex = 16;
+            lstList.SelectedIndexChanged += lstList_SelectedIndexChanged;
             // 
             // label1
             // 

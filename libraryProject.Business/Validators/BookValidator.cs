@@ -14,7 +14,7 @@ public class BookValidator: AbstractValidator<Book>
         // BookISBN boş olamaz ve 10 ya da 13 haneli olmalıdır
         RuleFor(b => b.BookISBN)
       .NotEmpty().WithMessage("ISBN gereklidir.")
-      .Matches(@"^(?:\d{9}[\dX]|\d{13})$").WithMessage("ISBN, 10 veya 13 haneli olmalıdır (ISBN-10 son karakter 'X' olabilir).");
+      .Length(10, 13).WithMessage("ISBN 10 ya da 13 haneli olmalıdır.");
 
 
         // TotalCopies 0'dan büyük olmalıdır
