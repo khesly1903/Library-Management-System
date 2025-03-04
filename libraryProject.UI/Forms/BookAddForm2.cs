@@ -41,7 +41,7 @@ namespace libraryProject.UI.Forms
         private void BookAddForm2_Load(object sender, EventArgs e)
         {
             GetAllComboBoxData();
-            //GetAllBooks();
+            GetAllBooks();
             //GetAllAuthors();
         }
 

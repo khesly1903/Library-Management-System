@@ -40,90 +40,100 @@
             // 
             // label1
             // 
-            label1.Location = new Point(53, 107);
+            label1.ForeColor = Color.FromArgb(75, 54, 33);
+            label1.Location = new Point(165, 146);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(135, 28);
+            label1.Size = new Size(135, 37);
             label1.TabIndex = 0;
             label1.Text = "YAZAR SOYADI";
             // 
             // txtAuthorSurname
             // 
-            txtAuthorSurname.Location = new Point(208, 103);
-            txtAuthorSurname.Margin = new Padding(4, 3, 4, 3);
+            txtAuthorSurname.BackColor = Color.FromArgb(234, 216, 192);
+            txtAuthorSurname.Location = new Point(320, 140);
+            txtAuthorSurname.Margin = new Padding(4);
             txtAuthorSurname.Multiline = true;
             txtAuthorSurname.Name = "txtAuthorSurname";
-            txtAuthorSurname.Size = new Size(320, 32);
+            txtAuthorSurname.Size = new Size(320, 41);
             txtAuthorSurname.TabIndex = 1;
             // 
             // lstAuthorList
             // 
+            lstAuthorList.BackColor = Color.FromArgb(234, 216, 192);
             lstAuthorList.FormattingEnabled = true;
-            lstAuthorList.ItemHeight = 21;
-            lstAuthorList.Location = new Point(568, 66);
-            lstAuthorList.Margin = new Padding(4, 3, 4, 3);
+            lstAuthorList.ItemHeight = 28;
+            lstAuthorList.Location = new Point(680, 91);
+            lstAuthorList.Margin = new Padding(4);
             lstAuthorList.Name = "lstAuthorList";
-            lstAuthorList.Size = new Size(320, 277);
+            lstAuthorList.Size = new Size(320, 368);
             lstAuthorList.TabIndex = 2;
             lstAuthorList.SelectedIndexChanged += lstAuthorList_SelectedIndexChanged_1;
             // 
             // btnAuthorDelete
             // 
-            btnAuthorDelete.ForeColor = Color.Red;
-            btnAuthorDelete.Location = new Point(471, 447);
-            btnAuthorDelete.Margin = new Padding(4, 3, 4, 3);
+            btnAuthorDelete.BackColor = Color.FromArgb(139, 94, 60);
+            btnAuthorDelete.FlatStyle = FlatStyle.Flat;
+            btnAuthorDelete.ForeColor = Color.FromArgb(75, 54, 33);
+            btnAuthorDelete.Location = new Point(680, 510);
+            btnAuthorDelete.Margin = new Padding(4);
             btnAuthorDelete.Name = "btnAuthorDelete";
-            btnAuthorDelete.Size = new Size(450, 46);
+            btnAuthorDelete.Size = new Size(515, 60);
             btnAuthorDelete.TabIndex = 3;
             btnAuthorDelete.Text = "SİL";
-            btnAuthorDelete.UseVisualStyleBackColor = true;
+            btnAuthorDelete.UseVisualStyleBackColor = false;
             btnAuthorDelete.Click += btnAuthorDelete_Click;
             // 
             // btnAuthorSave
             // 
-            btnAuthorSave.ForeColor = Color.Green;
-            btnAuthorSave.Location = new Point(13, 447);
-            btnAuthorSave.Margin = new Padding(4, 3, 4, 3);
+            btnAuthorSave.BackColor = Color.FromArgb(139, 94, 60);
+            btnAuthorSave.FlatStyle = FlatStyle.Flat;
+            btnAuthorSave.ForeColor = Color.FromArgb(75, 54, 33);
+            btnAuthorSave.Location = new Point(28, 510);
+            btnAuthorSave.Margin = new Padding(4);
             btnAuthorSave.Name = "btnAuthorSave";
-            btnAuthorSave.Size = new Size(450, 46);
+            btnAuthorSave.Size = new Size(515, 60);
             btnAuthorSave.TabIndex = 3;
             btnAuthorSave.Text = "KAYDET";
-            btnAuthorSave.UseVisualStyleBackColor = true;
+            btnAuthorSave.UseVisualStyleBackColor = false;
             btnAuthorSave.Click += btnAuthorSave_Click;
             // 
             // label2
             // 
-            label2.Location = new Point(669, 27);
+            label2.ForeColor = Color.FromArgb(75, 54, 33);
+            label2.Location = new Point(781, 39);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(147, 36);
+            label2.Size = new Size(147, 48);
             label2.TabIndex = 0;
             label2.Text = "YAZAR LİSTESİ";
             // 
             // label4
             // 
-            label4.Location = new Point(53, 70);
+            label4.ForeColor = Color.FromArgb(75, 54, 33);
+            label4.Location = new Point(165, 96);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(147, 25);
+            label4.Size = new Size(147, 33);
             label4.TabIndex = 0;
             label4.Text = "YAZAR ADI";
             // 
             // txtAuthorName
             // 
-            txtAuthorName.Location = new Point(208, 66);
-            txtAuthorName.Margin = new Padding(4);
+            txtAuthorName.BackColor = Color.FromArgb(234, 216, 192);
+            txtAuthorName.Location = new Point(320, 91);
+            txtAuthorName.Margin = new Padding(4, 5, 4, 5);
             txtAuthorName.Name = "txtAuthorName";
-            txtAuthorName.Size = new Size(320, 29);
+            txtAuthorName.Size = new Size(320, 36);
             txtAuthorName.TabIndex = 4;
             txtAuthorName.TextChanged += txtAuthorName_TextChanged;
             // 
             // AuthorAddForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(934, 661);
+            BackColor = Color.FromArgb(245, 225, 200);
+            ClientSize = new Size(1234, 611);
             Controls.Add(txtAuthorName);
             Controls.Add(btnAuthorSave);
             Controls.Add(btnAuthorDelete);
@@ -132,8 +142,8 @@
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(label1);
-            Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            Margin = new Padding(4, 3, 4, 3);
+            Font = new Font("Segoe Print", 12F, FontStyle.Bold);
+            Margin = new Padding(4);
             Name = "AuthorAddForm";
             Text = "AuthorForm";
             Load += AuthorForm_Load;

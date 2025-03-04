@@ -32,76 +32,94 @@
             // 
             // btnGoStudentAddForm
             // 
+            btnGoStudentAddForm.BackColor = Color.FromArgb(139, 94, 60);
+            btnGoStudentAddForm.FlatStyle = FlatStyle.Flat;
             btnGoStudentAddForm.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnGoStudentAddForm.Location = new Point(402, 12);
+            btnGoStudentAddForm.ForeColor = Color.White;
+            btnGoStudentAddForm.Location = new Point(699, 12);
             btnGoStudentAddForm.Name = "btnGoStudentAddForm";
             btnGoStudentAddForm.Size = new Size(250, 40);
             btnGoStudentAddForm.TabIndex = 0;
             btnGoStudentAddForm.Text = "Öğrenci Ekleme Formunu Aç";
-            btnGoStudentAddForm.UseVisualStyleBackColor = true;
+            btnGoStudentAddForm.UseVisualStyleBackColor = false;
             btnGoStudentAddForm.Click += btnGoStudentAddForm_Click;
             // 
             // btnGoAuthorAddForm
             // 
-            btnGoAuthorAddForm.Location = new Point(658, 12);
+            btnGoAuthorAddForm.BackColor = Color.FromArgb(139, 94, 60);
+            btnGoAuthorAddForm.FlatStyle = FlatStyle.Flat;
+            btnGoAuthorAddForm.ForeColor = Color.White;
+            btnGoAuthorAddForm.Location = new Point(955, 12);
             btnGoAuthorAddForm.Name = "btnGoAuthorAddForm";
             btnGoAuthorAddForm.Size = new Size(250, 40);
             btnGoAuthorAddForm.TabIndex = 1;
             btnGoAuthorAddForm.Text = "Yazar Ekleme Formunu Aç";
-            btnGoAuthorAddForm.UseVisualStyleBackColor = true;
+            btnGoAuthorAddForm.UseVisualStyleBackColor = false;
             btnGoAuthorAddForm.Click += btnGoAuthorAddForm_Click;
             // 
             // btnGoBookAddForm
             // 
-            btnGoBookAddForm.Location = new Point(402, 58);
+            btnGoBookAddForm.BackColor = Color.FromArgb(139, 94, 60);
+            btnGoBookAddForm.FlatStyle = FlatStyle.Flat;
+            btnGoBookAddForm.ForeColor = Color.White;
+            btnGoBookAddForm.Location = new Point(699, 58);
             btnGoBookAddForm.Name = "btnGoBookAddForm";
             btnGoBookAddForm.Size = new Size(250, 40);
             btnGoBookAddForm.TabIndex = 2;
             btnGoBookAddForm.Text = "Kitap Ekleme Formunu Aç";
-            btnGoBookAddForm.UseVisualStyleBackColor = true;
+            btnGoBookAddForm.UseVisualStyleBackColor = false;
             btnGoBookAddForm.Click += btnGoBookAddForm_Click;
             // 
             // btnGoPublisherAddForm
             // 
-            btnGoPublisherAddForm.Location = new Point(658, 58);
+            btnGoPublisherAddForm.BackColor = Color.FromArgb(139, 94, 60);
+            btnGoPublisherAddForm.FlatStyle = FlatStyle.Flat;
+            btnGoPublisherAddForm.ForeColor = Color.White;
+            btnGoPublisherAddForm.Location = new Point(955, 58);
             btnGoPublisherAddForm.Name = "btnGoPublisherAddForm";
             btnGoPublisherAddForm.Size = new Size(250, 40);
             btnGoPublisherAddForm.TabIndex = 3;
             btnGoPublisherAddForm.Text = "Yayınevi Ekleme Formunu Aç";
-            btnGoPublisherAddForm.UseVisualStyleBackColor = true;
+            btnGoPublisherAddForm.UseVisualStyleBackColor = false;
             btnGoPublisherAddForm.Click += btnGoPublisherAddForm_Click;
             // 
             // btnGoLoanForm
             // 
+            btnGoLoanForm.BackColor = Color.FromArgb(139, 94, 60);
+            btnGoLoanForm.FlatStyle = FlatStyle.Flat;
+            btnGoLoanForm.ForeColor = Color.White;
             btnGoLoanForm.Location = new Point(62, 12);
             btnGoLoanForm.Name = "btnGoLoanForm";
             btnGoLoanForm.Size = new Size(250, 40);
             btnGoLoanForm.TabIndex = 4;
             btnGoLoanForm.Text = "Kitap Ver";
-            btnGoLoanForm.UseVisualStyleBackColor = true;
+            btnGoLoanForm.UseVisualStyleBackColor = false;
             btnGoLoanForm.Click += btnGoLoanForm_Click;
             // 
             // mainPanel
             // 
             mainPanel.Location = new Point(12, 133);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(950, 520);
+            mainPanel.Size = new Size(1250, 650);
             mainPanel.TabIndex = 5;
             // 
             // btnGoReturnForm
             // 
+            btnGoReturnForm.BackColor = Color.FromArgb(139, 94, 60);
+            btnGoReturnForm.FlatStyle = FlatStyle.Flat;
+            btnGoReturnForm.ForeColor = Color.White;
             btnGoReturnForm.Location = new Point(62, 58);
             btnGoReturnForm.Name = "btnGoReturnForm";
             btnGoReturnForm.Size = new Size(250, 40);
             btnGoReturnForm.TabIndex = 6;
             btnGoReturnForm.Text = "Kitap Al";
-            btnGoReturnForm.UseVisualStyleBackColor = true;
+            btnGoReturnForm.UseVisualStyleBackColor = false;
             btnGoReturnForm.Click += btnGoReturnForm_Click;
             // 
             // MainForm
             // 
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(984, 661);
+            BackColor = Color.FromArgb(245, 225, 200);
+            ClientSize = new Size(1279, 803);
             Controls.Add(btnGoReturnForm);
             Controls.Add(mainPanel);
             Controls.Add(btnGoLoanForm);
@@ -109,9 +127,8 @@
             Controls.Add(btnGoBookAddForm);
             Controls.Add(btnGoAuthorAddForm);
             Controls.Add(btnGoStudentAddForm);
-            Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            MaximumSize = new Size(1000, 700);
-            MinimumSize = new Size(1000, 700);
+            Font = new Font("Segoe Print", 12F, FontStyle.Bold);
+            ForeColor = Color.Black;
             Name = "MainForm";
             ResumeLayout(false);
         }

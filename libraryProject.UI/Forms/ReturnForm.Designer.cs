@@ -38,28 +38,32 @@
             // 
             // btnRetrun
             // 
-            btnRetrun.Font = new Font("Arial", 12F, FontStyle.Bold);
-            btnRetrun.ForeColor = Color.Green;
-            btnRetrun.Location = new Point(13, 447);
+            btnRetrun.BackColor = Color.FromArgb(139, 94, 60);
+            btnRetrun.FlatStyle = FlatStyle.Flat;
+            btnRetrun.Font = new Font("Segoe Print", 12F, FontStyle.Bold);
+            btnRetrun.ForeColor = Color.FromArgb(75, 54, 33);
+            btnRetrun.Location = new Point(13, 516);
             btnRetrun.Margin = new Padding(4);
             btnRetrun.Name = "btnRetrun";
-            btnRetrun.Size = new Size(893, 46);
+            btnRetrun.Size = new Size(1200, 45);
             btnRetrun.TabIndex = 13;
             btnRetrun.Text = "Kitabı Al";
-            btnRetrun.UseVisualStyleBackColor = true;
+            btnRetrun.UseVisualStyleBackColor = false;
             btnRetrun.Click += btnRetrun_Click;
             // 
             // txtStudentSearch
             // 
+            txtStudentSearch.BackColor = Color.FromArgb(234, 216, 192);
             txtStudentSearch.Location = new Point(13, 55);
             txtStudentSearch.Name = "txtStudentSearch";
-            txtStudentSearch.Size = new Size(420, 36);
+            txtStudentSearch.Size = new Size(320, 36);
             txtStudentSearch.TabIndex = 14;
             txtStudentSearch.TextChanged += txtStudentSearch_TextChanged;
             // 
             // txtBookSearch
             // 
-            txtBookSearch.Location = new Point(488, 55);
+            txtBookSearch.BackColor = Color.FromArgb(234, 216, 192);
+            txtBookSearch.Location = new Point(795, 55);
             txtBookSearch.Name = "txtBookSearch";
             txtBookSearch.Size = new Size(418, 36);
             txtBookSearch.TabIndex = 15;
@@ -67,18 +71,20 @@
             // 
             // lstList
             // 
+            lstList.BackColor = Color.FromArgb(234, 216, 192);
             lstList.FormattingEnabled = true;
             lstList.ItemHeight = 28;
-            lstList.Location = new Point(13, 109);
+            lstList.Location = new Point(13, 112);
             lstList.Name = "lstList";
-            lstList.Size = new Size(893, 256);
+            lstList.Size = new Size(1200, 340);
             lstList.TabIndex = 16;
             lstList.SelectedIndexChanged += lstList_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(185, 24);
+            label1.ForeColor = Color.FromArgb(75, 54, 33);
+            label1.Location = new Point(132, 24);
             label1.Name = "label1";
             label1.Size = new Size(89, 28);
             label1.TabIndex = 17;
@@ -87,7 +93,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(668, 24);
+            label2.ForeColor = Color.FromArgb(75, 54, 33);
+            label2.Location = new Point(988, 24);
             label2.Name = "label2";
             label2.Size = new Size(63, 28);
             label2.TabIndex = 17;
@@ -97,8 +104,8 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(934, 661);
+            BackColor = Color.FromArgb(245, 225, 200);
+            ClientSize = new Size(1234, 611);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(lstList);

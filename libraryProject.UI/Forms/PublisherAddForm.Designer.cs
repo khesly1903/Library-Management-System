@@ -42,109 +42,121 @@
             // 
             // label1
             // 
-            label1.Location = new Point(53, 70);
+            label1.ForeColor = Color.FromArgb(75, 54, 33);
+            label1.Location = new Point(165, 94);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(147, 28);
+            label1.Size = new Size(147, 37);
             label1.TabIndex = 0;
             label1.Text = "YAYINEVİ ADI";
             // 
             // label2
             // 
-            label2.Location = new Point(53, 107);
+            label2.ForeColor = Color.FromArgb(75, 54, 33);
+            label2.Location = new Point(165, 144);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(147, 28);
+            label2.Size = new Size(147, 37);
             label2.TabIndex = 0;
             label2.Text = "YAYINEVİ ADRESİ";
             // 
             // label3
             // 
-            label3.Location = new Point(53, 144);
+            label3.ForeColor = Color.FromArgb(75, 54, 33);
+            label3.Location = new Point(165, 193);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(301, 35);
+            label3.Size = new Size(301, 47);
             label3.TabIndex = 0;
             label3.Text = "İLETİŞİM NO";
             // 
             // txtPublisherName
             // 
-            txtPublisherName.Location = new Point(208, 66);
-            txtPublisherName.Margin = new Padding(4, 3, 4, 3);
+            txtPublisherName.BackColor = Color.FromArgb(234, 216, 192);
+            txtPublisherName.Location = new Point(320, 89);
+            txtPublisherName.Margin = new Padding(4);
             txtPublisherName.Multiline = true;
             txtPublisherName.Name = "txtPublisherName";
-            txtPublisherName.Size = new Size(320, 32);
+            txtPublisherName.Size = new Size(320, 41);
             txtPublisherName.TabIndex = 1;
             txtPublisherName.TextChanged += txtPublisherName_TextChanged;
             // 
             // txtPublisherAddress
             // 
-            txtPublisherAddress.Location = new Point(208, 103);
-            txtPublisherAddress.Margin = new Padding(4, 3, 4, 3);
+            txtPublisherAddress.BackColor = Color.FromArgb(234, 216, 192);
+            txtPublisherAddress.Location = new Point(320, 138);
+            txtPublisherAddress.Margin = new Padding(4);
             txtPublisherAddress.Multiline = true;
             txtPublisherAddress.Name = "txtPublisherAddress";
-            txtPublisherAddress.Size = new Size(320, 32);
+            txtPublisherAddress.Size = new Size(320, 41);
             txtPublisherAddress.TabIndex = 1;
             // 
             // txtContactNumber
             // 
-            txtContactNumber.Location = new Point(208, 140);
-            txtContactNumber.Margin = new Padding(4, 3, 4, 3);
+            txtContactNumber.BackColor = Color.FromArgb(234, 216, 192);
+            txtContactNumber.Location = new Point(320, 188);
+            txtContactNumber.Margin = new Padding(4);
             txtContactNumber.Multiline = true;
             txtContactNumber.Name = "txtContactNumber";
-            txtContactNumber.Size = new Size(320, 32);
+            txtContactNumber.Size = new Size(320, 41);
             txtContactNumber.TabIndex = 1;
             // 
             // lstPublisherList
             // 
+            lstPublisherList.BackColor = Color.FromArgb(234, 216, 192);
             lstPublisherList.FormattingEnabled = true;
-            lstPublisherList.ItemHeight = 21;
-            lstPublisherList.Location = new Point(568, 66);
-            lstPublisherList.Margin = new Padding(4, 3, 4, 3);
+            lstPublisherList.ItemHeight = 28;
+            lstPublisherList.Location = new Point(680, 89);
+            lstPublisherList.Margin = new Padding(4);
             lstPublisherList.Name = "lstPublisherList";
-            lstPublisherList.Size = new Size(320, 277);
+            lstPublisherList.Size = new Size(320, 368);
             lstPublisherList.TabIndex = 2;
             lstPublisherList.SelectedIndexChanged += lstPublisherList_SelectedIndexChanged;
             // 
             // btnPublisherDelete
             // 
-            btnPublisherDelete.ForeColor = Color.Red;
-            btnPublisherDelete.Location = new Point(471, 447);
-            btnPublisherDelete.Margin = new Padding(4, 3, 4, 3);
+            btnPublisherDelete.BackColor = Color.FromArgb(139, 94, 60);
+            btnPublisherDelete.FlatStyle = FlatStyle.Flat;
+            btnPublisherDelete.ForeColor = Color.FromArgb(75, 54, 33);
+            btnPublisherDelete.Location = new Point(680, 510);
+            btnPublisherDelete.Margin = new Padding(4);
             btnPublisherDelete.Name = "btnPublisherDelete";
-            btnPublisherDelete.Size = new Size(450, 46);
+            btnPublisherDelete.Size = new Size(515, 60);
             btnPublisherDelete.TabIndex = 3;
             btnPublisherDelete.Text = "SİL";
-            btnPublisherDelete.UseVisualStyleBackColor = true;
+            btnPublisherDelete.UseVisualStyleBackColor = false;
             btnPublisherDelete.Click += btnPublisherDelete_Click;
             // 
             // btnPublisherSave
             // 
-            btnPublisherSave.ForeColor = Color.Green;
-            btnPublisherSave.Location = new Point(13, 447);
-            btnPublisherSave.Margin = new Padding(4, 3, 4, 3);
+            btnPublisherSave.BackColor = Color.FromArgb(139, 94, 60);
+            btnPublisherSave.FlatStyle = FlatStyle.Flat;
+            btnPublisherSave.ForeColor = Color.FromArgb(75, 54, 33);
+            btnPublisherSave.Location = new Point(28, 510);
+            btnPublisherSave.Margin = new Padding(4);
             btnPublisherSave.Name = "btnPublisherSave";
-            btnPublisherSave.Size = new Size(450, 46);
+            btnPublisherSave.Size = new Size(515, 60);
             btnPublisherSave.TabIndex = 3;
             btnPublisherSave.Text = "KAYDET";
-            btnPublisherSave.UseVisualStyleBackColor = true;
+            btnPublisherSave.UseVisualStyleBackColor = false;
             btnPublisherSave.Click += btnPublisherSave_Click;
             // 
             // label4
             // 
-            label4.Location = new Point(661, 28);
+            label4.ForeColor = Color.FromArgb(75, 54, 33);
+            label4.Location = new Point(773, 38);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(144, 35);
+            label4.Size = new Size(144, 47);
             label4.TabIndex = 0;
             label4.Text = "YAYINEVİ LİSTESİ";
             // 
             // PublisherAddForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(934, 661);
+            BackColor = Color.FromArgb(245, 225, 200);
+            ClientSize = new Size(1234, 611);
             Controls.Add(btnPublisherSave);
             Controls.Add(btnPublisherDelete);
             Controls.Add(lstPublisherList);
@@ -155,8 +167,8 @@
             Controls.Add(label2);
             Controls.Add(label4);
             Controls.Add(label1);
-            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            Margin = new Padding(4, 3, 4, 3);
+            Font = new Font("Segoe Print", 12F, FontStyle.Bold);
+            Margin = new Padding(4);
             Name = "PublisherAddForm";
             Text = "PublisherForm";
             Load += PublisherForm_Load;

@@ -51,7 +51,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label1.Location = new Point(53, 70);
+            label1.ForeColor = Color.FromArgb(75, 54, 33);
+            label1.Location = new Point(165, 147);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(99, 28);
@@ -61,7 +62,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(53, 144);
+            label2.ForeColor = Color.FromArgb(75, 54, 33);
+            label2.Location = new Point(165, 221);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(57, 28);
@@ -71,7 +73,8 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(53, 107);
+            label3.ForeColor = Color.FromArgb(75, 54, 33);
+            label3.Location = new Point(165, 184);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(52, 28);
@@ -81,7 +84,8 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(53, 181);
+            label4.ForeColor = Color.FromArgb(75, 54, 33);
+            label4.Location = new Point(165, 258);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(88, 28);
@@ -91,7 +95,8 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(53, 218);
+            label5.ForeColor = Color.FromArgb(75, 54, 33);
+            label5.Location = new Point(165, 295);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(39, 28);
@@ -101,7 +106,8 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(53, 255);
+            label6.ForeColor = Color.FromArgb(75, 54, 33);
+            label6.Location = new Point(165, 332);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(47, 28);
@@ -110,7 +116,8 @@
             // 
             // txtBookName
             // 
-            txtBookName.Location = new Point(208, 66);
+            txtBookName.BackColor = Color.FromArgb(234, 216, 192);
+            txtBookName.Location = new Point(320, 143);
             txtBookName.Name = "txtBookName";
             txtBookName.Size = new Size(320, 36);
             txtBookName.TabIndex = 6;
@@ -118,17 +125,19 @@
             // 
             // txtBookISBN
             // 
-            txtBookISBN.Location = new Point(208, 103);
+            txtBookISBN.BackColor = Color.FromArgb(234, 216, 192);
+            txtBookISBN.Location = new Point(320, 180);
             txtBookISBN.Name = "txtBookISBN";
             txtBookISBN.Size = new Size(320, 36);
             txtBookISBN.TabIndex = 7;
             // 
             // cmbBookAuthor
             // 
+            cmbBookAuthor.BackColor = Color.FromArgb(234, 216, 192);
             cmbBookAuthor.DropDownHeight = 200;
             cmbBookAuthor.FormattingEnabled = true;
             cmbBookAuthor.IntegralHeight = false;
-            cmbBookAuthor.Location = new Point(208, 140);
+            cmbBookAuthor.Location = new Point(320, 217);
             cmbBookAuthor.Name = "cmbBookAuthor";
             cmbBookAuthor.Size = new Size(320, 36);
             cmbBookAuthor.TabIndex = 8;
@@ -136,10 +145,11 @@
             // 
             // cmbBookPublisher
             // 
+            cmbBookPublisher.BackColor = Color.FromArgb(234, 216, 192);
             cmbBookPublisher.DropDownHeight = 200;
             cmbBookPublisher.FormattingEnabled = true;
             cmbBookPublisher.IntegralHeight = false;
-            cmbBookPublisher.Location = new Point(208, 177);
+            cmbBookPublisher.Location = new Point(320, 254);
             cmbBookPublisher.Name = "cmbBookPublisher";
             cmbBookPublisher.Size = new Size(320, 36);
             cmbBookPublisher.TabIndex = 9;
@@ -147,42 +157,48 @@
             // 
             // numBookStock
             // 
-            numBookStock.Location = new Point(208, 251);
+            numBookStock.BackColor = Color.FromArgb(234, 216, 192);
+            numBookStock.Location = new Point(320, 328);
             numBookStock.Name = "numBookStock";
             numBookStock.Size = new Size(320, 36);
             numBookStock.TabIndex = 10;
             // 
             // btnAdd
             // 
+            btnAdd.BackColor = Color.FromArgb(139, 94, 60);
+            btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Arial", 12F, FontStyle.Bold);
-            btnAdd.ForeColor = Color.Green;
-            btnAdd.Location = new Point(13, 447);
+            btnAdd.ForeColor = Color.FromArgb(75, 54, 33);
+            btnAdd.Location = new Point(28, 510);
             btnAdd.Margin = new Padding(4);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(450, 46);
+            btnAdd.Size = new Size(515, 60);
             btnAdd.TabIndex = 12;
             btnAdd.Text = "EKLE";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
             // btnDelete
             // 
+            btnDelete.BackColor = Color.FromArgb(139, 94, 60);
+            btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Arial", 12F, FontStyle.Bold);
-            btnDelete.ForeColor = Color.Red;
-            btnDelete.Location = new Point(471, 447);
+            btnDelete.ForeColor = Color.FromArgb(75, 54, 33);
+            btnDelete.Location = new Point(680, 510);
             btnDelete.Margin = new Padding(4);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(450, 46);
+            btnDelete.Size = new Size(515, 60);
             btnDelete.TabIndex = 13;
             btnDelete.Text = "SİL";
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
             // lstList
             // 
+            lstList.BackColor = Color.FromArgb(234, 216, 192);
             lstList.FormattingEnabled = true;
             lstList.ItemHeight = 28;
-            lstList.Location = new Point(568, 66);
+            lstList.Location = new Point(680, 143);
             lstList.Name = "lstList";
             lstList.Size = new Size(320, 256);
             lstList.TabIndex = 14;
@@ -190,10 +206,11 @@
             // 
             // cmbBookShelf
             // 
+            cmbBookShelf.BackColor = Color.FromArgb(234, 216, 192);
             cmbBookShelf.DropDownHeight = 200;
             cmbBookShelf.FormattingEnabled = true;
             cmbBookShelf.IntegralHeight = false;
-            cmbBookShelf.Location = new Point(208, 214);
+            cmbBookShelf.Location = new Point(320, 291);
             cmbBookShelf.Name = "cmbBookShelf";
             cmbBookShelf.Size = new Size(320, 36);
             cmbBookShelf.TabIndex = 15;
@@ -201,7 +218,8 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(666, 35);
+            label7.ForeColor = Color.FromArgb(75, 54, 33);
+            label7.Location = new Point(778, 112);
             label7.Name = "label7";
             label7.Size = new Size(131, 28);
             label7.TabIndex = 16;
@@ -211,8 +229,8 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(934, 661);
+            BackColor = Color.FromArgb(245, 225, 200);
+            ClientSize = new Size(1234, 611);
             Controls.Add(label7);
             Controls.Add(cmbBookShelf);
             Controls.Add(lstList);

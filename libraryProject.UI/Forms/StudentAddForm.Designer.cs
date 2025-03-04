@@ -42,110 +42,122 @@
             // 
             // label1
             // 
-            label1.Location = new Point(53, 70);
+            label1.ForeColor = Color.FromArgb(75, 54, 33);
+            label1.Location = new Point(165, 96);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(187, 29);
+            label1.Size = new Size(187, 39);
             label1.TabIndex = 0;
             label1.Text = "ÖĞRENCİ ADI";
             // 
             // label2
             // 
-            label2.Location = new Point(53, 107);
+            label2.ForeColor = Color.FromArgb(75, 54, 33);
+            label2.Location = new Point(165, 146);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(157, 32);
+            label2.Size = new Size(157, 43);
             label2.TabIndex = 0;
             label2.Text = "ÖĞRENCİ SOYADI";
             // 
             // label3
             // 
-            label3.Location = new Point(53, 144);
+            label3.ForeColor = Color.FromArgb(75, 54, 33);
+            label3.Location = new Point(165, 195);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(261, 36);
+            label3.Size = new Size(261, 48);
             label3.TabIndex = 0;
             label3.Text = "ÖĞRENCİ NO";
             // 
             // btnStudentDelete
             // 
-            btnStudentDelete.ForeColor = Color.Red;
-            btnStudentDelete.Location = new Point(471, 447);
-            btnStudentDelete.Margin = new Padding(4, 3, 4, 3);
+            btnStudentDelete.BackColor = Color.FromArgb(139, 94, 60);
+            btnStudentDelete.FlatStyle = FlatStyle.Flat;
+            btnStudentDelete.ForeColor = Color.FromArgb(75, 54, 33);
+            btnStudentDelete.Location = new Point(680, 510);
+            btnStudentDelete.Margin = new Padding(4);
             btnStudentDelete.Name = "btnStudentDelete";
-            btnStudentDelete.Size = new Size(450, 46);
+            btnStudentDelete.Size = new Size(515, 60);
             btnStudentDelete.TabIndex = 1;
             btnStudentDelete.Text = "SİL";
-            btnStudentDelete.UseVisualStyleBackColor = true;
+            btnStudentDelete.UseVisualStyleBackColor = false;
             btnStudentDelete.Click += btnStudentDelete_Click;
             // 
             // btnStudentSave
             // 
-            btnStudentSave.ForeColor = Color.Green;
-            btnStudentSave.Location = new Point(13, 447);
-            btnStudentSave.Margin = new Padding(4, 3, 4, 3);
+            btnStudentSave.BackColor = Color.FromArgb(139, 94, 60);
+            btnStudentSave.FlatStyle = FlatStyle.Flat;
+            btnStudentSave.ForeColor = Color.FromArgb(75, 54, 33);
+            btnStudentSave.Location = new Point(28, 510);
+            btnStudentSave.Margin = new Padding(4);
             btnStudentSave.Name = "btnStudentSave";
-            btnStudentSave.Size = new Size(450, 46);
+            btnStudentSave.Size = new Size(515, 60);
             btnStudentSave.TabIndex = 1;
             btnStudentSave.Text = "KAYDET";
-            btnStudentSave.UseVisualStyleBackColor = true;
+            btnStudentSave.UseVisualStyleBackColor = false;
             btnStudentSave.Click += btnStudentSave_Click;
             // 
             // txtStudentName
             // 
-            txtStudentName.Location = new Point(208, 66);
-            txtStudentName.Margin = new Padding(4, 3, 4, 3);
+            txtStudentName.BackColor = Color.FromArgb(234, 216, 192);
+            txtStudentName.Location = new Point(320, 91);
+            txtStudentName.Margin = new Padding(4);
             txtStudentName.Multiline = true;
             txtStudentName.Name = "txtStudentName";
-            txtStudentName.Size = new Size(320, 32);
+            txtStudentName.Size = new Size(320, 41);
             txtStudentName.TabIndex = 2;
             txtStudentName.TextChanged += txtStudentName_TextChanged;
             // 
             // txtStudentSurname
             // 
-            txtStudentSurname.Location = new Point(208, 103);
-            txtStudentSurname.Margin = new Padding(4, 3, 4, 3);
+            txtStudentSurname.BackColor = Color.FromArgb(234, 216, 192);
+            txtStudentSurname.Location = new Point(320, 140);
+            txtStudentSurname.Margin = new Padding(4);
             txtStudentSurname.Multiline = true;
             txtStudentSurname.Name = "txtStudentSurname";
-            txtStudentSurname.Size = new Size(320, 32);
+            txtStudentSurname.Size = new Size(320, 41);
             txtStudentSurname.TabIndex = 2;
             // 
             // txtStudentNumber
             // 
-            txtStudentNumber.Location = new Point(208, 140);
-            txtStudentNumber.Margin = new Padding(4, 3, 4, 3);
+            txtStudentNumber.BackColor = Color.FromArgb(234, 216, 192);
+            txtStudentNumber.Location = new Point(320, 190);
+            txtStudentNumber.Margin = new Padding(4);
             txtStudentNumber.Multiline = true;
             txtStudentNumber.Name = "txtStudentNumber";
-            txtStudentNumber.Size = new Size(320, 32);
+            txtStudentNumber.Size = new Size(320, 41);
             txtStudentNumber.TabIndex = 2;
             // 
             // lstStudentList
             // 
+            lstStudentList.BackColor = Color.FromArgb(234, 216, 192);
             lstStudentList.FormattingEnabled = true;
-            lstStudentList.ItemHeight = 21;
-            lstStudentList.Location = new Point(568, 66);
-            lstStudentList.Margin = new Padding(4, 3, 4, 3);
+            lstStudentList.ItemHeight = 28;
+            lstStudentList.Location = new Point(680, 91);
+            lstStudentList.Margin = new Padding(4);
             lstStudentList.Name = "lstStudentList";
-            lstStudentList.Size = new Size(320, 277);
+            lstStudentList.Size = new Size(320, 368);
             lstStudentList.TabIndex = 3;
             lstStudentList.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // label4
             // 
-            label4.Location = new Point(660, 27);
+            label4.ForeColor = Color.FromArgb(75, 54, 33);
+            label4.Location = new Point(772, 39);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(146, 36);
+            label4.Size = new Size(146, 48);
             label4.TabIndex = 0;
             label4.Text = "ÖĞRENCİ LİSTESİ";
             label4.Click += label4_Click;
             // 
             // StudentAddForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(934, 661);
+            BackColor = Color.FromArgb(245, 225, 200);
+            ClientSize = new Size(1234, 611);
             Controls.Add(lstStudentList);
             Controls.Add(txtStudentSurname);
             Controls.Add(txtStudentNumber);
@@ -156,8 +168,8 @@
             Controls.Add(label2);
             Controls.Add(label4);
             Controls.Add(label1);
-            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            Margin = new Padding(4, 3, 4, 3);
+            Font = new Font("Segoe Print", 12F, FontStyle.Bold);
+            Margin = new Padding(4);
             Name = "StudentAddForm";
             Text = "StudentAddForm";
             Load += StudentAddForm_Load;
