@@ -1,0 +1,17 @@
+
+
+1- bugünden itibaren 1 aylýk süreç içinde loan tarihi alýnabilir, 1 ay sonrasýna randevu oluþturulamaz
+2- ayný gün içinde teslim alýnabilir
+3- öðrenci numarasýna sýnýr getirildi
+4- book validasyonlarý düzenlendi
+5- getiriyor checkboxa göre - konuþuldu
+6- ???? ben sildim
+7- ???? öyle bir hata almadým, validasyon düzenlemeleri sonrasý düzelmiþ olabilir
+8- ???? böyle de bir hata almadým, validasyon düzenlemeleri sonrasý düzelmiþ olabilir
+9- ayný ýsbn VEYA ada sahip kitap eklenemez
+10- ayný rafa kitap eklenemez
+
+
+
+kitap silme iþlemi
+silince hepsini siliyor

@@ -34,6 +34,8 @@
             lstList = new ListBox();
             label1 = new Label();
             label2 = new Label();
+            btnStudentSearchClear = new Button();
+            btnBookSearchClear = new Button();
             SuspendLayout();
             // 
             // btnRetrun
@@ -100,12 +102,36 @@
             label2.TabIndex = 17;
             label2.Text = "KİTAP";
             // 
+            // btnStudentSearchClear
+            // 
+            btnStudentSearchClear.BackColor = Color.Red;
+            btnStudentSearchClear.Location = new Point(339, 55);
+            btnStudentSearchClear.Name = "btnStudentSearchClear";
+            btnStudentSearchClear.Size = new Size(35, 35);
+            btnStudentSearchClear.TabIndex = 18;
+            btnStudentSearchClear.Text = "X";
+            btnStudentSearchClear.UseVisualStyleBackColor = false;
+            btnStudentSearchClear.Click += btnStudentSearchClear_Click;
+            // 
+            // btnBookSearchClear
+            // 
+            btnBookSearchClear.BackColor = Color.Red;
+            btnBookSearchClear.Location = new Point(753, 54);
+            btnBookSearchClear.Name = "btnBookSearchClear";
+            btnBookSearchClear.Size = new Size(36, 36);
+            btnBookSearchClear.TabIndex = 19;
+            btnBookSearchClear.Text = "X";
+            btnBookSearchClear.UseVisualStyleBackColor = false;
+            btnBookSearchClear.Click += btnBookSearchClear_Click;
+            // 
             // ReturnForm
             // 
             AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 225, 200);
             ClientSize = new Size(1234, 611);
+            Controls.Add(btnBookSearchClear);
+            Controls.Add(btnStudentSearchClear);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(lstList);
@@ -129,5 +155,7 @@
         private ListBox lstList;
         private Label label1;
         private Label label2;
+        private Button btnStudentSearchClear;
+        private Button btnBookSearchClear;
     }
 }

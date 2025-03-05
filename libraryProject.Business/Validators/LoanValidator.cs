@@ -16,12 +16,14 @@ namespace libraryProject.Business.Validators
 
             // ReturnDate, LoanDate'den sonra olmalıdır
             RuleFor(l => l.RetrunDate)
-                .GreaterThan(l => l.LoanDate).WithMessage("Teslim tarihi, ödünç alma tarihinden sonra olmalıdır.")
+                .GreaterThanOrEqualTo(l => l.LoanDate).WithMessage("Teslim tarihi, ödünç alma tarihinden sonra olmalıdır.")
                 .LessThanOrEqualTo(l => l.LoanDate.AddDays(15)).WithMessage("Teslim tarihi, ödünç alma tarihinden 15 günden fazla olamaz.");
 
             // ödünç alma tarihi bugünün tarihinden geride olamaz
             RuleFor(l => l.LoanDate.Date)
-                .GreaterThanOrEqualTo(System.DateTime.Now.Date).WithMessage("Ödünç alma tarihi bugünün tarihinden geride olamaz.");
+                .GreaterThanOrEqualTo(System.DateTime.Now.Date).WithMessage("Ödünç alma tarihi bugünün tarihinden geride olamaz.")
+                .LessThanOrEqualTo(l => l.LoanDate.AddDays(30)).WithMessage("1 aylık tarih seçimi yapılabilir");
+                           
 
             // Student boş olamaz
             RuleFor(l => l.Student)

@@ -58,5 +58,11 @@ namespace libraryProject.UI.Forms
             var returnForm = new ReturnForm();
             OpenFormInPanel(returnForm);
         }
+
+        private void btnGoReport_Click(object sender, EventArgs e)
+        {
+            var reportForm = new LoanReport();
+            OpenFormInPanel(reportForm);
+        }
     }
 }

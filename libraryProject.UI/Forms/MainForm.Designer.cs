@@ -28,6 +28,7 @@
             btnGoLoanForm = new Button();
             mainPanel = new Panel();
             btnGoReturnForm = new Button();
+            btnGoReport = new Button();
             SuspendLayout();
             // 
             // btnGoStudentAddForm
@@ -116,10 +117,21 @@
             btnGoReturnForm.UseVisualStyleBackColor = false;
             btnGoReturnForm.Click += btnGoReturnForm_Click;
             // 
+            // btnGoReport
+            // 
+            btnGoReport.Location = new Point(434, 12);
+            btnGoReport.Name = "btnGoReport";
+            btnGoReport.Size = new Size(185, 89);
+            btnGoReport.TabIndex = 7;
+            btnGoReport.Text = "Rapor";
+            btnGoReport.UseVisualStyleBackColor = true;
+            btnGoReport.Click += btnGoReport_Click;
+            // 
             // MainForm
             // 
             BackColor = Color.FromArgb(245, 225, 200);
             ClientSize = new Size(1279, 803);
+            Controls.Add(btnGoReport);
             Controls.Add(btnGoReturnForm);
             Controls.Add(mainPanel);
             Controls.Add(btnGoLoanForm);
@@ -134,5 +146,6 @@
         }
 
         private Button btnGoReturnForm;
+        private Button btnGoReport;
     }
 }

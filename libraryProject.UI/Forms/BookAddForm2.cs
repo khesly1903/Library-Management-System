@@ -63,9 +63,21 @@ namespace libraryProject.UI.Forms
                 if (selected == null)
                 {
                     string bookControl = txtBookName.Text;
-                    if (_bookService.IfEntityExists(s => s.BookName == bookControl))
+                    string bookControl2 = txtBookISBN.Text;
+                    string bookControl3 = cmbBookShelf.Text;
+                    if (_bookService.IfEntityExists(s => s.BookName == bookControl) )
                     {
-                        throw new Exception("Kitap zaten mevcut");
+                        throw new Exception("Bu kitap adı zaten mevcut");
+                    }
+
+                    if (_bookService.IfEntityExists(b => b.BookISBN == bookControl2))
+                    {
+                        throw new Exception("Bu ISBN zaten mevcut");
+                    }
+
+                    if (_bookService.IfEntityExists(b=> b.Shelf.ShelfDescription == bookControl3))
+                    {
+                        throw new Exception("Bu rafta bir kitap var");
                     }
 
                     Book book = new Book()
@@ -77,10 +89,12 @@ namespace libraryProject.UI.Forms
                         Publiser = (Publisher)cmbBookPublisher.SelectedItem,
                         Shelf = (Shelf)cmbBookShelf.SelectedItem
                     };
-                    Author book_author = book.Author;
-                    book_author.Books.Add(book);
+                   
 
                     _bookService.Create(book);
+
+                    Author book_author = book.Author;
+                    book_author.Books.Add(book);
                     MessageBox.Show("Kitap Eklendi");
                     ClearForm();
 
@@ -101,8 +115,8 @@ namespace libraryProject.UI.Forms
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show($"Error: {ex.Message}\nInner Exception: {ex.InnerException?.Message}");
+                //\nInner Exception: {ex.InnerException?.Message}
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 

@@ -39,6 +39,8 @@
             clndrEndDate = new MonthCalendar();
             clndrStartDate = new MonthCalendar();
             btnLoan = new Button();
+            btnStudentSearchClear = new Button();
+            btnBookSearchClear = new Button();
             SuspendLayout();
             // 
             // lblStudentList
@@ -167,12 +169,36 @@
             btnLoan.UseVisualStyleBackColor = false;
             btnLoan.Click += btnLoan_Click;
             // 
+            // btnStudentSearchClear
+            // 
+            btnStudentSearchClear.BackColor = Color.Red;
+            btnStudentSearchClear.Location = new Point(440, 55);
+            btnStudentSearchClear.Name = "btnStudentSearchClear";
+            btnStudentSearchClear.Size = new Size(35, 35);
+            btnStudentSearchClear.TabIndex = 8;
+            btnStudentSearchClear.Text = "X";
+            btnStudentSearchClear.UseVisualStyleBackColor = false;
+            btnStudentSearchClear.Click += btnStudentSearchClear_Click;
+            // 
+            // btnBookSearchClear
+            // 
+            btnBookSearchClear.BackColor = Color.Red;
+            btnBookSearchClear.Location = new Point(752, 55);
+            btnBookSearchClear.Name = "btnBookSearchClear";
+            btnBookSearchClear.Size = new Size(36, 36);
+            btnBookSearchClear.TabIndex = 9;
+            btnBookSearchClear.Text = "X";
+            btnBookSearchClear.UseVisualStyleBackColor = false;
+            btnBookSearchClear.Click += btnBookSearchClear_Click;
+            // 
             // LoanForm
             // 
             AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 225, 200);
             ClientSize = new Size(1250, 650);
+            Controls.Add(btnBookSearchClear);
+            Controls.Add(btnStudentSearchClear);
             Controls.Add(btnLoan);
             Controls.Add(clndrStartDate);
             Controls.Add(clndrEndDate);
@@ -208,5 +234,7 @@
         private MonthCalendar clndrEndDate;
         private MonthCalendar clndrStartDate;
         private Button btnLoan;
+        private Button btnStudentSearchClear;
+        private Button btnBookSearchClear;
     }
 }

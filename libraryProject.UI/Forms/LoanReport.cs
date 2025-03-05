@@ -44,7 +44,7 @@ namespace libraryProject.UI.Forms
 
         private void LoanReport_Load(object sender, EventArgs e)
         {
-            GetAllLoans();
+            GetAllLoansWithRemainingDays();
         }
 
         private void GetAllLoans()
@@ -54,18 +54,85 @@ namespace libraryProject.UI.Forms
             foreach (var loan in loans)
             {
                 Loan current_loan = _loanService.GetById(loan.Id);
-                Student loan_student = _studentService.GetById(loan.Student.Id);
-                Book loan_book = _bookService.GetById(loan.Book.Id);
-                string loan_date = loan.LoanDate.ToShortDateString();
-                string retrun_date = loan.RetrunDate.ToShortDateString();
+                //Student loan_student = _studentService.GetById(loan.Student.Id);
+                //Book loan_book = _bookService.GetById(loan.Book.Id);
+                //string loan_date = loan.LoanDate.ToShortDateString();
+                //string retrun_date = loan.RetrunDate.ToShortDateString();
                 //lstList.Items.Add($"{loan_student} # {loan_book} # {loan_date} # {retrun_date}");
 
-                if (loan.IsActive == false)
-                {
-                    lstReport.Items.Add(loan);
-                }
-                
+                lstReport.Items.Add(loan);
+
+
             }
+        }
+
+        private List<Loan> GetAllLoansList()
+        {
+
+            var loans = _loanService.GetAll().ToList();
+            List<Loan> loanList = new List<Loan>();
+            foreach (var loan in loans)
+            {
+                Loan current_loan = _loanService.GetById(loan.Id);
+                loanList.Add(current_loan);
+            }
+            return loanList;
+
+        }
+
+
+        private void GetAllStudentsByHighestLoan()
+        {
+            lstReport.Items.Clear();
+            var loans = GetAllLoansList();
+
+            var studentLoanCounts = loans
+                .GroupBy(l => l.Student)
+                .Select(g => new
+                {
+                    Student = g.Key,
+                    LoanCount = g.Count()
+                })
+                .OrderByDescending(x => x.LoanCount)
+                .ToList();
+
+            foreach (var studentLoan in studentLoanCounts)
+            {
+                lstReport.Items.Add($"{studentLoan.Student.StudentName} {studentLoan.Student.StudentSurname} - {studentLoan.LoanCount} ");
+            }
+        }
+
+
+
+        private void GetAllLoansWithRemainingDays()
+        {
+            lstReport.Items.Clear();
+            var loans = GetAllLoansList().Where(l => !l.IsActive).ToList();
+
+            var loanWithRemainingDays = loans
+                .Select(l => new
+                {
+                    Student = l.Student,
+                    Book = l.Book,
+                    RemainingDays = (l.RetrunDate - DateTime.Now).Days
+                })
+                .OrderBy(x => x.RemainingDays)
+                .ToList();
+
+            foreach (var loan in loanWithRemainingDays)
+            {
+                lstReport.Items.Add($"{loan.Student.StudentName} {loan.Student.StudentSurname} - {loan.Book.BookName} - {loan.RemainingDays} days left");
+            }
+        }
+
+        private void btnDueDateCheck_Click(object sender, EventArgs e)
+        {
+            GetAllLoansWithRemainingDays();
+        }
+
+        private void btnStudentHighestCheck_Click(object sender, EventArgs e)
+        {
+            GetAllStudentsByHighestLoan();
         }
     }
 }

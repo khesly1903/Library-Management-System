@@ -19,7 +19,8 @@ namespace libraryProject.Business.Validators
 
             RuleFor(s => s.StudentNumber)
             .NotEmpty().WithMessage("Öğrenci numarası zorunludur.")
-            .Matches(@"^\d+$").WithMessage("Öğrenci numarası sadece sayılardan oluşmalıdır.");
+            .Matches(@"^\d+$").WithMessage("Öğrenci numarası sadece sayılardan oluşmalıdır.")
+            .Length(10).WithMessage("Öğrenci numarası 10 haneli olmalıdır");
             
 
         }

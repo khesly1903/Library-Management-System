@@ -124,7 +124,7 @@ namespace libraryProject.UI.Forms
         }
 
 
-        
+
 
         private void lstList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -133,19 +133,33 @@ namespace libraryProject.UI.Forms
                 selectedLoan = loan;
             }
 
-            
+
         }
 
         private void btnRetrun_Click(object sender, EventArgs e)
         {
             Loan loan = _loanService.GetById(selectedLoan.Id);
+
             loan.Book.TotalCopies++;
             loan.IsActive = true;
 
+            selectedLoan.Student.StudentCurrentLoanCount--;
+
             _loanService.Update(loan);
+            _studentService.Update(selectedLoan.Student);
 
             MessageBox.Show("İşlem başarıyla tamamlandı");
             GetAllLoans();
+        }
+
+        private void btnStudentSearchClear_Click(object sender, EventArgs e)
+        {
+            txtStudentSearch.Text = "";
+        }
+
+        private void btnBookSearchClear_Click(object sender, EventArgs e)
+        {
+            txtBookSearch.Text = "";
         }
     }
 }

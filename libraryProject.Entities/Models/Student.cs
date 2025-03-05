@@ -14,6 +14,9 @@ namespace libraryProject.Entities.Models
         public string? StudentNumber { get; set; }
 
 
+        public int StudentCurrentLoanCount { get; set; }
+        public int StudentTotolLoanCount { get; set; }
+
         //referans bağlantılar
         public ICollection<Loan>? Loan { get; set; }
 
