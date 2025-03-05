@@ -33,7 +33,9 @@ namespace libraryProject.UI
                 {
 
                     string studentName = txtStudentName.Text;
-                    if (_studentService.IfEntityExists(s => s.StudentName == studentName))
+                    string studentSurname = txtStudentSurname.Text;
+                    string studentNumber = txtStudentNumber.Text;
+                    if (_studentService.IfEntityExists(s => s.StudentName == studentName) && _studentService.IfEntityExists(s => s.StudentSurname == studentSurname) && _studentService.IfEntityExists(s => s.StudentNumber == studentNumber))
                     {
                         throw new Exception("Öğrenci zaten mevcut");
                     }
@@ -58,7 +60,7 @@ namespace libraryProject.UI
                     selected.StudentNumber = txtStudentNumber.Text;
                     _studentService.Update(selected);
                     GetAllStudents();
-                    MessageBox.Show("İşlem başarılı");
+                    MessageBox.Show("Güncellendi");
                     ClearForm();
                 }
             }
