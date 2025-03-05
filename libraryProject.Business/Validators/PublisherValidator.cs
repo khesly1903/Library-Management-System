@@ -11,7 +11,8 @@ namespace libraryProject.Business.Validators
         {
             // PublisherName boş olamaz
             RuleFor(p => p.PublisherName)
-                .NotEmpty().WithMessage("Yayınevi adı gereklidir.");
+                .NotEmpty().WithMessage("Yayınevi adı gereklidir.")
+                .Matches(@"^[a-zA-ZÇİÜĞŞÖçüğşöı\s]+$").WithMessage("Yayınevi adı sadece harf içerebilir, sayı ve özel karakter içeremez.");
 
             // ContactNumber 10 haneli olmalı
             RuleFor(p => p.ContactNumber)

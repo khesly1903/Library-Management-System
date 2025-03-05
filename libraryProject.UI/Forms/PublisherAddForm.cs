@@ -61,7 +61,7 @@ namespace libraryProject.UI.Forms
                     selected.Address = txtPublisherAddress.Text;
                     _publisherService.Update(selected);
                     GetAllPublisher();
-                    MessageBox.Show("işlem başarılı");
+                    MessageBox.Show("Güncellendi");
                     ClearForm();
                 }
             }

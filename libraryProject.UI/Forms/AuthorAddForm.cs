@@ -60,7 +60,7 @@ namespace libraryProject.UI.Forms
                     selected.Surname = txtAuthorSurname.Text;
                     _authorService.Update(selected);
                     GetAllAuthor();
-                    MessageBox.Show("İşlem başarılı");
+                    MessageBox.Show("Güncellendi");
                     ClearForm();
                 }
             }
