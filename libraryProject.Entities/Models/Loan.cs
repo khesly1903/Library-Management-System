@@ -12,8 +12,9 @@ namespace libraryProject.Entities.Models
         public DateTime LoanDate { get; set; }
         public DateTime RetrunDate { get; set; }
 
+        public bool IsActive { get; set; } = false;
         // referans bağlantılar
-        
+
         public Student? Student { get; set; }
 
         public Book? Book { get; set; }

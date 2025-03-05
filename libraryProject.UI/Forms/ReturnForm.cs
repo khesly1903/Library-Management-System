@@ -51,7 +51,12 @@ namespace libraryProject.UI.Forms
                 string loan_date = loan.LoanDate.ToShortDateString();
                 string retrun_date = loan.RetrunDate.ToShortDateString();
                 //lstList.Items.Add($"{loan_student} # {loan_book} # {loan_date} # {retrun_date}");
-                lstList.Items.Add(loan);
+
+                if (loan.IsActive == false)
+                {
+                    lstList.Items.Add(loan);
+                }
+
             }
         }
 
@@ -135,8 +140,9 @@ namespace libraryProject.UI.Forms
         {
             Loan loan = _loanService.GetById(selectedLoan.Id);
             loan.Book.TotalCopies++;
+            loan.IsActive = true;
 
-            _loanService.Delete(loan.Id);
+            _loanService.Update(loan);
 
             MessageBox.Show("İşlem başarıyla tamamlandı");
             GetAllLoans();
