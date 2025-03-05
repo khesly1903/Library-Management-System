@@ -34,7 +34,7 @@
             // 
             btnGoStudentAddForm.BackColor = Color.FromArgb(139, 94, 60);
             btnGoStudentAddForm.FlatStyle = FlatStyle.Flat;
-            btnGoStudentAddForm.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnGoStudentAddForm.Font = new Font("Segoe Print", 12F, FontStyle.Bold);
             btnGoStudentAddForm.ForeColor = Color.White;
             btnGoStudentAddForm.Location = new Point(699, 12);
             btnGoStudentAddForm.Name = "btnGoStudentAddForm";
