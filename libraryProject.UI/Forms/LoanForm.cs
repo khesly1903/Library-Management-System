@@ -216,7 +216,8 @@ namespace libraryProject.UI.Forms
                             studentLoanCount++;
                         }
                     }
-                    
+
+
                     if (studentLoanCount > 3)
                     {
                         MessageBox.Show("Öğrenci aynı anda en fazla 3 kitap alabilir.");
@@ -235,6 +236,13 @@ namespace libraryProject.UI.Forms
                         }
                     }
 
+
+                    int totalBooks = selectedBook.TotalCopies - 1;
+
+                    if (totalBooks < 0)
+                    {
+                        MessageBox.Show("Mevcut kitap yok");
+                    }
 
 
                     Loan loan = new Loan()

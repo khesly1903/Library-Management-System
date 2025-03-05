@@ -19,6 +19,10 @@ namespace libraryProject.Business.Validators
                 .GreaterThan(l => l.LoanDate).WithMessage("Teslim tarihi, ödünç alma tarihinden sonra olmalıdır.")
                 .LessThanOrEqualTo(l => l.LoanDate.AddDays(15)).WithMessage("Teslim tarihi, ödünç alma tarihinden 15 günden fazla olamaz.");
 
+            // ödünç alma tarihi bugünün tarihinden geride olamaz
+            RuleFor(l => l.LoanDate.Date)
+                .GreaterThanOrEqualTo(System.DateTime.Now.Date).WithMessage("Ödünç alma tarihi bugünün tarihinden geride olamaz.");
+
             // Student boş olamaz
             RuleFor(l => l.Student)
                 .NotEmpty().WithMessage("Öğrenci gereklidir.");
