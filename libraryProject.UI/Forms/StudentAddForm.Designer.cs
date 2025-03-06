@@ -56,7 +56,7 @@
             label2.Location = new Point(165, 146);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(157, 43);
+            label2.Size = new Size(187, 43);
             label2.TabIndex = 0;
             label2.Text = "ÖĞRENCİ SOYADI";
             // 

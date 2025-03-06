@@ -12,6 +12,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System;
+
+using System.Data.SqlClient;
+using System.Windows.Forms;
+using System.ComponentModel.DataAnnotations;
+
+
 namespace libraryProject.UI.Forms
 {
     public partial class LoanReport : Form
@@ -40,31 +47,44 @@ namespace libraryProject.UI.Forms
             _loanRepository = new LoanRepository(context);
             _loanService = new LoanService(_loanRepository);
 
+
+
+
         }
 
         private void LoanReport_Load(object sender, EventArgs e)
         {
-            GetAllLoansWithRemainingDays();
+            GeneralReport();
         }
 
-        private void GetAllLoans()
+        private void GeneralReport()
         {
-            lstReport.Items.Clear();
-            var loans = _loanService.GetAll().ToList();
+            List<Loan> loans = GetAllLoansList();
+            List<Student> students = _studentService.GetAll().ToList();
+            List<Book> books = _bookService.GetAll().ToList();
+
+            int studentcount = students.Count;
+            int bookcount = books.Count;
+            int loancount = loans.Count;
+
+            int activeLoanCount = 0;
             foreach (var loan in loans)
             {
-                Loan current_loan = _loanService.GetById(loan.Id);
-                //Student loan_student = _studentService.GetById(loan.Student.Id);
-                //Book loan_book = _bookService.GetById(loan.Book.Id);
-                //string loan_date = loan.LoanDate.ToShortDateString();
-                //string retrun_date = loan.RetrunDate.ToShortDateString();
-                //lstList.Items.Add($"{loan_student} # {loan_book} # {loan_date} # {retrun_date}");
-
-                lstReport.Items.Add(loan);
-
-
+                if (loan.IsActive)
+                {
+                    activeLoanCount++;
+                }
             }
+
+            lblToatalLoan.Text = loancount.ToString();
+            lblTotalActiveLoan.Text = activeLoanCount.ToString();
+            lblTotalStudent.Text = studentcount.ToString();
+            lblTotalBook.Text = bookcount.ToString();
+
+
         }
+
+
 
         private List<Loan> GetAllLoansList()
         {
@@ -81,58 +101,159 @@ namespace libraryProject.UI.Forms
         }
 
 
+
+        private void dGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        //--------------------------------------------------------------------------------
+        private void btnGetAllLoans_Click(object sender, EventArgs e)
+        {
+            LoadAllLoansToDataGridView();
+        }
+
+        private List<Loan>? _allLoansList = new List<Loan>();
+        private void LoadAllLoansToDataGridView()
+        {
+
+            dGV.DataSource = null;
+            dGV.Rows.Clear();
+            dGV.Columns.Clear();
+
+
+            List<Loan> loans = GetAllLoansList();
+
+            var _allLoansList = loans
+                .OrderByDescending(l => l.LoanDate)
+                .Select(l => new
+                {
+                    Student = l.Student.StudentName + " " + l.Student.StudentSurname,
+                    BookName = l.Book.BookName,
+                    LoanDate = l.LoanDate.ToShortDateString(),
+                    ReturnDate = l.RetrunDate.ToShortDateString(),
+                    Status = l.IsActive ? "İade Edildi" : "Devam Ediyor"
+                })
+                .ToList();
+
+            if (dGV.Columns.Count == 0)
+            {
+                dGV.AutoGenerateColumns = true;
+            }
+            dGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
+
+            dGV.DataSource = _allLoansList;
+        }
+        
+        //--------------------------------------------------------------------------------
+        private void btnDueDateCheck_Click(object sender, EventArgs e)
+        {
+            GetAllLoansWithRemainingDays();
+        }
+        private void GetAllLoansWithRemainingDays()
+        {
+
+            dGV.DataSource = null;
+            dGV.Rows.Clear();
+            dGV.Columns.Clear();
+
+            var loans = GetAllLoansList().Where(l => !l.IsActive).ToList();
+
+            var loanWithRemainingDays = loans
+                .Select(l => new
+                {
+                    StudentFullName = l.Student.StudentName + " " + l.Student.StudentSurname,
+                    BookName = l.Book.BookName,
+                    RemainingDays = (l.RetrunDate - DateTime.Now).Days
+                })
+                .OrderBy(x => x.RemainingDays)
+                .ToList();
+
+            // DataGridView için kolonları manuel olarak ekleyelim
+            dGV.AutoGenerateColumns = false;
+
+            dGV.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                HeaderText = "Öğrenci Adı",
+                DataPropertyName = "StudentFullName"
+            });
+
+            dGV.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                HeaderText = "Kitap Adı",
+                DataPropertyName = "BookName"
+            });
+            dGV.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                HeaderText = "Kalan Gün",
+                DataPropertyName = "RemainingDays"
+            });
+
+            //dGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dGV.Columns[0].Width = 300;
+            dGV.Columns[1].Width = 300;
+            dGV.Columns[2].Width = 300;
+
+            dGV.DataSource = loanWithRemainingDays;
+        }
+
+
+
+        //--------------------------------------------------------------------------------
+        private void btnStudentHighestCheck_Click(object sender, EventArgs e)
+        {
+            GetAllStudentsByHighestLoan();
+        }
+
         private void GetAllStudentsByHighestLoan()
         {
-            lstReport.Items.Clear();
+            dGV.DataSource = null;
+            dGV.Rows.Clear();
+            dGV.Columns.Clear();
             var loans = GetAllLoansList();
 
             var studentLoanCounts = loans
                 .GroupBy(l => l.Student)
                 .Select(g => new
                 {
-                    Student = g.Key,
+                    StudentFullName = g.Key.StudentName + " " + g.Key.StudentSurname,
+                    StudentNumber = g.Key.StudentNumber,
                     LoanCount = g.Count()
                 })
                 .OrderByDescending(x => x.LoanCount)
                 .ToList();
 
-            foreach (var studentLoan in studentLoanCounts)
+            // DataGridView için kolonları manuel olarak ekleyelim
+            dGV.AutoGenerateColumns = false;
+
+            dGV.Columns.Add(new DataGridViewTextBoxColumn()
             {
-                lstReport.Items.Add($"{studentLoan.Student.StudentName} {studentLoan.Student.StudentSurname} - {studentLoan.LoanCount} ");
-            }
-        }
-
-
-
-        private void GetAllLoansWithRemainingDays()
-        {
-            lstReport.Items.Clear();
-            var loans = GetAllLoansList().Where(l => !l.IsActive).ToList();
-
-            var loanWithRemainingDays = loans
-                .Select(l => new
-                {
-                    Student = l.Student,
-                    Book = l.Book,
-                    RemainingDays = (l.RetrunDate - DateTime.Now).Days
-                })
-                .OrderBy(x => x.RemainingDays)
-                .ToList();
-
-            foreach (var loan in loanWithRemainingDays)
+                HeaderText = "Öğrenci",
+                DataPropertyName = "StudentFullName"
+            });
+            dGV.Columns.Add(new DataGridViewTextBoxColumn()
             {
-                lstReport.Items.Add($"{loan.Student.StudentName} {loan.Student.StudentSurname} - {loan.Book.BookName} - {loan.RemainingDays} days left");
-            }
+                HeaderText = "Öğrenci No",
+                DataPropertyName = "StudentNumber"
+            });
+            dGV.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                HeaderText = "Ödünç Kitap Sayısı",
+                DataPropertyName = "LoanCount"
+            });
+
+            //dGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dGV.Columns[0].Width = 300;
+            dGV.Columns[1].Width = 300;
+            dGV.Columns[2].Width = 300;
+            // Veriyi bağla
+            dGV.DataSource = studentLoanCounts;
         }
 
-        private void btnDueDateCheck_Click(object sender, EventArgs e)
-        {
-            GetAllLoansWithRemainingDays();
-        }
-
-        private void btnStudentHighestCheck_Click(object sender, EventArgs e)
-        {
-            GetAllStudentsByHighestLoan();
-        }
+        
     }
 }

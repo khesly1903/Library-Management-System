@@ -64,5 +64,7 @@ namespace libraryProject.UI.Forms
             var reportForm = new LoanReport();
             OpenFormInPanel(reportForm);
         }
+
+        
     }
 }

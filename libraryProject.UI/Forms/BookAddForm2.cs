@@ -210,8 +210,31 @@ namespace libraryProject.UI.Forms
 
         private void cmbBookAuthor_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LoadAuthors();
 
         }
+
+        private void LoadAuthors()
+        {
+
+
+            lstList.Items.Clear();
+            var books = _bookService.GetAll();
+
+            if (cmbBookAuthor.SelectedItem is Author selectedAuthor)
+            {
+                Author currentAuthor = selectedAuthor;
+
+                books = books.Where(b => b.Author.Id == currentAuthor.Id).ToList();
+            }
+            foreach (var book in books)
+            {
+                lstList.Items.Add(book);
+            }
+        }
+
+       
+
 
         private void cmbBookPublisher_SelectedIndexChanged(object sender, EventArgs e)
         {

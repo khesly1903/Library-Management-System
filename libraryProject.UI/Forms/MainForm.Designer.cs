@@ -41,7 +41,7 @@
             btnGoStudentAddForm.Name = "btnGoStudentAddForm";
             btnGoStudentAddForm.Size = new Size(250, 40);
             btnGoStudentAddForm.TabIndex = 0;
-            btnGoStudentAddForm.Text = "Öğrenci Ekleme Formunu Aç";
+            btnGoStudentAddForm.Text = "Öğrenci";
             btnGoStudentAddForm.UseVisualStyleBackColor = false;
             btnGoStudentAddForm.Click += btnGoStudentAddForm_Click;
             // 
@@ -54,7 +54,7 @@
             btnGoAuthorAddForm.Name = "btnGoAuthorAddForm";
             btnGoAuthorAddForm.Size = new Size(250, 40);
             btnGoAuthorAddForm.TabIndex = 1;
-            btnGoAuthorAddForm.Text = "Yazar Ekleme Formunu Aç";
+            btnGoAuthorAddForm.Text = "Yazar ";
             btnGoAuthorAddForm.UseVisualStyleBackColor = false;
             btnGoAuthorAddForm.Click += btnGoAuthorAddForm_Click;
             // 
@@ -67,7 +67,7 @@
             btnGoBookAddForm.Name = "btnGoBookAddForm";
             btnGoBookAddForm.Size = new Size(250, 40);
             btnGoBookAddForm.TabIndex = 2;
-            btnGoBookAddForm.Text = "Kitap Ekleme Formunu Aç";
+            btnGoBookAddForm.Text = "Kitap ";
             btnGoBookAddForm.UseVisualStyleBackColor = false;
             btnGoBookAddForm.Click += btnGoBookAddForm_Click;
             // 
@@ -80,7 +80,7 @@
             btnGoPublisherAddForm.Name = "btnGoPublisherAddForm";
             btnGoPublisherAddForm.Size = new Size(250, 40);
             btnGoPublisherAddForm.TabIndex = 3;
-            btnGoPublisherAddForm.Text = "Yayınevi Ekleme Formunu Aç";
+            btnGoPublisherAddForm.Text = "Yayınevi ";
             btnGoPublisherAddForm.UseVisualStyleBackColor = false;
             btnGoPublisherAddForm.Click += btnGoPublisherAddForm_Click;
             // 
@@ -119,12 +119,15 @@
             // 
             // btnGoReport
             // 
-            btnGoReport.Location = new Point(434, 12);
+            btnGoReport.BackColor = Color.FromArgb(139, 94, 60);
+            btnGoReport.FlatStyle = FlatStyle.Flat;
+            btnGoReport.ForeColor = Color.White;
+            btnGoReport.Location = new Point(338, 12);
             btnGoReport.Name = "btnGoReport";
-            btnGoReport.Size = new Size(185, 89);
+            btnGoReport.Size = new Size(157, 86);
             btnGoReport.TabIndex = 7;
             btnGoReport.Text = "Rapor";
-            btnGoReport.UseVisualStyleBackColor = true;
+            btnGoReport.UseVisualStyleBackColor = false;
             btnGoReport.Click += btnGoReport_Click;
             // 
             // MainForm
