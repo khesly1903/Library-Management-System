@@ -34,13 +34,13 @@ namespace libraryProject.DataAccess.Context
             if (!optionsBuilder.IsConfigured)
             {
                 // BERKAY DB LOCAL
-                optionsBuilder.UseSqlServer(@"Data Source=KAYAB\SQLEXPRESS;Initial Catalog=LibraryProject6;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                //optionsBuilder.UseSqlServer(@"Data Source=KAYAB\SQLEXPRESS;Initial Catalog=LibraryProject6;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
                 //optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LibProj;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
 
                 // DERYA DB LOCAL
-                //optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-N6SRBPV;Initial Catalog=LibraryDataBase;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LibraryProject3;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
                 // MERVE DB LOCAL
                 //optionsBuilder.UseSqlServer(@"Data Source=LAPTOP-R2AE4IO5\SQLEXPRESS;Initial Catalog=LibraryProject;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
@@ -50,8 +50,8 @@ namespace libraryProject.DataAccess.Context
 
 
                 // merve bilgisayar 
-               // optionsBuilder.UseSqlServer(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = LibraryProj1; Integrated Security = True; Connect Timeout = 30; Encrypt = False; Trust Server Certificate = False; Application Intent = ReadWrite; Multi Subnet Failover = False");
-                
+                // optionsBuilder.UseSqlServer(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = LibraryProj1; Integrated Security = True; Connect Timeout = 30; Encrypt = False; Trust Server Certificate = False; Application Intent = ReadWrite; Multi Subnet Failover = False");
+
             }
 
         }

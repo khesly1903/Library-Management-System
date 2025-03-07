@@ -193,9 +193,9 @@ namespace libraryProject.UI.Forms
 
             //dGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-            dGV.Columns[0].Width = 300;
-            dGV.Columns[1].Width = 300;
-            dGV.Columns[2].Width = 300;
+            dGV.Columns[0].Width = 270;
+            dGV.Columns[1].Width = 270;
+            dGV.Columns[2].Width = 140;
 
             dGV.DataSource = loanWithRemainingDays;
         }
@@ -247,9 +247,9 @@ namespace libraryProject.UI.Forms
 
             //dGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-            dGV.Columns[0].Width = 300;
-            dGV.Columns[1].Width = 300;
-            dGV.Columns[2].Width = 300;
+            dGV.Columns[0].Width = 270;
+            dGV.Columns[1].Width = 270;
+            dGV.Columns[2].Width = 140;
             // Veriyi bağla
             dGV.DataSource = studentLoanCounts;
         }

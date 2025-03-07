@@ -12,12 +12,19 @@ namespace libraryProject.UI
         private readonly StudentService _studentService;
         private readonly StudentRepository _studentRepository;
 
+        private readonly LoanService _loanService;
+        private readonly LoanRepository _loanRepository;
+
         public StudentAddForm()
         {
             InitializeComponent();
             var context = new AppDBContext();
             _studentRepository = new StudentRepository(context);
             _studentService = new StudentService(_studentRepository);
+
+
+            _loanRepository = new LoanRepository(context);
+            _loanService = new LoanService(_loanRepository);
         }
         private void StudentAddForm_Load(object sender, EventArgs e)
         {
@@ -73,6 +80,19 @@ namespace libraryProject.UI
 
         private void btnStudentDelete_Click(object sender, EventArgs e)
         {
+            List<Loan> loans = new List<Loan>();
+            loans = GetAllLoansList();
+
+            foreach (Loan loan in loans)
+            {
+                if (selected == loan.Student)
+                {
+                    MessageBox.Show("Kitap ödünç almış öğrenci silinemez");
+                    return;
+                }
+            }
+
+
             if (selected != null)
             {
                 _studentService.Delete(selected.Id);
@@ -85,6 +105,20 @@ namespace libraryProject.UI
             {
                 MessageBox.Show("Öğrenci seçiniz");
             }
+        }
+
+        private List<Loan> GetAllLoansList()
+        {
+
+            var loans = _loanService.GetAll().ToList();
+            List<Loan> loanList = new List<Loan>();
+            foreach (var loan in loans)
+            {
+                Loan current_loan = _loanService.GetById(loan.Id);
+                loanList.Add(current_loan);
+            }
+            return loanList;
+
         }
 
         private void GetAllStudents()

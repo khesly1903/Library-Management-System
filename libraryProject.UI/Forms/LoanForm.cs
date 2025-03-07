@@ -301,5 +301,10 @@ namespace libraryProject.UI.Forms
         {
             txtBookSearch.Text = "";
         }
+
+        private void clndrStartDate_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
     }
 }

@@ -42,12 +42,12 @@
             // 
             btnRetrun.BackColor = Color.FromArgb(139, 94, 60);
             btnRetrun.FlatStyle = FlatStyle.Flat;
-            btnRetrun.Font = new Font("Segoe Print", 12F, FontStyle.Bold);
+            btnRetrun.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnRetrun.ForeColor = Color.FromArgb(75, 54, 33);
-            btnRetrun.Location = new Point(13, 516);
-            btnRetrun.Margin = new Padding(4);
+            btnRetrun.Location = new Point(11, 373);
+            btnRetrun.Margin = new Padding(4, 3, 4, 3);
             btnRetrun.Name = "btnRetrun";
-            btnRetrun.Size = new Size(1200, 45);
+            btnRetrun.Size = new Size(995, 31);
             btnRetrun.TabIndex = 13;
             btnRetrun.Text = "Kitabı Al";
             btnRetrun.UseVisualStyleBackColor = false;
@@ -56,18 +56,20 @@
             // txtStudentSearch
             // 
             txtStudentSearch.BackColor = Color.FromArgb(234, 216, 192);
-            txtStudentSearch.Location = new Point(13, 55);
+            txtStudentSearch.Location = new Point(12, 37);
+            txtStudentSearch.Margin = new Padding(3, 2, 3, 2);
             txtStudentSearch.Name = "txtStudentSearch";
-            txtStudentSearch.Size = new Size(320, 36);
+            txtStudentSearch.Size = new Size(377, 26);
             txtStudentSearch.TabIndex = 14;
             txtStudentSearch.TextChanged += txtStudentSearch_TextChanged;
             // 
             // txtBookSearch
             // 
             txtBookSearch.BackColor = Color.FromArgb(234, 216, 192);
-            txtBookSearch.Location = new Point(795, 55);
+            txtBookSearch.Location = new Point(630, 37);
+            txtBookSearch.Margin = new Padding(3, 2, 3, 2);
             txtBookSearch.Name = "txtBookSearch";
-            txtBookSearch.Size = new Size(418, 36);
+            txtBookSearch.Size = new Size(377, 26);
             txtBookSearch.TabIndex = 15;
             txtBookSearch.TextChanged += txtBookSearch_TextChanged;
             // 
@@ -75,10 +77,11 @@
             // 
             lstList.BackColor = Color.FromArgb(234, 216, 192);
             lstList.FormattingEnabled = true;
-            lstList.ItemHeight = 28;
-            lstList.Location = new Point(13, 112);
+            lstList.ItemHeight = 19;
+            lstList.Location = new Point(12, 104);
+            lstList.Margin = new Padding(3, 2, 3, 2);
             lstList.Name = "lstList";
-            lstList.Size = new Size(1200, 340);
+            lstList.Size = new Size(995, 232);
             lstList.TabIndex = 16;
             lstList.SelectedIndexChanged += lstList_SelectedIndexChanged;
             // 
@@ -86,9 +89,9 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.FromArgb(75, 54, 33);
-            label1.Location = new Point(132, 24);
+            label1.Location = new Point(164, 16);
             label1.Name = "label1";
-            label1.Size = new Size(89, 28);
+            label1.Size = new Size(84, 19);
             label1.TabIndex = 17;
             label1.Text = "ÖĞRENCİ";
             // 
@@ -96,18 +99,19 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.FromArgb(75, 54, 33);
-            label2.Location = new Point(988, 24);
+            label2.Location = new Point(803, 14);
             label2.Name = "label2";
-            label2.Size = new Size(63, 28);
+            label2.Size = new Size(56, 19);
             label2.TabIndex = 17;
             label2.Text = "KİTAP";
             // 
             // btnStudentSearchClear
             // 
             btnStudentSearchClear.BackColor = Color.Red;
-            btnStudentSearchClear.Location = new Point(339, 55);
+            btnStudentSearchClear.Location = new Point(404, 37);
+            btnStudentSearchClear.Margin = new Padding(3, 2, 3, 2);
             btnStudentSearchClear.Name = "btnStudentSearchClear";
-            btnStudentSearchClear.Size = new Size(35, 35);
+            btnStudentSearchClear.Size = new Size(32, 24);
             btnStudentSearchClear.TabIndex = 18;
             btnStudentSearchClear.Text = "X";
             btnStudentSearchClear.UseVisualStyleBackColor = false;
@@ -116,9 +120,10 @@
             // btnBookSearchClear
             // 
             btnBookSearchClear.BackColor = Color.Red;
-            btnBookSearchClear.Location = new Point(753, 54);
+            btnBookSearchClear.Location = new Point(592, 37);
+            btnBookSearchClear.Margin = new Padding(3, 2, 3, 2);
             btnBookSearchClear.Name = "btnBookSearchClear";
-            btnBookSearchClear.Size = new Size(36, 36);
+            btnBookSearchClear.Size = new Size(32, 24);
             btnBookSearchClear.TabIndex = 19;
             btnBookSearchClear.Text = "X";
             btnBookSearchClear.UseVisualStyleBackColor = false;
@@ -126,10 +131,10 @@
             // 
             // ReturnForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 225, 200);
-            ClientSize = new Size(1234, 611);
+            ClientSize = new Size(1019, 433);
             Controls.Add(btnBookSearchClear);
             Controls.Add(btnStudentSearchClear);
             Controls.Add(label2);
@@ -138,8 +143,8 @@
             Controls.Add(txtBookSearch);
             Controls.Add(txtStudentSearch);
             Controls.Add(btnRetrun);
-            Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            Margin = new Padding(4, 6, 4, 6);
+            Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            Margin = new Padding(4);
             Name = "ReturnForm";
             Text = "RetrunForm";
             Load += RetrunForm_Load;

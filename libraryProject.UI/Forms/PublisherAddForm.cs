@@ -10,6 +10,10 @@ namespace libraryProject.UI.Forms
 
         private readonly PublisherService _publisherService;
         private readonly PublisherRepository _publisherRepository;
+
+        private readonly BookService _bookService;
+        private readonly BookRepository _bookRepository;
+
         Publisher? selected;
         public PublisherAddForm()
         {
@@ -17,6 +21,11 @@ namespace libraryProject.UI.Forms
             var context = new AppDBContext();
             _publisherRepository = new PublisherRepository(context);
             _publisherService = new PublisherService(_publisherRepository);
+
+
+            _bookRepository = new BookRepository(context);
+            _bookService = new BookService(_bookRepository);
+
         }
 
         private void PublisherForm_Load(object sender, EventArgs e)
@@ -73,6 +82,19 @@ namespace libraryProject.UI.Forms
 
         private void btnPublisherDelete_Click(object sender, EventArgs e)
         {
+
+
+            List<Book> books = new List<Book>();
+            books = GetAllBooksList();
+
+            foreach (Book book in books)
+            {
+                if (selected == book.Publiser)
+                {
+                    MessageBox.Show("Kitabı olan yayın evi silinemez");
+                    return;
+                }
+            }
             if (selected != null)
             {
                 _publisherService.Delete(selected.Id);
@@ -86,7 +108,19 @@ namespace libraryProject.UI.Forms
             }
         }
 
+        private List<Book> GetAllBooksList()
+        {
 
+            var books = _bookService.GetAll().ToList();
+            List<Book> bookList = new List<Book>();
+            foreach (var book in books)
+            {
+                Book current_book = _bookService.GetById(book.Id);
+                bookList.Add(current_book);
+            }
+
+            return bookList;
+        }
         private void ClearForm()
         {
             txtPublisherName.Text = "";

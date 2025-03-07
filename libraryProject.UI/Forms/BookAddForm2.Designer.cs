@@ -50,12 +50,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.FromArgb(75, 54, 33);
-            label1.Location = new Point(165, 147);
+            label1.Location = new Point(77, 87);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(99, 28);
+            label1.Size = new Size(87, 19);
             label1.TabIndex = 0;
             label1.Text = "KİTAP ADI";
             // 
@@ -63,10 +63,10 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.FromArgb(75, 54, 33);
-            label2.Location = new Point(165, 221);
+            label2.Location = new Point(77, 147);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(57, 28);
+            label2.Size = new Size(45, 19);
             label2.TabIndex = 1;
             label2.Text = "Yazar";
             // 
@@ -74,10 +74,10 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.FromArgb(75, 54, 33);
-            label3.Location = new Point(165, 184);
+            label3.Location = new Point(77, 117);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(52, 28);
+            label3.Size = new Size(47, 19);
             label3.TabIndex = 2;
             label3.Text = "ISBN";
             // 
@@ -85,10 +85,10 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.FromArgb(75, 54, 33);
-            label4.Location = new Point(165, 258);
+            label4.Location = new Point(77, 178);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(88, 28);
+            label4.Size = new Size(71, 19);
             label4.TabIndex = 3;
             label4.Text = "Yayın Evi";
             // 
@@ -96,10 +96,10 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.FromArgb(75, 54, 33);
-            label5.Location = new Point(165, 295);
+            label5.Location = new Point(77, 209);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(39, 28);
+            label5.Size = new Size(34, 19);
             label5.TabIndex = 4;
             label5.Text = "Raf";
             // 
@@ -107,28 +107,30 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.FromArgb(75, 54, 33);
-            label6.Location = new Point(165, 332);
+            label6.Location = new Point(77, 239);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(47, 28);
+            label6.Size = new Size(40, 19);
             label6.TabIndex = 5;
             label6.Text = "Stok";
             // 
             // txtBookName
             // 
             txtBookName.BackColor = Color.FromArgb(234, 216, 192);
-            txtBookName.Location = new Point(320, 143);
+            txtBookName.Location = new Point(217, 84);
+            txtBookName.Margin = new Padding(3, 2, 3, 2);
             txtBookName.Name = "txtBookName";
-            txtBookName.Size = new Size(320, 36);
+            txtBookName.Size = new Size(288, 26);
             txtBookName.TabIndex = 6;
             txtBookName.TextChanged += txtBookName_TextChanged;
             // 
             // txtBookISBN
             // 
             txtBookISBN.BackColor = Color.FromArgb(234, 216, 192);
-            txtBookISBN.Location = new Point(320, 180);
+            txtBookISBN.Location = new Point(217, 114);
+            txtBookISBN.Margin = new Padding(3, 2, 3, 2);
             txtBookISBN.Name = "txtBookISBN";
-            txtBookISBN.Size = new Size(320, 36);
+            txtBookISBN.Size = new Size(288, 26);
             txtBookISBN.TabIndex = 7;
             // 
             // cmbBookAuthor
@@ -137,9 +139,10 @@
             cmbBookAuthor.DropDownHeight = 200;
             cmbBookAuthor.FormattingEnabled = true;
             cmbBookAuthor.IntegralHeight = false;
-            cmbBookAuthor.Location = new Point(320, 217);
+            cmbBookAuthor.Location = new Point(217, 144);
+            cmbBookAuthor.Margin = new Padding(3, 2, 3, 2);
             cmbBookAuthor.Name = "cmbBookAuthor";
-            cmbBookAuthor.Size = new Size(320, 36);
+            cmbBookAuthor.Size = new Size(288, 27);
             cmbBookAuthor.TabIndex = 8;
             cmbBookAuthor.SelectedIndexChanged += cmbBookAuthor_SelectedIndexChanged;
             // 
@@ -149,18 +152,20 @@
             cmbBookPublisher.DropDownHeight = 200;
             cmbBookPublisher.FormattingEnabled = true;
             cmbBookPublisher.IntegralHeight = false;
-            cmbBookPublisher.Location = new Point(320, 254);
+            cmbBookPublisher.Location = new Point(217, 175);
+            cmbBookPublisher.Margin = new Padding(3, 2, 3, 2);
             cmbBookPublisher.Name = "cmbBookPublisher";
-            cmbBookPublisher.Size = new Size(320, 36);
+            cmbBookPublisher.Size = new Size(288, 27);
             cmbBookPublisher.TabIndex = 9;
             cmbBookPublisher.SelectedIndexChanged += cmbBookPublisher_SelectedIndexChanged;
             // 
             // numBookStock
             // 
             numBookStock.BackColor = Color.FromArgb(234, 216, 192);
-            numBookStock.Location = new Point(320, 328);
+            numBookStock.Location = new Point(217, 237);
+            numBookStock.Margin = new Padding(3, 2, 3, 2);
             numBookStock.Name = "numBookStock";
-            numBookStock.Size = new Size(320, 36);
+            numBookStock.Size = new Size(288, 26);
             numBookStock.TabIndex = 10;
             // 
             // btnAdd
@@ -169,10 +174,10 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnAdd.ForeColor = Color.FromArgb(75, 54, 33);
-            btnAdd.Location = new Point(28, 510);
-            btnAdd.Margin = new Padding(4);
+            btnAdd.Location = new Point(25, 346);
+            btnAdd.Margin = new Padding(4, 3, 4, 3);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(515, 60);
+            btnAdd.Size = new Size(480, 41);
             btnAdd.TabIndex = 12;
             btnAdd.Text = "EKLE";
             btnAdd.UseVisualStyleBackColor = false;
@@ -184,12 +189,12 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnDelete.ForeColor = Color.FromArgb(75, 54, 33);
-            btnDelete.Location = new Point(680, 510);
-            btnDelete.Margin = new Padding(4);
+            btnDelete.Location = new Point(513, 346);
+            btnDelete.Margin = new Padding(4, 3, 4, 3);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(515, 60);
+            btnDelete.Size = new Size(480, 41);
             btnDelete.TabIndex = 13;
-            btnDelete.Text = "SİL";
+            btnDelete.Text = "KİTABI KALDIR";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
@@ -197,10 +202,11 @@
             // 
             lstList.BackColor = Color.FromArgb(234, 216, 192);
             lstList.FormattingEnabled = true;
-            lstList.ItemHeight = 28;
-            lstList.Location = new Point(680, 143);
+            lstList.ItemHeight = 19;
+            lstList.Location = new Point(602, 65);
+            lstList.Margin = new Padding(3, 2, 3, 2);
             lstList.Name = "lstList";
-            lstList.Size = new Size(320, 256);
+            lstList.Size = new Size(288, 251);
             lstList.TabIndex = 14;
             lstList.SelectedIndexChanged += lstList_SelectedIndexChanged;
             // 
@@ -210,27 +216,28 @@
             cmbBookShelf.DropDownHeight = 200;
             cmbBookShelf.FormattingEnabled = true;
             cmbBookShelf.IntegralHeight = false;
-            cmbBookShelf.Location = new Point(320, 291);
+            cmbBookShelf.Location = new Point(217, 206);
+            cmbBookShelf.Margin = new Padding(3, 2, 3, 2);
             cmbBookShelf.Name = "cmbBookShelf";
-            cmbBookShelf.Size = new Size(320, 36);
+            cmbBookShelf.Size = new Size(288, 27);
             cmbBookShelf.TabIndex = 15;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.FromArgb(75, 54, 33);
-            label7.Location = new Point(778, 112);
+            label7.Location = new Point(679, 44);
             label7.Name = "label7";
-            label7.Size = new Size(131, 28);
+            label7.Size = new Size(119, 19);
             label7.TabIndex = 16;
             label7.Text = "KİTAP LİSTESİ";
             // 
             // BookAddForm2
             // 
-            AutoScaleDimensions = new SizeF(10F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 225, 200);
-            ClientSize = new Size(1234, 611);
+            ClientSize = new Size(1019, 433);
             Controls.Add(label7);
             Controls.Add(cmbBookShelf);
             Controls.Add(lstList);
@@ -247,8 +254,8 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            Margin = new Padding(4, 5, 4, 5);
+            Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "BookAddForm2";
             Text = "BookAddForm2";
             Load += BookAddForm2_Load;

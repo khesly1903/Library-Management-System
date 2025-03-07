@@ -35,9 +35,9 @@
             // 
             btnGoStudentAddForm.BackColor = Color.FromArgb(139, 94, 60);
             btnGoStudentAddForm.FlatStyle = FlatStyle.Flat;
-            btnGoStudentAddForm.Font = new Font("Segoe Print", 12F, FontStyle.Bold);
+            btnGoStudentAddForm.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnGoStudentAddForm.ForeColor = Color.White;
-            btnGoStudentAddForm.Location = new Point(699, 12);
+            btnGoStudentAddForm.Location = new Point(538, 12);
             btnGoStudentAddForm.Name = "btnGoStudentAddForm";
             btnGoStudentAddForm.Size = new Size(250, 40);
             btnGoStudentAddForm.TabIndex = 0;
@@ -50,7 +50,7 @@
             btnGoAuthorAddForm.BackColor = Color.FromArgb(139, 94, 60);
             btnGoAuthorAddForm.FlatStyle = FlatStyle.Flat;
             btnGoAuthorAddForm.ForeColor = Color.White;
-            btnGoAuthorAddForm.Location = new Point(955, 12);
+            btnGoAuthorAddForm.Location = new Point(794, 12);
             btnGoAuthorAddForm.Name = "btnGoAuthorAddForm";
             btnGoAuthorAddForm.Size = new Size(250, 40);
             btnGoAuthorAddForm.TabIndex = 1;
@@ -63,7 +63,7 @@
             btnGoBookAddForm.BackColor = Color.FromArgb(139, 94, 60);
             btnGoBookAddForm.FlatStyle = FlatStyle.Flat;
             btnGoBookAddForm.ForeColor = Color.White;
-            btnGoBookAddForm.Location = new Point(699, 58);
+            btnGoBookAddForm.Location = new Point(538, 58);
             btnGoBookAddForm.Name = "btnGoBookAddForm";
             btnGoBookAddForm.Size = new Size(250, 40);
             btnGoBookAddForm.TabIndex = 2;
@@ -76,7 +76,7 @@
             btnGoPublisherAddForm.BackColor = Color.FromArgb(139, 94, 60);
             btnGoPublisherAddForm.FlatStyle = FlatStyle.Flat;
             btnGoPublisherAddForm.ForeColor = Color.White;
-            btnGoPublisherAddForm.Location = new Point(955, 58);
+            btnGoPublisherAddForm.Location = new Point(794, 58);
             btnGoPublisherAddForm.Name = "btnGoPublisherAddForm";
             btnGoPublisherAddForm.Size = new Size(250, 40);
             btnGoPublisherAddForm.TabIndex = 3;
@@ -89,7 +89,7 @@
             btnGoLoanForm.BackColor = Color.FromArgb(139, 94, 60);
             btnGoLoanForm.FlatStyle = FlatStyle.Flat;
             btnGoLoanForm.ForeColor = Color.White;
-            btnGoLoanForm.Location = new Point(62, 12);
+            btnGoLoanForm.Location = new Point(12, 12);
             btnGoLoanForm.Name = "btnGoLoanForm";
             btnGoLoanForm.Size = new Size(250, 40);
             btnGoLoanForm.TabIndex = 4;
@@ -99,9 +99,9 @@
             // 
             // mainPanel
             // 
-            mainPanel.Location = new Point(12, 133);
+            mainPanel.Location = new Point(12, 127);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(1250, 650);
+            mainPanel.Size = new Size(1035, 472);
             mainPanel.TabIndex = 5;
             // 
             // btnGoReturnForm
@@ -109,7 +109,7 @@
             btnGoReturnForm.BackColor = Color.FromArgb(139, 94, 60);
             btnGoReturnForm.FlatStyle = FlatStyle.Flat;
             btnGoReturnForm.ForeColor = Color.White;
-            btnGoReturnForm.Location = new Point(62, 58);
+            btnGoReturnForm.Location = new Point(12, 58);
             btnGoReturnForm.Name = "btnGoReturnForm";
             btnGoReturnForm.Size = new Size(250, 40);
             btnGoReturnForm.TabIndex = 6;
@@ -122,7 +122,7 @@
             btnGoReport.BackColor = Color.FromArgb(139, 94, 60);
             btnGoReport.FlatStyle = FlatStyle.Flat;
             btnGoReport.ForeColor = Color.White;
-            btnGoReport.Location = new Point(338, 12);
+            btnGoReport.Location = new Point(288, 12);
             btnGoReport.Name = "btnGoReport";
             btnGoReport.Size = new Size(157, 86);
             btnGoReport.TabIndex = 7;
@@ -133,7 +133,7 @@
             // MainForm
             // 
             BackColor = Color.FromArgb(245, 225, 200);
-            ClientSize = new Size(1279, 803);
+            ClientSize = new Size(1064, 612);
             Controls.Add(btnGoReport);
             Controls.Add(btnGoReturnForm);
             Controls.Add(mainPanel);
@@ -142,8 +142,10 @@
             Controls.Add(btnGoBookAddForm);
             Controls.Add(btnGoAuthorAddForm);
             Controls.Add(btnGoStudentAddForm);
-            Font = new Font("Segoe Print", 12F, FontStyle.Bold);
+            Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             ForeColor = Color.Black;
+            MaximumSize = new Size(1080, 651);
+            MinimumSize = new Size(1080, 651);
             Name = "MainForm";
             ResumeLayout(false);
         }

@@ -17,6 +17,8 @@ namespace libraryProject.UI.Forms
         private readonly PublisherService _publisherService;
         private readonly PublisherRepository _publisherRepository;
         private readonly ShelfRepository _shelfRepository;
+        private readonly LoanService _loanService;
+        private readonly LoanRepository _loanRepository;
 
         Book? selected;
 
@@ -35,6 +37,10 @@ namespace libraryProject.UI.Forms
 
             _shelfRepository = new ShelfRepository(context);
             _shelfService = new ShelfService(_shelfRepository);
+
+
+            _loanRepository = new LoanRepository(context);
+            _loanService = new LoanService(_loanRepository);
 
         }
 
@@ -243,6 +249,18 @@ namespace libraryProject.UI.Forms
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            List<Loan> loans = new List<Loan>();
+            loans = GetAllLoansList();
+
+            foreach (Loan loan in loans)
+            {
+                if (selected == loan.Book)
+                {
+                    MessageBox.Show("Ödünç alınmış kitap kaldırılamaz");
+                    return;
+                }
+            }
+
             if (selected != null)
             {
                 _bookService.Delete(selected.Id);
@@ -253,6 +271,20 @@ namespace libraryProject.UI.Forms
             {
                 MessageBox.Show("Silinecek kitap seçiniz");
             }
+        }
+
+        private List<Loan> GetAllLoansList()
+        {
+
+            var loans = _loanService.GetAll().ToList();
+            List<Loan> loanList = new List<Loan>();
+            foreach (var loan in loans)
+            {
+                Loan current_loan = _loanService.GetById(loan.Id);
+                loanList.Add(current_loan);
+            }
+            return loanList;
+
         }
     }
 }

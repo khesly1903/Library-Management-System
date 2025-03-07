@@ -9,6 +9,9 @@ namespace libraryProject.UI.Forms
     {
         private readonly AuthorService _authorService;
         private readonly AuthorRepository _authorRepository;
+
+        private readonly BookService _bookService;
+        private readonly BookRepository _bookRepository;
         Author? selected;
 
         public AuthorAddForm()
@@ -17,6 +20,10 @@ namespace libraryProject.UI.Forms
             var context = new AppDBContext();
             _authorRepository = new AuthorRepository(context);
             _authorService = new AuthorService(_authorRepository);
+
+            _bookRepository = new BookRepository(context);
+            _bookService = new BookService(_bookRepository);
+
         }
 
         private void AuthorForm_Load(object sender, EventArgs e)
@@ -77,8 +84,35 @@ namespace libraryProject.UI.Forms
             selected = null;
         }
 
+        private List<Book> GetAllBooksList()
+        {
+            var books = _bookService.GetAll().ToList();
+            List<Book> bookList = new List<Book>();
+            foreach (var book in books)
+            {
+                Book current_book = _bookService.GetById(book.Id);
+                bookList.Add(current_book); // Add the book to the list
+            }
+
+            return bookList;
+        }
+
         private void btnAuthorDelete_Click(object sender, EventArgs e)
         {
+
+            List<Book> books = new List<Book>();
+            books = GetAllBooksList();
+
+            foreach (Book book in books)
+            {
+
+                if (selected == book.Author)
+                {
+                    MessageBox.Show("Kitabı olan yazar silinemez");
+                    return;
+                }
+            }
+
             if (selected != null)
             {
                 _authorService.Delete(selected.Id);
